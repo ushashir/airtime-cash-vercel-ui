@@ -2,4 +2,11 @@
 
 ## SCRIPTS
 
-- yarn start
+- run `yarn start` to start app
+
+
+### ROUTES
+
+- `Home page` - `/`
+- `Login page` - `/login`
+- `Signup page` - `/register`
