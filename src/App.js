@@ -1,10 +1,10 @@
 import React, { BrowserRouter, Routes, Route } from "react-router-dom";
 // components
-import Auth from './components/auth/Index';
+import Auth from './components/auth';
 // pages
-import LandingPage from "./pages/landingPage/Index.jsx";
-import LoginPage from './pages/login/Index';
-import SignupPage from "./pages/signup/Index.jsx";
+import LandingPage from "./pages/landingPage";
+import LoginPage from './pages/login';
+import SignupPage from "./pages/signup";
 
 
 function App() {
