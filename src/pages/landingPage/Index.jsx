@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from '../../components/nav';
 import './style.scss'
 
-function Index(props) {
+function LandingPage(props) {
     return (
         <div>
             <Nav />
@@ -12,4 +12,4 @@ function Index(props) {
     );
 }
 
-export default Index;
+export default LandingPage;

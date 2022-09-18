@@ -1,5 +1,6 @@
-import "./index.scss";
-import Nav from "../../components/nav/";
+import Nav from "../../components/nav";
+import "./style.scss";
+
 
 function UpdatePage(){
     
