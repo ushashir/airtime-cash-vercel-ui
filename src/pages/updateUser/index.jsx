@@ -5,6 +5,7 @@ import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
 
 function UpdatePage() {
+    
   const {
     register,
     handleSubmit,
