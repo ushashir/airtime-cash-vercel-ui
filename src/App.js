@@ -5,6 +5,7 @@ import Auth from './components/auth';
 import LandingPage from "./pages/landingPage";
 import LoginPage from './pages/login';
 import SignupPage from "./pages/signup";
+import PageNotFound from "./pages/notfound";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/auth" element={<Auth />}></Route>
         <Route path="/register" element={<SignupPage />}></Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
