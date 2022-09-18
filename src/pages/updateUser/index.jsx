@@ -1,11 +1,17 @@
-import React from 'react';
+import Nav from "../../components/nav";
+import "./style.scss";
 
-function Update(props) {
+
+function UpdatePage(){
+    
     return (
-        <div>
-            <h1>This is update user page</h1>
-        </div>
-    );
+        <>
+            <Nav />
+            <div className="top-bg">
+
+            </div>
+        </>
+    )
 }
 
-export default Update;
+export default UpdatePage

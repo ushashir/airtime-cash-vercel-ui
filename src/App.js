@@ -6,6 +6,7 @@ import LandingPage from "./pages/landingPage";
 import LoginPage from './pages/login';
 import SignupPage from "./pages/signup";
 import PageNotFound from "./pages/notfound";
+import UpdatePage from "./pages/updateUser";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/auth" element={<Auth />}></Route>
         <Route path="/register" element={<SignupPage />}></Route>
+        <Route path="/update" element={<UpdatePage />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
