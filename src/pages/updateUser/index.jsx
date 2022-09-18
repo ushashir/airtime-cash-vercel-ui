@@ -3,16 +3,27 @@ import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
+import client from "../../api/index"
+import {useState} from "react"
 
 function UpdatePage() {
-    
+    const [userData, setUserData] = useState({
+        firstName: "John",
+        lastName: "Doe",
+        phone: "12345678901",
+        email:"senior@dev.com"
+})
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
+    
+    
   const onSubmit = (data) => {
-    console.log(data);
+      console.log(data);
+
+      
   };
   return (
     <>
