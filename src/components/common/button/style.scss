@@ -1,0 +1,21 @@
+.btn{
+//     display: flex;
+// flex-direction: row;
+// justify-content: center;
+// align-items: center;
+// padding: 8px 16px;
+gap: 10px;
+
+width: 198px;
+height: 48px;
+color: #fff;
+outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    input:focus {
+        outline: none /* Removes the border when the input is clicked */
+      }
+background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
+
+}
