@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Index(props) {
+function Auth(props) {
     return (
         <div>
             <h1>This is auth component</h1>
@@ -8,4 +8,4 @@ function Index(props) {
     );
 }
 
-export default Index;
+export default Auth;

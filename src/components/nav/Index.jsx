@@ -1,4 +1,4 @@
-import "./nav.scss";
+import "./style.scss";
 import logo from "../../assets/icons/logo.svg"
 
 function Nav() {
