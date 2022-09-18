@@ -13,6 +13,9 @@ const Login = () => {
         const name = e.target.name;
         const value = e.target.value;
         setInputs({ ...inputs, [name]: value })
+        if (loginError) {
+            setLoginError("");
+        }
     }
 
     const handleSubmit = () => {
