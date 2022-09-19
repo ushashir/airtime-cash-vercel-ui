@@ -1,8 +1,5 @@
 body {
     background-color: #E5E5E5;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
 }
 
@@ -12,7 +9,6 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,53 +22,227 @@ body {
     background: #FFFFFF;
 }
 
+.login-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
 
-// .login-test {
-//     text-align: center;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 80px;
-//     gap: 40px;
+    width: 320px;
+    height: 466px;
+}
 
-//     width: 745px;
-//     height: 626px;
-//     background: #FFFFFF;
-// }
+.logo-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 12px;
 
-// .login-main {
-//     flex-direction: column;
-//     justify-content: center;
-//     align-items: center;
-//     padding: 0px;
-//     gap: 40px;
+    width: 151px;
+    height: 56px;
+}
 
-//     width: 320px;
-//     height: 466px;
-// }
+.details-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
 
-// input {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     padding: 8px 16px;
-//     gap: 10px;
+    width: 320px;
+    height: 370px;
+}
 
-//     width: 320px;
-//     height: 48px;
+input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
 
-//     background: #FFFFFF;
-//     border: 1px solid #D9D9D9;
-// }
+    width: 320px;
+    height: 48px;
 
-// .detail-div {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: flex-start;
-//     padding: 0px;
-//     gap: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+}
 
-//     width: 320px;
-//     height: 370px;
-// }
+.L-frame-10 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 40px;
+
+    width: 320px;
+    height: 308px;
+}
+
+.L-frame-9 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+
+    width: 320px;
+    height: 253px;
+}
+
+.L-frame-7 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 320px;
+    height: 181px;
+}
+
+.L-frame-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 16px;
+
+    width: 320px;
+    height: 158px;
+}
+
+.L-frame-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 320px;
+    height: 71px;
+}
+
+.L-frame-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+
+    width: 320px;
+    height: 71px;
+}
+
+.login-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+
+    width: 320px;
+    height: 48px;
+
+    background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
+}
+
+.login-text {
+    width: 49px;
+    height: 22px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+
+    color: #21334F;
+}
+
+.email-text {
+    width: 31px;
+    height: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #21334F;
+}
+
+.password-text {
+    width: 56px;
+    height: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #21334F;
+}
+
+.forgot_password-text {
+    width: 102px;
+    height: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #4285F4;
+}
+
+.no_account-message {
+    width: 228px;
+    height: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+
+    color: #21334F;
+}
+
+.create_account {
+    width: 228px;
+    height: 15px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    /* identical to box height */
+
+    color: #DE3D6D;
+}
+
+Link {
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+}

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
+import loginLogo from '../../assets/icons/loginLogo.svg'
 
 const Login = () => {
     const navigate = useNavigate();
@@ -64,27 +65,56 @@ const Login = () => {
     return (
         <form>
             <div className='test'>
-                <h1>This is login page</h1>
-                Email
-                <input type="email"
-                    name='email'
-                    value={inputs.email || ""}
-                    onChange={handleChange}
-                    required
-                />
-                Password
-                <input type="password"
-                    name="password"
-                    value={inputs.password || ""}
-                    onChange={handleChange}
-                    required
-                />
-                Forgot Password?
-                <input type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
-                <p className="message">Don't have an account? <Link to="../signup"><span> Create an account</span></Link></p>
-                <p style={{
-                    "color": "red"
-                }}>{loginError}</p>
+                <div className='login-main'>
+                    <div className='logo-div'>
+                        <img src={loginLogo} />
+                    </div>
+
+                    <div className='details-div'>
+                        <p className='login-text'>Login</p>
+                        <div className='L-frame-10'>
+                            <div className='L-frame-9'>
+                                <div className='L-frame-7'>
+                                    <div className='L-frame-6'>
+                                        <div className='L-frame-4'>
+                                            <p className='email-text'>Email</p>
+                                            <div className='L-frame-2'>
+                                                <input type="email"
+                                                    name='email'
+                                                    value={inputs.email || ""}
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder='Enter your email'
+                                                />
+                                            </div>
+
+                                        </div>
+                                        <div className='L-frame-5'>
+                                            <div className='password-text'>Password</div>
+                                            <div className='L-frame-3'>
+                                                <input type="password"
+                                                    name="password"
+                                                    value={inputs.password || ""}
+                                                    onChange={handleChange}
+                                                    required
+                                                    placeholder='Enter your password'
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <Link to="../forgotPassword" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
+                                </div>
+                                <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
+                            </div>
+                            <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
+                            <p style={{
+                                "color": "red"
+                            }}>{loginError}</p>
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </form>
         //  <>
