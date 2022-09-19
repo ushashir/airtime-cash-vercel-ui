@@ -1,16 +1,15 @@
 import axios from "axios";
-
+import { baseUrl } from "../utils/baseUrl";
 export const client = axios.create({
-    baseURL: process.env.BASE_URL
+    baseURL: baseUrl
 })
 
 export const updateUserData = async(data) => {
     try {
+        const token = localStorage.getItem("token")
         const response = await client.patch("/api/users", data,{
-            headers: { Authorization: `Bearer ${data.token}` },
+            headers: { Authorization: `Bearer ${token}` },
         })
-        return response
-
     } catch (error) {
         return error.toJSON()
     }
