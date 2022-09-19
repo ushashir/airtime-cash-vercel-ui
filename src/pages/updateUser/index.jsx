@@ -3,27 +3,30 @@ import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
-import client from "../../api/index";
-import { useState } from "react";
+import client, { updateUserData } from "../../api/index";
 
 function UpdatePage() {
+
   const userData = {
     firstName: "John",
     lastName: "Doe",
     phone: "12345678901",
     email: "senior@dev.com",
   };
+    
   const {
     register,
-      handleSubmit,
+    handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({defaultValues: userData});
-console.log(watch())
-  const onSubmit = (data) => {
+  } = useForm({ defaultValues: userData });
     
-      console.log("qqqqq",data)
-    console.log("kkkk",userData);
+    watch()
+
+    const onSubmit = async (data) => {
+      console.log(data)
+        const response = await updateUserData(data)
+        console.log(response)
   };
   return (
     <>
@@ -33,7 +36,8 @@ console.log(watch())
         <div className="update-form">
           <img src={logo} alt="logo" />
           <h3>Basic information</h3>
-          <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
+                  <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
+                      
             <label htmlFor="firstName">First Name</label>
             <input
               className="form-input"
@@ -59,7 +63,7 @@ console.log(watch())
             />
             {errors.phone && <span>Enter valid phone number</span>}
             <label htmlFor="email">Email</label>
-            <input
+            {/* <input
               className="form-input"
               type="email"
               {...register("email", {
@@ -68,7 +72,7 @@ console.log(watch())
               })}
               placeholder="Enter your email"
             />
-            {errors.email && <span>Enter valid email</span>}
+            {errors.email && <span>Enter valid email</span>} */}
             <Button value="save" type="submit" />
           </form>
         </div>

@@ -1,7 +1,17 @@
 import axios from "axios";
 
-const client = axios.create({
+export const client = axios.create({
     baseURL: process.env.BASE_URL
 })
 
-export default client
+export const updateUserData = async(data) => {
+    try {
+        const response = await client.patch("/api/users", data,{
+            headers: { Authorization: `Bearer ${data.token}` },
+        })
+        return response
+
+    } catch (error) {
+        return error.toJSON()
+    }
+}
