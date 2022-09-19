@@ -3,11 +3,16 @@ import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
-import { updateUserData } from "../../api/index";
+import { updateUserData, getUserData } from "../../api/index";
+import { useEffect, useState } from "react";
 
 function UpdatePage() {
-
-  const userData = JSON.parse(localStorage.getItem("userDetails"))
+    const [userData, setUserData] = useState("")
+    useEffect(() => {
+       async () => {
+         setUserData(await getUserData())
+     }
+},[])
   const {
     register,
     handleSubmit,
@@ -18,8 +23,16 @@ function UpdatePage() {
     watch()
 
     const onSubmit = async (data) => {
-        const response = await updateUserData(data)
-        console.log("reply", response)
+        try {
+            const response = await updateUserData(data)
+            console.log(response)
+            if (response.status === 200) {
+                console.log(response.data)
+            }
+        } catch (error) {
+            console.log(error)
+        }
+
   };
   return (
     <>
@@ -35,26 +48,32 @@ function UpdatePage() {
             <input
               className="form-input"
               type="text"
-              {...register("firstName", { minLength: 1 })}
+                          {...register("firstName", {
+                              minLength: 1,
+                              pattern: /^[A-Za-z][A-Za-z_]$/
+                          })}
               placeholder="Enter your first name"
             />
-            {errors.firstName && <span>First name cannot be empty</span>}
+            {errors.firstName && <span className="error">Please enter valid first name</span>}
             <label htmlFor="lastName">Last Name</label>
             <input
               className="form-input"
               type="text"
-              {...register("lastName", { minLength: 1 })}
+                          {...register("lastName", {
+                              minLength: 1,
+                pattern: /^[A-Za-z][A-Za-z_]$/
+              })}
               placeholder="Enter your last name"
             />
-            {errors.lastName && <span>Last name cannot be empty</span>}
+            {errors.lastName && <span className="error">Please enter valid last name</span>}
             <label htmlFor="phone">Phone Number</label>
             <input
               className="form-input"
               type="tel"
-              {...register("phone", { minLength: 10 })}
+              {...register("phone", { minLength: 10, pattern: "^[0-9]" })}
               placeholder="Enter your phone number"
             />
-            {errors.phone && <span>Enter valid phone number</span>}
+            {errors.phone && <span className="error">Enter valid phone number</span>}
           {/*  <label htmlFor="email">Email</label>
            <input
               className="form-input"
