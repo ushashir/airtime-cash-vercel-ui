@@ -9,7 +9,10 @@ function Nav() {
                     <img src={logo} alt="airtime to cash logo"></img>
                 </div>
                 <div>
-                    <h4>Photo</h4>
+                    <span className="profile-icon">
+                        <img src="" alt="profile"/>
+                        Tunde
+                    </span>
                 </div>
             </nav>
         </>

@@ -1,8 +1,16 @@
 .navbar{
     background: #fff;
     color: white;
-    height: 96px;
-    display: flex;
-    justify-content: space-around;
+    display: flex;;
+    justify-content: space-between;
 }
 
+.logo-image{
+    padding-left: 9.375rem;
+    width: 16.813rem;
+}
+@media screen and (max-width: 970px) {
+    .logo-image{
+        padding-left: 1.5rem;
+    }
+}
