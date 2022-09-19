@@ -2,6 +2,7 @@ import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 
 function Nav() {
+<<<<<<< HEAD
   return (
     <div className="body">
       <input type="checkbox" id="hamburger-input" class="burger-shower" />
@@ -66,6 +67,20 @@ function Nav() {
                   <a href="/">Contact</a>
                 </li>
               </ul>
+=======
+    return (
+        <>
+            <nav className="navbar">
+                <div className="logo-image">
+                    <img src={logo} alt="airtime to cash logo"></img>
+                </div>
+                <div>
+                    <span className="profile-icon">
+                        <img src="" alt="profile"/>
+                        Tunde
+                    </span>
+                </div>
+>>>>>>> 06b3e50a1722d5db3282381712d616b67fb41b55
             </nav>
           </label>
           <div className="home-logo2">
