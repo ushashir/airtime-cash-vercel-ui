@@ -117,24 +117,6 @@ const Login = () => {
                 </div>
             </div>
         </form>
-        //  <>
-        //     <div className='login-test'>
-        //         <div className='login-main'>
-        //             <div className='logo-div'>
-
-        //             </div>
-        //             <div className='details-div'>
-        //                 Login
-        //                 Email
-        //                 <input type="email" />
-        //                 Password
-        //                 <input type="password" />
-        //                 Forgot Password?
-        //                 <input type="submit" value="Login" />
-        //             </div>
-        //         </div>
-        //     </div>
-        // </>
     );
 };
 
