@@ -1,5 +1,5 @@
 import "./style.scss";
-import Nav from "../../components/nav/";
+import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg"
 function UpdatePage(){
