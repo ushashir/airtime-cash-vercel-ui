@@ -1,5 +1,5 @@
 import "./style.scss";
-import Nav from "../../components/nav";
+// import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
@@ -20,20 +20,6 @@ function UpdatePage() {
   } = useForm();
     
     
-<<<<<<< HEAD
-    return (
-        <>
-            <Nav />
-            <div className="top-bg"></div>
-            <div className="form-input">
-                <img src={logo} alt="logo" />
-                <form>
-            <Button value="save" type="submit"/>
-                </form>q
-            </div>
-        </>
-    )
-=======
   const onSubmit = (data) => {
       console.log(data);
 
@@ -41,7 +27,7 @@ function UpdatePage() {
   };
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <div className="wrapper">
         <div className="top-bg"></div>
         <div className="update-form">
@@ -88,7 +74,6 @@ function UpdatePage() {
       </div>
     </>
   );
->>>>>>> 06b3e50a1722d5db3282381712d616b67fb41b55
 }
 
 export default UpdatePage;

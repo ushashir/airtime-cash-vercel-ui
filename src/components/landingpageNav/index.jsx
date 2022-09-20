@@ -2,7 +2,6 @@ import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 
 function Nav() {
-<<<<<<< HEAD
   return (
     <div className="body">
       <input type="checkbox" id="hamburger-input" class="burger-shower" />
@@ -14,7 +13,7 @@ function Nav() {
         <div className="menudiv">
           <ul class="menu">
             <li>
-              <a className="linkss" href="/">
+              <a className="home_link" href="/">
                 Home
               </a>
             </li>
@@ -67,7 +66,6 @@ function Nav() {
                   <a href="/">Contact</a>
                 </li>
               </ul>
-=======
     return (
         <>
             <nav className="navbar">
@@ -80,7 +78,6 @@ function Nav() {
                         Tunde
                     </span>
                 </div>
->>>>>>> 06b3e50a1722d5db3282381712d616b67fb41b55
             </nav>
           </label>
           <div className="home-logo2">
