@@ -46,11 +46,9 @@ const Login = () => {
             .then((res) => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
-                    const userDetails = res.data.response.userdata;
     
                     localStorage.setItem('token', token);
-                    localStorage.setItem('userDetails', JSON.stringify(userDetails));
-                    navigate('../landingPage')
+                    navigate('/dashboard')
                 }
             }).catch((err) => {
                 if (err) {
