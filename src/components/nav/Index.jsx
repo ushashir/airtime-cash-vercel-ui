@@ -1,5 +1,5 @@
 import "./style.scss";
-import logo from "../../assets/icons/logo.svg"
+import logo from "../../assets/icons/logo.svg";
 
 function Nav() {
     return (
@@ -9,11 +9,14 @@ function Nav() {
                     <img src={logo} alt="airtime to cash logo"></img>
                 </div>
                 <div>
-                    <h4>Photo</h4>
+                    <span className="profile-icon">
+                        <img src="" alt="profile"/>
+                        Tunde
+                    </span>
                 </div>
             </nav>
-        </>
-    )
+    </>
+  );
 }
 
 export default Nav;

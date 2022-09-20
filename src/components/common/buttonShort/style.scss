@@ -1,0 +1,18 @@
+.btn {
+    gap: 10px;
+    width: 100px;
+    height: 48px;
+    color: #fff;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    input:focus {
+        outline: none
+            /* Removes the border when the input is clicked */
+    }
+
+    background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
+
+}
