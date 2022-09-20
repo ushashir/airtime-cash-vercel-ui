@@ -5,34 +5,83 @@ import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
 import { updateUserData, getUserData } from "../../api/index";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+const MySwal = withReactContent(Swal);
 
 function UpdatePage() {
-    const [userData, setUserData] = useState("")
-    useEffect(() => {
-       async () => {
-         setUserData(await getUserData())
-     }
-},[])
+  const data = JSON.parse(localStorage.getItem("userDetails"));
+  const [userData, setUserData] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isUploaded, setIsUploaded] = useState(false);
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    getUserData().then((data) => setUserData(data.response));
+    setIsLoading(true);
+    // localStorage.setItem("userDetails", JSON.stringify(data.response))
+  }, []);
+  console.log("user", userData);
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ defaultValues: userData });
-    
-    watch()
+  } = useForm();
 
-    const onSubmit = async (data) => {
-        try {
-            const response = await updateUserData(data)
-            console.log(response)
-            if (response.status === 200) {
-                console.log(response.data)
-            }
-        } catch (error) {
-            console.log(error)
+  watch();
+  const updateProfile = async () => {
+    const { value: file } = await Swal.fire({
+      title: "Select image",
+      input: "file",
+      inputAttributes: {
+        accept: "image/*",
+        "aria-label": "Upload your profile picture",
+      },
+    });
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        Swal.fire("Uploading");
+        const res = await updateUserData({ avatar: e.target.result });
+
+        if (res.status === 200) {
+          console.log("is uploaded");
+          Swal.fire({
+            title: "Your uploaded picture",
+            imageUrl: e.target.result,
+            imageAlt: "The uploaded picture",
+          });
         }
+      };
 
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const onSubmit = async (data) => {
+    try {
+      const response = await updateUserData(data);
+      if (response.status === 200) {
+        console.log(response.data);
+        setUserData(response.data);
+
+        Swal.fire(
+          "Success",
+          "Your profile has been updated successfully",
+          "success"
+        );
+
+        setTimeout(() => {
+          navigate("/dashboard");
+        }, 5000);
+      }
+    } catch (error) {
+      Swal.fire("Oops", "Something went wrong, Try again", "error");
+      console.log(error);
+    }
   };
   return (
     <>
@@ -42,51 +91,78 @@ function UpdatePage() {
         <div className="update-form">
           <img src={logo} alt="logo" />
           <h3>Basic information</h3>
-                  <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
-                      
-            <label htmlFor="firstName">First Name</label>
-            <input
-              className="form-input"
-              type="text"
-                          {...register("firstName", {
-                              minLength: 1,
-                              pattern: /^[A-Za-z][A-Za-z_]$/
-                          })}
-              placeholder="Enter your first name"
-            />
-            {errors.firstName && <span className="error">Please enter valid first name</span>}
-            <label htmlFor="lastName">Last Name</label>
-            <input
-              className="form-input"
-              type="text"
-                          {...register("lastName", {
-                              minLength: 1,
-                pattern: /^[A-Za-z][A-Za-z_]$/
-              })}
-              placeholder="Enter your last name"
-            />
-            {errors.lastName && <span className="error">Please enter valid last name</span>}
-            <label htmlFor="phone">Phone Number</label>
-            <input
-              className="form-input"
-              type="tel"
-              {...register("phone", { minLength: 10, pattern: "^[0-9]" })}
-              placeholder="Enter your phone number"
-            />
-            {errors.phone && <span className="error">Enter valid phone number</span>}
-          {/*  <label htmlFor="email">Email</label>
-           <input
-              className="form-input"
-              type="email"
-              {...register("email", {
-                pattern:
-                  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              })}
-              placeholder="Enter your email"
-            />
-            {errors.email && <span>Enter valid email</span>} */}
-            <Button value="save" type="submit" />
-          </form>
+          {!isLoading ? (
+            "Loading"
+          ) : (
+            <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
+              <label htmlFor="firstName">First Name</label>
+              <input
+                className="form-input"
+                defaultValue={userData.firstName}
+                type="text"
+                {...register("firstName", {
+                  minLength: 2,
+                  required: true,
+                  pattern: /([A-ZÀ-ÿa-z]+)+/,
+                })}
+                placeholder="Enter your first name"
+              />
+              {errors.firstName && (
+                <span className="error">Please enter valid first name</span>
+              )}
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                defaultValue={userData.lastName}
+                className="form-input"
+                type="text"
+                {...register("lastName", {
+                  minLength: 2,
+                  required: true,
+                  pattern: /([A-ZÀ-ÿa-z]+)+/,
+                })}
+                placeholder="Enter your last name"
+              />
+              {errors.lastName && (
+                <span className="error">Please enter valid last name</span>
+              )}
+              <label htmlFor="phone">Username</label>
+              <input
+                className="form-input"
+                type="text"
+                defaultValue={userData.userName}
+                {...register("userName", {
+                  minLength: 3,
+                  pattern: /([A-Za-z][-,a-z._0-9']+)+/,
+                })}
+                placeholder="Enter your Username"
+              />
+              {errors.userName && (
+                <span className="error">Please enter valid username</span>
+              )}
+              <label htmlFor="phone">Phone Number</label>
+              <input
+                className="form-input"
+                type="tel"
+                defaultValue={userData.phone}
+                {...register("phone", {
+                  minLength: 10,
+                  maxLength: 12,
+                  required: true,
+                  pattern: "^[0-9]",
+                })}
+                placeholder="Enter your phone number"
+              />
+              {errors.phone && (
+                <span className="error">Enter valid phone number</span>
+              )}
+              <input
+                type="button"
+                value="Update profile picture"
+                onClick={updateProfile}
+              />
+              <Button value="save" type="submit" />
+            </form>
+          )}
         </div>
       </div>
     </>

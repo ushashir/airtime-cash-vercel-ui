@@ -21,7 +21,7 @@ export const getUserData = async() => {
         const response = await client.get("/api/users", {
             headers: { Authorization: `Bearer ${token}` },
         })
-        return response
+        return response.data
     } catch (error) {
         return error.toJSON()
     }
