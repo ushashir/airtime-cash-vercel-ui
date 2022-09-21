@@ -1,0 +1,103 @@
+.encb {
+    background-color: white;
+    width: 100vw;
+    padding-top: 30px;
+    margin-top: 0rem;
+    padding-bottom: 50px;
+margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.encompass1b {
+    color: var(--color-body);
+  
+    padding-top: 0px;
+    margin-top: -110px;
+    width: 34rem;
+    margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+
+}
+
+
+.bodytext1b {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.bodyText1Subtitleb {
+    margin-top: 0.7rem;
+    margin-bottom: 120px;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 600px) {
+
+    .encb {
+        margin-top: 0rem;
+        margin-left: 0px;
+        background-color: white;
+        padding-top: 5.5rem;
+        padding-bottom: 40px;
+    
+    }
+
+    .encompass1b {
+        margin-top: 0rem;
+        margin-left: 0px;
+        width: 38rem;
+        height: 24px;
+            margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+    }
+
+
+    .bodytext1b {
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 2.6rem;
+    }
+
+    .bodyText1Subtitleb {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (min-width: 950px) {
+
+
+    .encb {
+        margin-top: 0rem;
+        margin-left: 0px;
+        padding-left: 11rem;
+        padding-top: 7rem;
+    }
+
+    .encompass1b {
+        margin-top: 0rem;
+        margin-left: 0px;
+        width: 77.7rem;
+        height: 24px;
+        padding-top: 0rem;
+            margin-left: auto;
+                margin-right: auto;
+                text-align: center;
+    }
+
+
+    .bodytext1b {
+        font-weight: 700;
+        font-size: 2.7rem;
+        line-height: 5.6rem;
+    }
+
+    .bodyText1Subtitleb {
+        font-size: medium;
+    }
+
+}

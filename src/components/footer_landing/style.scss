@@ -19,10 +19,10 @@ height: 40px;
 display: flex;
 flex-direction: column;
 align-items: center;
-padding: 40px 180px 32px 190px;
-gap: 34px;
+padding: 40px 0;
+// gap: 34px;
 background: #21334F;
-height: 28.4rem;
+height: 13.4rem;
 }
 
 .footerMenu ul{
@@ -35,6 +35,31 @@ display: flex;
     font-size: 1.6rem;
     margin-right: 3rem;
 }
+
 hr{
-    border: 5px red solid;
+    border: 0.1px rgb(255, 255, 255) solid;
+    margin-top:30px;
+    margin-left: 76px;
+    margin-right: 76px;
+}
+.footer-container{
+    width: 100%;
+    height: 250px;
+    background: #21334F
+}
+
+.footer_labels{
+    color: white;
+    font-size: medium;
+    background-color: #21334F;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 76px;
+    margin-right: 76px;
+    margin-top: 30.2px;
+    margin-bottom: 40.3px;
+}
+
+.footer-icons img{
+    padding-left: 15px;
 }

@@ -10,7 +10,27 @@
     column-gap: 1.5vw;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
 
+}
+.arrow{
+    margin-top: 80px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 11px;
+    font-size: 28px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background: rgba(0, 0, 0, 0.04);
+  
+}
+.arrow-pos{
+    display: flex;
+    background-color: white;
+    padding: 15px;
 }
 
 

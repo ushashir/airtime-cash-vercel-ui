@@ -1,5 +1,5 @@
 import "./style.scss";
-import Nav from "../../components/nav";
+// import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
@@ -27,7 +27,7 @@ function UpdatePage() {
   };
   return (
     <>
-      <Nav />
+      {/* <Nav /> */}
       <div className="wrapper">
         <div className="top-bg"></div>
         <div className="update-form">
