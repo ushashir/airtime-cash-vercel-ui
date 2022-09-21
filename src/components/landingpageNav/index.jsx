@@ -35,11 +35,11 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-              <a href="/login">
+            
                 <div className="btn" href="/login">
-                  Login
+                  <a href="/login">Login</a>
                 </div>
-              </a>
+             
             </ul>
           </div>
         </nav>
