@@ -4,7 +4,7 @@ import logo from "../../assets/icons/logo.svg";
 
 const  Nav = () => {
   return (
-    <>
+    <div className="html">
       <div className="body">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input"></label>
@@ -48,7 +48,7 @@ const  Nav = () => {
         </div>
         <div class="overlay"></div>
       </div>
-    </>
+    </div>
   );
 }
 
