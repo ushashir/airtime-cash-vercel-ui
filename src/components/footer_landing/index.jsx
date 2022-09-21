@@ -22,11 +22,13 @@ export default function Footer(props) {
           </div>
           <hr />
           <div className='footer_labels'>
-          <p>© 2022 Airtime2Cash. All rights reserved</p>
+          <div className="footer-credit">
+            <p>© 2022 Airtime2Cash. All rights reserved</p>
+          </div>
           <div className='footer-icons'>
-          <img src={instagramicon} /> 
-          <img src={twittericon} />
-          <img src={youtubeicon} />
+          <div className="footer-social"><img src={instagramicon} /> </div>
+          <div className="footer-social"><img src={twittericon} /></div>
+          <footer className="footer-social"><img src={youtubeicon} /></footer>
           </div>
           </div>
       </div>

@@ -51,15 +51,25 @@ hr{
 .footer_labels{
     color: white;
     font-size: medium;
+    width: 100vw;
     background-color: #21334F;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 76px;
-    margin-right: 76px;
-    margin-top: 30.2px;
-    margin-bottom: 40.3px;
+    display:grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 24px;
 }
 
+.footer-icons{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100%
+    
+
+}
+
+.footer-social{
+    width: 10rem;
+}
 .footer-icons img{
-    padding-left: 15px;
+  width: 10px
 }
