@@ -1,0 +1,121 @@
+.enc{
+    background-color: white;
+    text-align: left;
+        padding-top: 0rem;
+        margin-top: 0rem;
+        padding-bottom: 50px;
+       
+}
+
+.encompass1{
+color: var(--color-body);
+    padding-left: 17%;
+    padding-right: 17%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 0px;
+    margin-top: -110px;
+    width: 34rem;
+
+}
+
+.rectangle{
+    padding-top: 25px;
+    padding-left: 40px;
+    margin-top: 0;
+}
+
+.rectangle img{
+height: 120px;
+}
+
+.bodytext1 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 2rem;
+}
+.bodyText1Subtitle{
+    margin-top: 0.7rem;
+    font-size: 1.2rem;
+}
+
+@media screen and (min-width: 600px) {
+
+    .enc{
+        display: flex;
+        margin-top: 0rem;
+            margin-left: 0px;
+            text-align: left;
+            padding-left: 6rem;
+            background-color: white;
+                padding-top: 5.5rem;
+                padding-bottom: 40px;
+    }
+
+.encompass1 {
+margin-top: 0rem;
+margin-left: 0px;
+text-align: left;
+padding-left: 3rem;
+width: 38rem;
+height: 24px;
+}
+
+.rectangle img{
+height: 100px;
+}
+
+.rectangle{
+    padding-top: 0px;
+}
+
+.bodytext1{
+font-weight: 700;
+font-size: 1rem;
+line-height: 2.6rem;
+}
+
+.bodyText1Subtitle{
+font-size: 1.2rem;
+}
+}
+
+@media screen and (min-width: 950px) {
+
+
+.enc {
+        display: flex;
+        margin-top: 0rem;
+        margin-left: 0px;
+        text-align: left;
+        padding-left: 11rem;
+        padding-top: 7rem;
+    }
+
+    .encompass1 {
+        margin-top: 0rem;
+        margin-left: 0px;
+        text-align: left;
+        padding-left: 3rem;
+        width: 77.7rem;
+        height: 24px;
+        padding-top: 0rem;
+    }
+
+    .rectangle img {
+        height: 160px;
+    }
+
+    .bodytext1 {
+        font-weight: 700;
+        font-size: 2.7rem;
+        line-height: 5.6rem;
+    }
+
+    .bodyText1Subtitle {
+        font-size: 1.7rem;
+    }
+
+}
