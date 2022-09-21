@@ -11,7 +11,7 @@ function Nav() {
           <img src={logo} alt="airtime to cash logo"></img>
         </div>
         <div className="menudiv">
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <a className="home_link" href="/">
                 Home
@@ -32,7 +32,7 @@ function Nav() {
                 Contact Us
               </a>
             </li>
-            <div className="btn" a href="/">
+            <div className="btn" href="/">
               Login
             </div>
           </ul>
@@ -42,7 +42,7 @@ function Nav() {
       <div className="home-logo2">
         <img src={logo} alt="airtime to cash logo"></img>
       </div>
-      <div class="overlay"></div>
+      <div className="overlay"></div>
 
       {/* <div className="mobile">
           <input type="checkbox" id="hamburger-input" class="burger-shower" />
