@@ -28,6 +28,7 @@ export default function Hero() {
                 value="Get Started"
                 style={{
                   fontSize: "1rem",
+                  width: "9rem",
                   textAlign: "center",
                   textDecoration: "none",
                   borderRadius: "24px",

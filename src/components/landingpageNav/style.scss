@@ -117,25 +117,32 @@ h3 {
 
 
 @media screen and (max-width: 950px) {
-
+.body{
+    width: 100vw;
+    padding-left: 0;
+    padding-right: 0;
+}
 
     .body .nav-bar{
         overflow: hidden;
         width: 100%;
-        grid-template-columns: 35vw 65vw;
+        grid-template-columns: 25vw 75vw;
         justify-items: start;
         justify-content: center;
+        padding-left: 0;
+    
+        
     }
 
 
 .menudiv {
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 50px;
 }
 
 .body li {
-    width: 8rem;
-    font-size: 1.4rem;
+    width: 4rem;
+    font-size: 0.7rem;
 }
 
 .home_link{
@@ -143,21 +150,26 @@ h3 {
 }
 
  .home-logo {
-     margin-left: 4.2rem;
-     margin-top: 1rem;
+     margin-left: 0.8rem;
+     margin-top: 0.625rem;
  }
  .body .btn {
-     width: 8rem;
-.navbar{
+     width: 5rem;
+.nav-bar{
     background: #fff;
     color: white;
-    display: flex;;
+    display: flex;
     justify-content: space-between;
+    // margin-left: -8rem;
 }
- .home-logo img {
-     width: 20rem;
+ .navlog {
+     width: 4rem;
  }
-     
+
+
+     .menudiv ul{
+        margin-top: 1rem;
+     }
         
         //    .hamburger-menu .home-logo2 {
         //        visibility: hidden;
