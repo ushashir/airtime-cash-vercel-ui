@@ -9,7 +9,22 @@ const Signup = () => {
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [passconfirm, setPassconfirm] = useState("");
+  const [btnDisabled, setBtnDisabled] = useState(true);
+
   const handleName = (e) => {
+    if (
+      name === "" ||
+      mail === "" ||
+      number === "" ||
+      password === "" ||
+      passconfirm === ""
+    ) {
+      setBtnDisabled(true);
+    } else if (name !== "" && name.trim().length <= 15) {
+      setBtnDisabled(false);
+    } else {
+      setBtnDisabled(true);
+    }
     setName(e.target.value);
   };
   const handleMail = (e) => {
@@ -24,8 +39,9 @@ const Signup = () => {
   const handleConfirm = (e) => {
     setPassconfirm(e.target.value);
   };
+
   return (
-    <div className="container">
+    <div className="father">
       <img src={logo} alt="logo" />
 
       <div className="account">
@@ -101,7 +117,9 @@ const Signup = () => {
               value={passconfirm}
             />
           </div>
-          <button className="eten-sign"> Sign Up</button>
+          <button className="eten-sign" disabled={btnDisabled} type="submit">
+            Sign Up
+          </button>
           <h4 className="kiki">
             <span className="dolly">Already have an account?</span>
             <span className="clem">Sign In</span>
