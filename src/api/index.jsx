@@ -1,5 +1,4 @@
 import axios from "axios";
-import { async } from "q";
 import { baseUrl } from "../utils/baseUrl";
 export const client = axios.create({
     baseURL: baseUrl
@@ -28,7 +27,7 @@ export const getUserData = async(data) => {
     }
 }
 
-export const registerUser = async () => {
+export const registerUser = async (data) => {
     try {
         const response = await client.patch("/api/users", data)
         return response.data
@@ -39,7 +38,8 @@ export const registerUser = async () => {
 
 export const forgetPassword = async (email) => {
     try {
-        const response = await client.post("/forgotpassword", email)
+        const response = await client.post("/api/users/forgotpassword", email)
+        console.log("gggg",response.data)
         return response.data
     } catch (error) {
         return error.toJSON()
@@ -48,7 +48,7 @@ export const forgetPassword = async (email) => {
 
 export const resetPassword = async (data) => {
     try {
-        const response = await client.post("/resetpassword", data)
+        const response = await client.post("/api/users/resetpassword", data)
         return response.data
     } catch (error) {
         return error.toJSON()

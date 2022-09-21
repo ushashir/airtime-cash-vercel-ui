@@ -28,7 +28,7 @@ function ForgotPassword() {
       .then((res) => {
         if (res.status === 200) {
           console.log(res);
-          localStorage.setItem("formData", formData);
+        
           navigate("/email-sent");
         }
       })
@@ -41,7 +41,7 @@ function ForgotPassword() {
   }
   
 
-  console.log(formData);
+
   return (
     <ForgetPasswordPage>
       <ForgotPasswordForm>
@@ -64,10 +64,10 @@ function ForgotPassword() {
               onChange={handleChange}
               placeholder="Enter your Email"
             />
-            <HeaderLink to={"/email-sent"}>
-            <button type="submit" className="reset-btn">
-              Reset password
-            </button>
+            <HeaderLink >
+            <button type="submit" className="reset-btn" onClick={handleSubmit}>
+             Reset Password
+          </button>
             </HeaderLink>
             <HeaderLink secondary={"true"} to={"/login"}>
               <button className="back-btn">Back to Login</button>

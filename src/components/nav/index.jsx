@@ -1,6 +1,6 @@
 import "./style.scss";
-import logo from "../../../assets/icons/logo.svg";
-import avatar from '../../../assets/images/dashboard_avata.png'
+import logo from "../../assets/icons/logo.svg";
+import avatar from '../../assets/images/dashboard_avata.png'
 
 
 

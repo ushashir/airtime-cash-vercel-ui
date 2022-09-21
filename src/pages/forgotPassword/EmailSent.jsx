@@ -42,7 +42,7 @@ const EmailSent = () => {
           </p>
           <p className="second">
             Don't receive the email?{" "}
-            <span className="red-text" onClick={handleSubmit}>Click to resend link</span>
+            <span className="red-text" ><a href="/forgot-password">Click to resend link</a></span>
           </p>
         </div>
 
