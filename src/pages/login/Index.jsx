@@ -100,7 +100,7 @@ const Login = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <Link to="../forgotPassword" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
+                                    <Link to="/forgot-password" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
                                 </div>
                                 <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
                             </div>

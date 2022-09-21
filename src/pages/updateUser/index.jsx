@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-
 function UpdatePage() {
   const [userData, setUserData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +16,6 @@ function UpdatePage() {
   useEffect(() => {
     getUserData().then((data) => setUserData(data.response));
     setIsLoading(true);
-    // localStorage.setItem("userDetails", JSON.stringify(data.response))
   }, []);
   console.log("user", userData);
   const {
@@ -90,7 +88,10 @@ function UpdatePage() {
           {!isLoading ? (
             "Loading"
           ) : (
-            <form className="update-page-form-data" onSubmit={handleSubmit(onSubmit)}>
+            <form
+              className="update-page-form-data"
+              onSubmit={handleSubmit(onSubmit)}
+            >
               <label htmlFor="firstName">First Name</label>
               <input
                 className="update-page-form-input"
@@ -104,7 +105,9 @@ function UpdatePage() {
                 placeholder="Enter your first name"
               />
               {errors.firstName && (
-                <span className="update-page-error">Please enter valid first name</span>
+                <span className="update-page-error">
+                  Please enter valid first name
+                </span>
               )}
               <label htmlFor="lastName">Last Name</label>
               <input
@@ -119,7 +122,9 @@ function UpdatePage() {
                 placeholder="Enter your last name"
               />
               {errors.lastName && (
-                <span className="update-page-error">Please enter valid last name</span>
+                <span className="update-page-error">
+                  Please enter valid last name
+                </span>
               )}
               <label htmlFor="phone">Username</label>
               <input
@@ -133,7 +138,9 @@ function UpdatePage() {
                 placeholder="Enter your Username"
               />
               {errors.userName && (
-                <span className="update-page-error">Please enter valid username</span>
+                <span className="update-page-error">
+                  Please enter valid username
+                </span>
               )}
               <label htmlFor="phone">Phone Number</label>
               <input
@@ -149,7 +156,9 @@ function UpdatePage() {
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
-                <span className="update-page-error">Enter valid phone number</span>
+                <span className="update-page-error">
+                  Enter valid phone number
+                </span>
               )}
               <label htmlFor="avater">Avater</label>
               <input
