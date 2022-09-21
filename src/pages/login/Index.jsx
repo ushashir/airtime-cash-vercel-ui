@@ -46,11 +46,9 @@ const Login = () => {
             .then((res) => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
-                    const userDetails = res.data.response.user;
-
+    
                     localStorage.setItem('token', token);
-                    localStorage.setItem('userDetails', userDetails);
-                    navigate('../landingPage')
+                    navigate('/dashboard')
                 }
             }).catch((err) => {
                 if (err) {
@@ -67,7 +65,7 @@ const Login = () => {
             <div className='test'>
                 <div className='login-main'>
                     <div className='logo-div'>
-                        <img src={loginLogo} />
+                        <img src={loginLogo} alt="airtime to cash login"/>
                     </div>
 
                     <div className='details-div'>

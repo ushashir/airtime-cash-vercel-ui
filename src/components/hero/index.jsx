@@ -1,7 +1,7 @@
 import React from 'react'
 import "./style.scss";
-import hero_image from "../../assets/hero_image.png";
-import Button from "../../components/common/button";
+import hero_image from "../../assets/images/hero_image.png";
+import Button from "../common/button";
 
 export default function Hero() {
   return (

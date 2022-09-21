@@ -11,7 +11,7 @@ import BodyText2 from '../../components/bodyText2';
 
 function LandingPage(props) {
     return (
-        <div>
+        <div className='html'>
             <Nav />
             <Hero />
             <BodyText1 />

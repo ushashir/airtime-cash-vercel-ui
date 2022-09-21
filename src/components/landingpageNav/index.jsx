@@ -12,7 +12,7 @@ const  Nav = () => {
           <img src={logo} alt="airtime to cash logo"></img>
         </div>
         <div className="menudiv">
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <a className="home_link" href="/">
                 Home
@@ -33,7 +33,7 @@ const  Nav = () => {
                 Contact Us
               </a>
             </li>
-            <div className="btn" a href="/">
+            <div className="btn" href="/">
               Login
             </div>
           </ul>
