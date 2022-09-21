@@ -24,7 +24,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} /> */}
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-sent" element={<EmailSent />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </BrowserRouter>
   );

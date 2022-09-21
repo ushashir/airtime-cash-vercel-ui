@@ -159,13 +159,13 @@ export const ForgotPasswordForm = styled.div`
   }
 
   .reset-btn {
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem;
     font-weight: 600;
     color: #ffffff;
     padding: 1rem 1.5rem;
     border-radius: 0.375rem;
     background-image: linear-gradient(to right, #de3d6d 80%, #f5844c 100%);
-    text-align: center;
+    text-align: center; */
   }
 
   .reset-btn:hover {

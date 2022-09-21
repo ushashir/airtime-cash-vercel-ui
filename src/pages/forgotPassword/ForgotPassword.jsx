@@ -8,13 +8,38 @@ import {ForgetPasswordPage,
 
 function ForgotPassword() {
   const [formData, setFormData] = useState("");
+  const [errorMessage, setErrorMessage] = useState("")
   const navigate = useNavigate();
 
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    if (errorMessage) {
+      setErrorMessage("")
+    }
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    axios
+      .post("http://localhost:7000/api/users/forgotpassword", formData)
+      .then((res) => {
+        if (res.status === 200) {
+          console.log(res);
+          localStorage.setItem("formData", formData);
+          navigate("/email-sent");
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          const theError = err.response.data.message;
+          setErrorMessage(theError)
+        }
+      });
+  }
+  
 
   console.log(formData);
   return (
@@ -29,17 +54,7 @@ function ForgotPassword() {
         </div>
         <div className="form-section">
           <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              axios
-                // .post("http://localhost:3000/users/forgotpassword", formData)
-                .then((res) => {
-                  console.log(res);
-                  navigate("/email-sent");
-                })
-                .catch((err) => console.log(err));
-            }}
+            onSubmit={handleSubmit}
           >
             <label htmlFor="email">Email</label>
             <input
@@ -49,14 +64,17 @@ function ForgotPassword() {
               onChange={handleChange}
               placeholder="Enter your Email"
             />
-            {/* <HeaderLink to={"/email-sent"}> */}
+            <HeaderLink to={"/email-sent"}>
             <button type="submit" className="reset-btn">
               Reset password
             </button>
-            {/* </HeaderLink> */}
+            </HeaderLink>
             <HeaderLink secondary={"true"} to={"/login"}>
               <button className="back-btn">Back to Login</button>
             </HeaderLink>
+            <p style ={{
+              "color": "red"
+            }}>{errorMessage}</p>
           </form>
         </div>
       </ForgotPasswordForm>
