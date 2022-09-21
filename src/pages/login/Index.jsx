@@ -81,7 +81,6 @@ const Login = () => {
                                             <div className='L-frame-2'>
                                                 <input type="email"
                                                     name='email'
-                                                    // value={inputs.email || ""}
                                                     value={inputs.email || ""}
                                                     onChange={handleChange}
                                                     required
@@ -95,7 +94,6 @@ const Login = () => {
                                             <div className='L-frame-3'>
                                                 <input type="password"
                                                     name="password"
-                                                    // value={inputs.password || ""}
                                                     value={inputs.password || ""}
                                                     onChange={handleChange}
                                                     required
