@@ -26,7 +26,7 @@ const ResetPassword = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     e.stopPropagation();
     const token = localStorage.getItem("token");
@@ -36,23 +36,11 @@ const ResetPassword = () => {
         setErrorMessage("passwords do not match");
         return
     }
-
-    axios
-      .post(`http://localhost:7000/api/users/resetpassword/${token}`, formData)
-      .then((res) => {
-        if (res.status === 200) {
-          console.log(res);
-          localStorage.setItem("formData", formData);
+    
+    
+        
           navigate("/login");
-        }
-      })
-      .catch((err) => {
-        if (err) {
-        //   const theError = err.response.data.message;
-        //   setErrorMessage(theError)
-        }
-      });
-  }
+}
 
   return (
     <ResetPasswordPage>
