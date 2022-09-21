@@ -10,17 +10,17 @@ async function Nav() {
    console.log(user)
     return (
         <div className="nav">
-        <div className="nav-bar">
-            <div>
-                <img src={logo} alt="airtime to cash logo"></img>
+            <div className="nav-bar">
+                <div>
+                    <img src={logo} alt="airtime to cash logo"></img>
+                </div>
+                <div className="user-bar">
+                    <img src={avatar} alt="user avatar" />
+                    <p>Ushahemba</p>
+                </div>
             </div>
-            <div className="user-bar">
-            <img src={avatar} alt="user avatar" />
-                <p>Ushahemba</p>
-            </div>
-            </div>
-            </div>
-  );
+        </div>
+    );
 }
 
 export default Nav;
