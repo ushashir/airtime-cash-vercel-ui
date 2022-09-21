@@ -107,17 +107,17 @@ height: 40%;
 
 @media screen and (min-width: 950px) {
 .adv_body {
-        height: 57.5rem;
+        height: 36rem;
         width: 100vw;
-        padding: 4rem 10vw 1rem 10vw;
+        padding: 2.5rem 10vw 0.625rem 10vw;
     }
     .adv_box{
         display: grid;
         width: 80vw;
         
             grid-template-columns: 52% 48%;
-            grid-template-rows: 51.5rem;
-            height: 51.5rem;
+            grid-template-rows: 32.2rem;
+            height: 32.2rem;
             border-radius: 50px !important;
             // background-image: url('../../assets/advert_bg.png');
             row-gap: 0;
@@ -126,7 +126,7 @@ height: 40%;
     }
     .advert_bgdiv{
         width: 80vw;
-        height: 51.5rem;
+        height: 32.2rem;
         // background-color: #F5844C;
                 background-image: url('../../assets/advert_bg.png');
                     background-size: cover;
@@ -146,13 +146,13 @@ height: 40%;
         }
                
                 .advert_text {
-                    margin-top: 6.5rem;
+                    margin-top: 4rem;
                 }
 
                      .advert_content h2{
             
                         width: 525px;
-                        margin-left: 8.5rem;
+                        margin-left: 5.3rem;
                         height: 168px;
                         font-style: normal;
                         font-weight: 700;
@@ -163,23 +163,24 @@ height: 40%;
                 }
 
                 .advert_text p{
-                    width:40rem;
-                    padding-top: 2.5rem;
-                    padding-bottom: 3rem;
+                    width:25rem;
+                    padding-top: 1.56rem;
+                    padding-bottom: 1.88rem;
                         font-style: normal;
                         font-weight: 400;
                         font-size: 14px;
                         line-height: 24px;
                         color: #03435F;
-                        margin-left: 8.5rem;
+                        margin-left: 5.3rem;
+                        text-align: left;
                        
                         
                 }
                 .my-btn {
-                    padding-bottom: 3.75rem;
+                    padding-bottom: 2.34rem;
             width: 178px;
                 height: 48px;
-                    margin-left: 8.5rem;
+                    margin-left: 5.3rem;
                     
                 }
 .btnpara{
