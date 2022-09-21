@@ -2,29 +2,34 @@ import { useState } from "react";
 import React from "react";
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
+import { registerUser } from "../../api";
+import { useNavigate } from "react-router";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const [firstname, setFirstName] = useState("");
-  const [lastname, setLastName] = useState("");
-  const [username, setUserName] = useState("");
-  const [mail, setMail] = useState("");
-  const [number, setNumber] = useState("");
+  const navigate = useNavigate()
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setMail] = useState("");
+  const [phone, setNumber] = useState("");
   const [password, setPassword] = useState("");
-  const [passconfirm, setPassconfirm] = useState("");
+  const [confirmPassword, setPassconfirm] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
 
   const handleFirstName = (e) => {
     if (
-      firstname === "" ||
-      lastname === "" ||
-      username === "" ||
-      mail === "" ||
-      number === "" ||
+      firstName === "" ||
+      lastName === "" ||
+      userName === "" ||
+      email === "" ||
+      phone === "" ||
       password === "" ||
-      passconfirm === ""
+      confirmPassword === ""
     ) {
       setBtnDisabled(true);
-    } else if (firstname !== "" && firstname.trim().length <= 15) {
+    } else if (firstName !== "" && firstName.trim().length <= 15) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
@@ -50,12 +55,46 @@ const Signup = () => {
     setPassconfirm(e.target.value);
   };
 
+  const submit = async(e) => {
+    e.preventDefault();
+console.log("clicking")
+    const data = {
+      firstName,
+      lastName,
+      userName,
+      email,
+      phone,
+      password,
+      confirmPassword,
+
+    }
+  
+    const res = await registerUser(data)
+    console.log(res)
+    if (res.message === "Success") {
+      Swal.fire(
+        "Success",
+        res.response,
+        "success"
+      );
+      setTimeout(() => {
+        navigate("/login")
+      }, 4000)
+      return
+    }
+    Swal.fire(
+      "Oops",
+      res.message,
+      "error"
+    );
+  }
+
   return (
     <div className="father">
       <img src={logo} alt="logo" />
 
       <div className="account">
-        <button className="back-btn">
+       <Link to="/login"><button className="back-btn">
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +111,7 @@ const Signup = () => {
             />
           </svg>
           Go back
-        </button>
+        </button></Link> 
         <div className="text">
           <h2>Create an account</h2>
         </div>
@@ -84,7 +123,7 @@ const Signup = () => {
               type="text"
               placeholder="First Name"
               className="help"
-              value={firstname}
+              value={firstName}
             />
           </div>
           <div className="blocks">
@@ -94,7 +133,7 @@ const Signup = () => {
               type="text"
               placeholder="Last Name"
               className="help"
-              value={lastname}
+              value={lastName}
             />
           </div>
           <div className="blocks">
@@ -104,7 +143,7 @@ const Signup = () => {
               type="text"
               placeholder="User Name"
               className="help"
-              value={username}
+              value={userName}
             />
           </div>
           <div className="blocks">
@@ -114,7 +153,7 @@ const Signup = () => {
               type="text"
               placeholder="Email"
               className="help"
-              value={mail}
+              value={email}
             />
           </div>
           <div className="blocks">
@@ -124,7 +163,7 @@ const Signup = () => {
               type="text"
               placeholder="Phone Number"
               className="help"
-              value={number}
+              value={phone}
             />
           </div>
           <div className="blocks">
@@ -144,10 +183,10 @@ const Signup = () => {
               type="text"
               placeholder="Confirm Password"
               className="help"
-              value={passconfirm}
+              value={confirmPassword}
             />
           </div>
-          <button className="eten-sign" disabled={btnDisabled} type="submit">
+          <button onClick={submit} className="eten-sign"  type="submit">
             Sign Up
           </button>
           <h4 className="kiki">
