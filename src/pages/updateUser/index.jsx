@@ -16,7 +16,6 @@ function UpdatePage() {
   useEffect(() => {
     getUserData().then((data) => setUserData(data.response));
     setIsLoading(true);
-    // localStorage.setItem("userDetails", JSON.stringify(data.response))
   }, []);
   console.log("user", userData);
   const {

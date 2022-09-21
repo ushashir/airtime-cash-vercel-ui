@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from './nav/'
+import Nav from './nav/'
 import './style.scss'
 
 function Dashboard(props) {
     return (
         <div>
-            <Navbar />
+            <Nav />
             <p>Welcome to Dashboad page</p>
         </div>
     );
