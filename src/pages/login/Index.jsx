@@ -32,15 +32,18 @@ const Login = () => {
             setLoginError("All input fields must be filled");
             return;
         }
+
+
+        //creating the payload
+        const payload = {}
+        payload.password = inputs.password;
         if (regex.test(inputs.email) === false) {
-            setLoginError("Invalid email");
-            return;
+            console.log("ran")
+            payload.userName = inputs.email;
+        } else {
+            payload.email = inputs.email;
         }
 
-        const payload = {
-            "email": inputs.email,
-            "password": inputs.password
-        }
 
         axios.post(`${baseUrl}/api/users/login`, payload)
             .then((res) => {
@@ -52,11 +55,9 @@ const Login = () => {
                 }
             }).catch((err) => {
                 if (err) {
-                    console.log('the err', err)
                     const theError = err.response.data.message
                     setLoginError(theError);
                 }
-
             })
 
 
@@ -76,14 +77,15 @@ const Login = () => {
                                 <div className='L-frame-7'>
                                     <div className='L-frame-6'>
                                         <div className='L-frame-4'>
-                                            <p className='email-text'>Email</p>
+                                            <p className='email-text'>Email/Username</p>
                                             <div className='L-frame-2'>
                                                 <input type="email"
                                                     name='email'
+                                                    // value={inputs.email || ""}
                                                     value={inputs.email || ""}
                                                     onChange={handleChange}
                                                     required
-                                                    placeholder='Enter your email'
+                                                    placeholder='Email/Username'
                                                 />
                                             </div>
 
@@ -93,6 +95,7 @@ const Login = () => {
                                             <div className='L-frame-3'>
                                                 <input type="password"
                                                     name="password"
+                                                    // value={inputs.password || ""}
                                                     value={inputs.password || ""}
                                                     onChange={handleChange}
                                                     required

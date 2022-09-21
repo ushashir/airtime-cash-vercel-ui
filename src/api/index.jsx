@@ -18,6 +18,7 @@ export const updateUserData = async (data) => {
 
 export const getUserData = async () => {
   try {
+    console.log('ran')
     const response = await client.get("/api/users", {
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -29,10 +30,11 @@ export const getUserData = async () => {
 
 export const registerUser = async (data) => {
   try {
-    const response = await client.patch("/api/users", data)
+    const response = await client.post("/api/users", data)
     return response.data
   } catch (error) {
-    return error.toJSON()
+    console.log(error)
+    return error.response.data
   }
 }
 

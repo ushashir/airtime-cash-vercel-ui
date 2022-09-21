@@ -1,7 +1,11 @@
 import React from 'react'
+import "./style.scss"
 
-export default function index() {
+export default function TestimonialSlider(props) {
   return (
-    <div>index</div>
+    <div className="testimonial-slider-div">
+      <h4 className='testimonial-sider-header'>{props.title}</h4>
+      <p>{props.message}</p>
+    </div>
   )
 }
