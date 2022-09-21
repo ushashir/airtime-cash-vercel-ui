@@ -1,6 +1,6 @@
 import "./style.scss";
-import Nav from "../../components/nav";
-import Button from "../../components/common/button";
+import Nav from "../../components/Nav";
+import Button from "../../components/Common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
 import { updateUserData, getUserData } from "../../api/index";
