@@ -15,7 +15,7 @@ const Login = () => {
         const name = e.target.name;
         const value = e.target.value;
         setInputs({ ...inputs, [name]: value })
-        if (loginError) {
+        if (loginError || clickedLogin === true) {
             setLoginError("");
             setClickedLogin(false)
         }
@@ -52,6 +52,7 @@ const Login = () => {
                 }
             }).catch((err) => {
                 if (err) {
+                    console.log('the err', err)
                     const theError = err.response.data.message
                     setLoginError(theError);
                 }
