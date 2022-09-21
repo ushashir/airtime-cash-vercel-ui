@@ -1,24 +1,19 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
-import avatar from '../../assets/images/dashboard_avata.png'
-import { getUserData } from "../../api";
-
-
 
 function Nav() {
-    const userData = getUserData();
-    return (
-
-        <div className="nav-bar">
-            <div>
-                <img src={logo} alt="airtime to cash logo"></img>
-            </div>
-            <div className="user-bar">
-                <img src={avatar} alt="user avatar" />
-                <p>Ushahemba</p>
-            </div>
+  return (
+    <>
+      <nav className="navbar">
+        <div className="logo-image">
+          <img src={logo} alt="airtime to cash logo"></img>
         </div>
-    );
+        <div>
+          <h4>Photo</h4>
+        </div>
+      </nav>
+    </>
+  );
 }
 
 export default Nav;
