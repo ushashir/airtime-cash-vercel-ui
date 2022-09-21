@@ -65,7 +65,7 @@ const Login = () => {
             <div className='test'>
                 <div className='login-main'>
                     <div className='logo-div'>
-                        <img src={loginLogo} />
+                        <img src={loginLogo} alt="airtime to cash login"/>
                     </div>
 
                     <div className='details-div'>

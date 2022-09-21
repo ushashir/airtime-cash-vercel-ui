@@ -1,16 +1,16 @@
-.wrapper{
+.update-page-wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.top-bg{
+.update-page-top-bg{
     height: 270px;
     width: 100%;
     overflow: hidden;
     background: rgba(222, 61, 109, 0.1);
 }
 
-.update-form{
+.update-page-update-form{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,12 +28,12 @@ label{
     color: #21334F;
 }
 
-.form-data{
+.update-page-form-data{
     display: flex;
     flex-direction: column;
     gap: 10px
 }
-.form-input{
+.update-page-form-input{
     padding: 8px 16px;
     font-weight: 400;
     font-size: 12px;
@@ -43,11 +43,11 @@ label{
 border: 1px solid #D9D9D9;
 height: 48px; 
 }
-.form-input::placeholder{
+.update-page-form-input::placeholder{
     color: #C4C4C4;
 }
 
-.form-data label{
+.update-page-form-data label{
     font-style: normal;
 font-weight: 400;
 font-size: 12px;
@@ -57,7 +57,7 @@ color: #21334F;
 }
 
 
-.update-form h3{
+.update-page-update-form h3{
 font-style: normal;
 font-weight: 700;
 font-size: 18px;
@@ -67,11 +67,11 @@ color: #21334F;
 margin-bottom: 2.5rem;
 }
 
-.update-form img{
+.update-page-update-form img{
     width: 151px;
     margin: 3.75rem auto;
 }
-.error{
+.update-page-error{
     font-size: 12px;
     color: crimson;
 }

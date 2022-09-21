@@ -7,14 +7,11 @@ import { updateUserData, getUserData } from "../../api/index";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal = withReactContent(Swal);
+
 
 function UpdatePage() {
-  const data = JSON.parse(localStorage.getItem("userDetails"));
   const [userData, setUserData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isUploaded, setIsUploaded] = useState(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -65,7 +62,6 @@ function UpdatePage() {
     try {
       const response = await updateUserData(data);
       if (response.status === 200) {
-        console.log(response.data);
         setUserData(response.data);
 
         Swal.fire(
@@ -86,18 +82,18 @@ function UpdatePage() {
   return (
     <>
       <Nav />
-      <div className="wrapper">
-        <div className="top-bg"></div>
-        <div className="update-form">
+      <div className="update-page-wrapper">
+        <div className="update-page-top-bg"></div>
+        <div className="update-page-update-form">
           <img src={logo} alt="logo" />
           <h3>Basic information</h3>
           {!isLoading ? (
             "Loading"
           ) : (
-            <form className="form-data" onSubmit={handleSubmit(onSubmit)}>
+            <form className="update-page-form-data" onSubmit={handleSubmit(onSubmit)}>
               <label htmlFor="firstName">First Name</label>
               <input
-                className="form-input"
+                className="update-page-form-input"
                 defaultValue={userData.firstName}
                 type="text"
                 {...register("firstName", {
@@ -108,12 +104,12 @@ function UpdatePage() {
                 placeholder="Enter your first name"
               />
               {errors.firstName && (
-                <span className="error">Please enter valid first name</span>
+                <span className="update-page-error">Please enter valid first name</span>
               )}
               <label htmlFor="lastName">Last Name</label>
               <input
                 defaultValue={userData.lastName}
-                className="form-input"
+                className="update-page-form-input"
                 type="text"
                 {...register("lastName", {
                   minLength: 2,
@@ -123,11 +119,11 @@ function UpdatePage() {
                 placeholder="Enter your last name"
               />
               {errors.lastName && (
-                <span className="error">Please enter valid last name</span>
+                <span className="update-page-error">Please enter valid last name</span>
               )}
               <label htmlFor="phone">Username</label>
               <input
-                className="form-input"
+                className="update-page-form-input"
                 type="text"
                 defaultValue={userData.userName}
                 {...register("userName", {
@@ -137,11 +133,11 @@ function UpdatePage() {
                 placeholder="Enter your Username"
               />
               {errors.userName && (
-                <span className="error">Please enter valid username</span>
+                <span className="update-page-error">Please enter valid username</span>
               )}
               <label htmlFor="phone">Phone Number</label>
               <input
-                className="form-input"
+                className="update-page-form-input"
                 type="tel"
                 defaultValue={userData.phone}
                 {...register("phone", {
@@ -153,8 +149,9 @@ function UpdatePage() {
                 placeholder="Enter your phone number"
               />
               {errors.phone && (
-                <span className="error">Enter valid phone number</span>
-              )}
+                <span className="update-page-error">Enter valid phone number</span>
+                )}
+                <label htmlFor="avater">Avater</label>
               <input
                 type="button"
                 value="Update profile picture"
