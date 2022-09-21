@@ -21,11 +21,12 @@ export default function Adevert() {
                 <Button
                   value="Get Started"
                   style={{
-                    fontSize: "1.6rem",
-                    textAlign: "center",
+                    fontSize: "1rem",
+                    textAlign: "left",
                     textDecoration: "none",
                     borderRadius: "24px",
-                    marginLeft:  "9rem",
+                    marginLeft: "5.625rem",
+                    paddingLeft: "3rem",
                   }}
                 />
               </div>
