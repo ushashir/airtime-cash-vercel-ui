@@ -1,6 +1,6 @@
 import "./style.scss";
-import Nav from "../../components/Nav";
-import Button from "../../components/Common/button";
+import Nav from "../../components/nav";
+import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
 import { updateUserData, getUserData } from "../../api/index";
@@ -17,7 +17,6 @@ function UpdatePage() {
   useEffect(() => {
     getUserData().then((data) => setUserData(data.response));
     setIsLoading(true);
-    // localStorage.setItem("userDetails", JSON.stringify(data.response))
   }, []);
   console.log("user", userData);
   const {

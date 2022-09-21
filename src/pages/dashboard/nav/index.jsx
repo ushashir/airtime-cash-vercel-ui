@@ -1,12 +1,8 @@
 import "./style.scss";
 import logo from "../../../assets/icons/logo.svg";
 import avatar from '../../../assets/images/dashboard_avata.png'
-import axios from 'axios';
 
-const token = localStorage.getItem('token');
-const user = axios.get("api/users")
-
-function Nav() {
+function Navb() {
     return (
         <div className="nav-bar">
             <div>
@@ -20,4 +16,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Navb;

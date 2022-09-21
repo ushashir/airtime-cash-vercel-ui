@@ -28,28 +28,28 @@ export const getUserData = async (data) => {
 };
 
 export const registerUser = async (data) => {
-  try {
-    const response = await client.patch("/api/users", data);
-    return response.data;
-  } catch (error) {
-    return error.toJSON();
-  }
-};
+    try {
+        const response = await client.patch("/api/users", data)
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
 
 export const forgetPassword = async (email) => {
-  try {
-    const response = await client.post("/forgotpassword", email);
-    return response.data;
-  } catch (error) {
-    return error.toJSON();
-  }
-};
+    try {
+        const response = await client.post("/api/users/forgotpassword", email)
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
 
 export const resetPassword = async (data) => {
-  try {
-    const response = await client.post("/resetpassword", data);
-    return response.data;
-  } catch (error) {
-    return error.toJSON();
-  }
-};
+    try {
+        const response = await client.post("/api/users/resetpassword", data)
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
