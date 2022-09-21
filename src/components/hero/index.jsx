@@ -15,11 +15,11 @@ export default function Hero() {
                       <div className="hero_subtitle">
                           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem recusandae facilis impedit laudantium voluptatibus corporis, adipisci atque error illum fugit?
                       </div>
-                      <Button />
+                      <Button className="hero-btn"/>
           </div>
         </div>
         <div className="right box">
-          <div className="home-logo">
+          <div className="hero-logo">
             <img src={hero_image} alt="airtime to cash logo"></img>
           </div>
         </div>
