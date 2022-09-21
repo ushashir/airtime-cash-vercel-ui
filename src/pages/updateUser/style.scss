@@ -1,5 +1,86 @@
-.top-bg{
+.update-page-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.update-page-top-bg{
     height: 270px;
     width: 100%;
+    overflow: hidden;
     background: rgba(222, 61, 109, 0.1);
+}
+
+.update-page-update-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #D9D9D9;
+    background-color: #fff;
+    width: 40rem;
+    margin-bottom: 15.75rem;
+    margin-top: -10rem;
+    z-index: 10;
+
+}
+
+label{
+    color: #21334F;
+}
+
+.update-page-form-data{
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+.update-page-form-input{
+    padding: 8px 16px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    width: 20rem;
+    background: #FFFFFF;
+border: 1px solid #D9D9D9;
+height: 48px; 
+}
+.update-page-form-input::placeholder{
+    color: #C4C4C4;
+}
+
+.update-page-form-data label{
+    font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 15px;
+
+color: #21334F;
+}
+
+
+.update-page-update-form h3{
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+color: #21334F;
+margin-bottom: 2.5rem;
+}
+
+.update-page-update-form img{
+    width: 151px;
+    margin: 3.75rem auto;
+}
+.update-page-error{
+    font-size: 12px;
+    color: crimson;
+}
+
+@media screen and (max-width: 970px) {
+//    .update-form{
+//     width: 80%;
+//    }
+//    .form-data{
+//     width: 100%;
+//    }
 }
