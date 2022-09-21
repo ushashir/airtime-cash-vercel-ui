@@ -19,7 +19,6 @@ function App() {
         <Route path="/update" element={<UpdatePage />}></Route>
         <Route path="*" element={<PageNotFound />} />
         <Route path="/signupPage" element={<SignupPage />}>
-          {" "}
         </Route>
       </Routes>
     </BrowserRouter>
