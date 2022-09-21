@@ -4,6 +4,7 @@ import avatar from '../../assets/images/dashboard_avata.png'
 
 
 
+
 function Nav() {
     return (
         <div className="nav-bar">
