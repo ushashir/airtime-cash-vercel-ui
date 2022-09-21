@@ -8,7 +8,7 @@
                     visibility: hidden;
                    }
 
-html {
+.html {
     font-size: 62.5%;
 }
 .burger-shower{
@@ -16,9 +16,7 @@ html {
     position: fixed;
   
 }
-body{
-    background-color: white;
-}
+
 .body {
     margin: 0;
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -283,30 +281,7 @@ h3 {
         padding-left: 0px;
     }
 
-    #hamburger-menu li {
-        list-style-type: none;
-        line-height: 3rem;
-    }
 
-    #hamburger-menu a {
-        color: #B9FAF8;
-        font-size: 1.3rem;
-        text-decoration: none;
-    }
-
-    #hamburger-menu a:hover {
-        text-decoration: underline;
-    }
-
-    #hamburger-input:checked+#hamburger-menu #sidebar-menu {
-        visibility: visible;
-        left: 0;
-    }
-
-    #hamburger-input:checked~.overlay {
-        visibility: visible;
-        opacity: 0.4;
-    }
 
 .logo-image{
     padding-left: 9.375rem;

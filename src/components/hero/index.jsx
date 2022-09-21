@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.scss";
-import hero_image from "../../assets/hero_image.png";
-import Button from "../../components/common/button";
+import hero_image from "../../assets/images/hero_image.png";
+import Button from "../common/button";
 
 export default function Hero() {
   return (
@@ -24,12 +24,15 @@ export default function Hero() {
               adipisci atque error illum fugit?
             </div>
             <a href="/signup">
-              <Button value="Get Started" style={{
-                fontSize: "1.6rem",
-                textAlign: "center",
-                textDecoration: "none",
-                borderRadius: "24px"
-              }} />
+              <Button
+                value="Get Started"
+                style={{
+                  fontSize: "1.6rem",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  borderRadius: "24px",
+                }}
+              />
             </a>
           </div>
         </div>
