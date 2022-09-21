@@ -14,9 +14,8 @@ export default function Adevert() {
               <div className="advert_text">
                 <h2>The best platform for your convenient airtime exchange</h2>
                 <p>
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Illum praesentium dolorum necessitatibus libero, quas
-                  reprehenderit.
+                  Airtime2Cash, your favourite airtime converter, is a platform that offers convenient, seamless conversion of airtime to 
+                  cash with a high payout to your bank account.
                 </p>
                 <Button
                   value="Get Started"
