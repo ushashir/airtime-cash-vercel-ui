@@ -1,4 +1,5 @@
 import axios from "axios";
+import { async } from "q";
 import { baseUrl } from "../utils/baseUrl";
 export const client = axios.create({
     baseURL: baseUrl
@@ -16,11 +17,20 @@ export const updateUserData = async(data) => {
     }
 }
 
-export const getUserData = async() => {
+export const getUserData = async(data) => {
     try {
         const response = await client.get("/api/users", {
             headers: { Authorization: `Bearer ${token}` },
         })
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
+
+export const registerUser = async () => {
+    try {
+        const response = await client.patch("/api/users", data)
         return response.data
     } catch (error) {
         return error.toJSON()
