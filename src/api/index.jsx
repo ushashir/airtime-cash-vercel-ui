@@ -6,9 +6,9 @@ export const client = axios.create({
 })
 
 const token = localStorage.getItem("token")
-export const updateUserData = async(data) => {
+export const updateUserData = async (data) => {
     try {
-        const response = await client.patch("/api/users", data,{
+        const response = await client.patch("/api/users", data, {
             headers: { Authorization: `Bearer ${token}` },
         })
         return response
@@ -17,7 +17,7 @@ export const updateUserData = async(data) => {
     }
 }
 
-export const getUserData = async(data) => {
+export const getUserData = async (data) => {
     try {
         const response = await client.get("/api/users", {
             headers: { Authorization: `Bearer ${token}` },
@@ -28,7 +28,7 @@ export const getUserData = async(data) => {
     }
 }
 
-export const registerUser = async () => {
+export const registerUser = async (data) => {
     try {
         const response = await client.patch("/api/users", data)
         return response.data

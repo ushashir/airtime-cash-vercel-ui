@@ -3,7 +3,7 @@ import React, { BrowserRouter, Routes, Route } from "react-router-dom";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import EmailSent from "./pages/forgotPassword/EmailSent";
 import ResetPassword from "./pages/forgotPassword/ResetPassword";
-import Auth from './components/Auth';
+import Auth from './components/auth';
 // pages
 import LandingPage from "./pages/landingPage";
 import LoginPage from './pages/login';
@@ -21,7 +21,7 @@ function App() {
       <Routes>
 
         <Route path="/" element={<LandingPage />}></Route>
-        
+
         <Route path="/signup" element={<SignupPage />}></Route>
 
         <Route path="/login" element={<LoginPage />}></Route>

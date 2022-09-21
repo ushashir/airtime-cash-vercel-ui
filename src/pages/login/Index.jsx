@@ -104,10 +104,10 @@ const Login = () => {
                                 </div>
                                 <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
                             </div>
-                            <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
                             <p style={{
                                 "color": "red"
                             }}>{loginError}</p>
+                            <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
 
                         </div>
                     </div>
