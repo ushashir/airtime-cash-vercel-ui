@@ -1,10 +1,13 @@
-import "./style.scss";
+import "./nav.scss";
 import logo from "../../assets/icons/logo.svg";
 import avatar from '../../assets/images/dashboard_avata.png'
+import { getUserData } from "../../api";
 
 
 
-function Nav() {
+async function Nav() {
+    const user = await getUserData()
+   console.log(user)
     return (
         <div className="nav">
         <div className="nav-bar">

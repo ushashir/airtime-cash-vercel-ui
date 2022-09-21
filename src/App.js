@@ -5,11 +5,12 @@ import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import EmailSent from "./pages/forgotPassword/EmailSent";
 import ResetPassword from "./pages/forgotPassword/ResetPassword";
 import LandingPage from "./pages/landingPage";
-import LoginPage from "./pages/login/Index";
+import LoginPage from "./pages/login/index";
 import SignupPage from "./pages/signup/Index";
 import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
+import EmailVerified from "./pages/forgotPassword/EmailVerified";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-sent" element={<EmailSent />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
+        <Route path="/verify/:token" element={<EmailVerified />} />
         <Route path="/signupPage" element={<SignupPage />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
