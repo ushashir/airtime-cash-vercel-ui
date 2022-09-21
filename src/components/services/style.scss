@@ -1,10 +1,16 @@
 .service_body{
     height: 62rem;
-    background-color: aqua;
     padding-bottom: 40px;
-    
+    background-color: #fff;
 }
 
+.serv_heading{
+color: var(--color-body)
+}
+
+.serv_body{
+color: var(--color-body)
+}
 
 
 @media screen and (min-width: 600px) {
@@ -19,6 +25,54 @@
 .service_body {
         height: 30.0rem;
         padding-bottom: 50px;
+        display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 24px;
+        
+          
     }
 
+        .serv{
+        padding: 24px;
+        margin-top: 20px;
+            gap: 24px;
+            width: 344px;
+            height: 251px;
+           
+    }
+
+    .box1{
+background: rgba(226, 0, 16, 0.05);
+    }
+    .box2{
+background: rgba(245, 132, 76, 0.05);
+    }
+    .box3{
+background: rgba(85, 166, 48, 0.05);
+    }
+
+    .serv_icon img{
+    height: 54.588233947753906px;
+    width: 63.99764633178711px;
+    left: 0.001251220703125px;
+    top: 0px;
+    border-radius: 0px;
+    }
+
+    .serv_heading{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    }
+    .serv_body{
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    }
 }

@@ -23,7 +23,17 @@ export default function Hero() {
               recusandae facilis impedit laudantium voluptatibus corporis,
               adipisci atque error illum fugit?
             </div>
-            <Button className="hero-btn" />
+            <a href="/signup">
+              <Button
+                value="Get Started"
+                style={{
+                  fontSize: "1.6rem",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  borderRadius: "24px",
+                }}
+              />
+            </a>
           </div>
         </div>
         <div className="right box">
