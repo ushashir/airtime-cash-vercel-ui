@@ -10,18 +10,67 @@
     flex-direction: column-reverse;
     width: 100%;
     height:76rem;
-    background-color: aqua;
-    background: rgba(255, 242, 235, 0.6);
+    // background-color: aqua;
+    // background: #fff;
     border-radius: 24px;
 }
 
 .adv_left{
-height: 50%;
+height: 40%;
 }
 
 .adv_right{
-    height: 50%;
+    height: 60;
 }
+ .advert_text {
+     margin-top: 6.5rem;
+ }
+
+ .advert_content h2 {
+    margin-left: auto;
+    margin-right: auto;
+     width: 80%;
+     height: 13.5rem;
+     font-style: normal;
+     font-weight: 600;
+     font-size: 2.7rem;
+     line-height: 30px;
+     color: #03435F;
+ }
+
+ .advert_text p {
+    margin-left: auto;
+        margin-right: auto;
+     width: 30rem;
+     padding-top: 0rem;
+     padding-bottom: 3rem;
+     font-style: normal;
+     font-weight: 400;
+     font-size: 14px;
+     line-height: 24px;
+     color: #03435F;
+ }
+
+.my-btn{
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-bottom: 3.75rem;
+            width: 110px;
+            height: 44px;
+            color: #fff;
+            border: none;
+            outline: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            input:focus {
+                outline: none
+            }
+            background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
+            border-radius: 10px;
+}
+
 
 @media screen and (min-width: 600px) {
 .adv_body {
@@ -32,7 +81,7 @@ height: 50%;
     }
 .adv_box{
         display: grid;
-   grid-template-columns: 48vw 48rem;
+   grid-template-columns: 57.6vw 38.4rem;
    grid-template-rows: 36rem;
     width: 99vw;
         height: 36rem;
@@ -41,39 +90,100 @@ height: 50%;
 .adv_left {
     height: 100%;
     width: 100%;
-    background-color: aqua;
+    // background-color: aqua;
 }
 
 .adv_right {
     height: 100%;
     width: 100%;
 }
+
+.my-btn {
+    padding-bottom: 3.75rem;
+    width: 110px;
+    height: 44px;
+}
 }
 
 @media screen and (min-width: 950px) {
 .adv_body {
-        height: 61.5rem;
+        height: 57.5rem;
         width: 100vw;
-        padding: 5rem 10vw 5rem 10vw;
+        padding: 4rem 10vw 1rem 10vw;
     }
     .adv_box{
         display: grid;
         width: 80vw;
-            grid-template-columns: 50% 50%;
+        
+            grid-template-columns: 52% 48%;
             grid-template-rows: 51.5rem;
             height: 51.5rem;
             border-radius: 50px !important;
+            // background-image: url('../../assets/advert_bg.png');
+            row-gap: 0;
+            column-gap: 0;
             
+    }
+    .advert_bgdiv{
+        width: 80vw;
+        height: 51.5rem;
+        // background-color: #F5844C;
+                background-image: url('../../assets/advert_bg.png');
+                    background-size: cover;
+                        background-position: center;
+
     }
         .adv_left {
             width: 100%;
             height: 100%;
-            background-color: aqua;
+            // background-color: aqua;
         }
     
         .adv_right {
             height: 100%;
             width: 100%;
-            background-color: aqua;
+            // background-color: aqua;
         }
-}
+               
+                .advert_text {
+                    margin-top: 6.5rem;
+                }
+
+                     .advert_content h2{
+            
+                        width: 525px;
+                        margin-left: 8.5rem;
+                        height: 168px;
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 40px;
+                        line-height: 56px;
+                        text-align: left;
+                       
+                }
+
+                .advert_text p{
+                    width:40rem;
+                    padding-top: 2.5rem;
+                    padding-bottom: 3rem;
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: #03435F;
+                        margin-left: 8.5rem;
+                       
+                        
+                }
+                .my-btn {
+                    padding-bottom: 3.75rem;
+            width: 178px;
+                height: 48px;
+                    margin-left: 8.5rem;
+                }
+
+                .phonetouch img{
+                    width: 510px;
+                    
+                }
+            }

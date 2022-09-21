@@ -10,7 +10,6 @@
 
 html {
     font-size: 62.5%;
-    background-color: white;
 }
 .burger-shower{
     display: none;
@@ -50,6 +49,7 @@ h3 {
     grid-template-columns: 50fr 50fr;
     grid-template-rows: 9.6rem;
     position: fixed;
+    background-color: #fff;
 }
 
 .menu a:link {
@@ -71,6 +71,7 @@ h3 {
     justify-content: center;
     visibility: visible;
     list-style-type: none;
+    margin-top: 5rem;
 }
 
 
