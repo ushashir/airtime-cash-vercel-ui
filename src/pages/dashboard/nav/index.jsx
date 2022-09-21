@@ -1,8 +1,10 @@
 import "./style.scss";
 import logo from "../../../assets/icons/logo.svg";
 import avatar from '../../../assets/images/dashboard_avata.png'
+import axios from 'axios';
 
-
+const token = localStorage.getItem('token');
+const user = axios.get("api/users")
 
 function Nav() {
     return (
