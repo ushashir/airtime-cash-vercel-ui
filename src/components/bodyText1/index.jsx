@@ -13,10 +13,7 @@ export default function BodyText1() {
             <h2>Change Surplus Airtime to Real Cash </h2>
           </div>
           <div className="bodyText1Subtitle">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-              blanditiis at nostrum corporis provident id.
-            </p>
+            <p>In three simple steps, change airtime to cash</p>
           </div>
         </div>
       </div>

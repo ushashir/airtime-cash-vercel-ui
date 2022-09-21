@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [userName, setUserName] = useState("");
@@ -55,9 +55,8 @@ const Signup = () => {
     setPassconfirm(e.target.value);
   };
 
-  const submit = async(e) => {
+  const submit = async (e) => {
     e.preventDefault();
-console.log("clicking")
     const data = {
       firstName,
       lastName,
@@ -66,52 +65,45 @@ console.log("clicking")
       phone,
       password,
       confirmPassword,
+    };
 
-    }
-  
-    const res = await registerUser(data)
-    console.log(res)
+    const res = await registerUser(data);
+    console.log(res);
     if (res.message === "Success") {
-      Swal.fire(
-        "Success",
-        res.response,
-        "success"
-      );
+      Swal.fire("Success", res.response, "success");
       setTimeout(() => {
-        navigate("/login")
-      }, 4000)
-      return
+        navigate("/login");
+      }, 4000);
+      return;
     }
-    Swal.fire(
-      "Oops",
-      res.message,
-      "error"
-    );
-  }
+    Swal.fire("Oops", res.message, "error");
+  };
 
   return (
     <div className="father">
-      <img src={logo} alt="logo" />
+      <img className="img" src={logo} alt="logo" />
 
       <div className="account">
-       <Link to="/login"><button className="back-btn">
-          {" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="heroicon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
-            />
-          </svg>
-          Go back
-        </button></Link> 
+        <Link to="/login">
+          <button className="back-btn">
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="heroicon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+              />
+            </svg>
+            Go back
+          </button>
+        </Link>
         <div className="text">
           <h2>Create an account</h2>
         </div>
@@ -170,7 +162,7 @@ console.log("clicking")
             <h4 className="eten">Password</h4>
             <input
               onChange={handlePassword}
-              type="text"
+              type="password"
               placeholder="Password"
               className="help"
               value={password}
@@ -180,13 +172,13 @@ console.log("clicking")
             <h4 className="eten-password">Confirm Password</h4>
             <input
               onChange={handleConfirm}
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               className="help"
               value={confirmPassword}
             />
           </div>
-          <button onClick={submit} className="eten-sign"  type="submit">
+          <button onClick={submit} className="eten-sign" type="submit">
             Sign Up
           </button>
           <h4 className="kiki">

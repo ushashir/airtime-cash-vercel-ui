@@ -6,13 +6,13 @@ export default function BodyText1() {
     <div className="encb">
       <div className="encompass1b">
         <div className="bodytext1b">
-          <h2>
-            Hear what our customers are
-            saying
-          </h2>
+          <h2>Hear what our customers are saying</h2>
         </div>
         <div className="bodyText1Subtitleb">
-          <p>In three simple steps, change airtime to cash</p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
+            blanditiis at nostrum corporis provident id.
+          </p>
         </div>
       </div>
     </div>
