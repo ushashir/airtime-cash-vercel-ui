@@ -1,21 +1,18 @@
-<<<<<<< HEAD
 :root {
     --color-body: #03435F;
     --color-testimonial: #59C378;
-    --color-menu:  #012A4A;
+    --color-menu: #012A4A;
 }
-      
-                   .home-logo2{
-                    visibility: hidden;
-                   }
 
-
-
+.home-logo2 {
+    visibility: hidden;
+}
 
 html {
     font-size: 62.5%;
 }
-.burger-shower{
+
+.burger-shower {
     display: none;
 }
 
@@ -58,18 +55,16 @@ h3 {
     transform: scale(0.54);
 }
 
- .menu a:active {
+.menu a:active {
     color: #DE3D6D;
 }
 
-
- .menudiv ul {
+.menudiv ul {
     display: flex;
     justify-content: center;
     visibility: visible;
     list-style-type: none;
 }
-
 
 .body li {
     width: 10rem;
@@ -78,12 +73,14 @@ h3 {
     text-decoration: none;
 }
 
-.home-logo{
+.home-logo {
     margin-left: 9rem;
 }
-.body{
+
+.body {
     height: 96px;
 }
+
 .body .btn {
     gap: 1rem;
     height: 3.9rem;
@@ -103,19 +100,12 @@ h3 {
             /* Removes the border when the input is clicked */
     }
 
-  background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
-  border-radius: 4px;
-
- 
+    background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
+    border-radius: 4px;
 }
 
-
-
-
 @media screen and (max-width: 950px) {
-
-
-    .body .nav-bar{
+    .body .nav-bar {
         overflow: hidden;
         width: 100%;
         grid-template-columns: 35vw 65vw;
@@ -123,50 +113,54 @@ h3 {
         justify-content: center;
     }
 
+    .menudiv {
+        margin-top: 50px;
+        margin-left: 50px;
+    }
 
-.body li {
-    width: 8.8rem;
-}
- .home-logo {
-     margin-left: 3.3rem;
-     margin-top: 1rem;
- }
- .body .btn {
-     width: 8rem;
-=======
-.navbar{
-    background: #fff;
-    color: white;
-    display: flex;;
-    justify-content: space-between;
->>>>>>> 06b3e50a1722d5db3282381712d616b67fb41b55
-}
- .home-logo img {
-     width: 20rem;
- }
-     
-        
+    .body li {
+        width: 8rem;
+        font-size: 1.4rem;
+    }
+
+    .home_link {
+        margin-left: 20px;
+    }
+
+    .home-logo {
+        margin-left: 4.2rem;
+        margin-top: 1rem;
+    }
+
+    .body .btn {
+        width: 8rem;
+
+        .navbar {
+            background: #fff;
+            color: white;
+            display: flex;
+            ;
+            justify-content: space-between;
+        }
+
+        .home-logo img {
+            width: 20rem;
+        }
+
         //    .hamburger-menu .home-logo2 {
         //        visibility: hidden;
         //    }
-
-
+    }
 }
 
-
 @media screen and (max-width: 600px) {
-
- 
     .home-logo2 {
         visibility: visible;
     }
 
-
     .home-logo {
         visibility: hidden;
-
     }
-
 
     .home-logo2 img {
         margin-top: 35px;
@@ -295,13 +289,14 @@ h3 {
         opacity: 0.4;
     }
 
-<<<<<<< HEAD
-.logo-image{
-    padding-left: 9.375rem;
-    width: 16.813rem;
-}
-@media screen and (max-width: 970px) {
-    .logo-image{
-        padding-left: 1.5rem;
+    .logo-image {
+        padding-left: 9.375rem;
+        width: 16.813rem;
+    }
+
+    @media screen and (max-width: 970px) {
+        .logo-image {
+            padding-left: 1.5rem;
+        }
     }
 }

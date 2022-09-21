@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from '../../components/nav';
-import Hero from '../../components/hero';
+import Nav from '../../components/Nav';
+import Hero from '../../components/Hero';
 import './style.scss'
 
 function LandingPage(props) {
