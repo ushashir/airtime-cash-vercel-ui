@@ -4,7 +4,7 @@ import React, { BrowserRouter, Routes, Route } from "react-router-dom";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import EmailSent from "./pages/forgotPassword/EmailSent";
 import ResetPassword from "./pages/forgotPassword/ResetPassword";
-import Auth from "./components/Auth";
+import Auth from "./components/auth";
 
 import LandingPage from "./pages/landingPage";
 import LoginPage from "./pages/login";

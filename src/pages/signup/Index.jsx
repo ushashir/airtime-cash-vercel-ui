@@ -4,28 +4,38 @@ import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 
 const Signup = () => {
-  const [name, setName] = useState("");
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [username, setUserName] = useState("");
   const [mail, setMail] = useState("");
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
   const [passconfirm, setPassconfirm] = useState("");
   const [btnDisabled, setBtnDisabled] = useState(true);
 
-  const handleName = (e) => {
+  const handleFirstName = (e) => {
     if (
-      name === "" ||
+      firstname === "" ||
+      lastname === "" ||
+      username === "" ||
       mail === "" ||
       number === "" ||
       password === "" ||
       passconfirm === ""
     ) {
       setBtnDisabled(true);
-    } else if (name !== "" && name.trim().length <= 15) {
+    } else if (firstname !== "" && firstname.trim().length <= 15) {
       setBtnDisabled(false);
     } else {
       setBtnDisabled(true);
     }
-    setName(e.target.value);
+    setFirstName(e.target.value);
+  };
+  const handleLastName = (e) => {
+    setLastName(e.target.value);
+  };
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
   };
   const handleMail = (e) => {
     setMail(e.target.value);
@@ -68,13 +78,33 @@ const Signup = () => {
         </div>
         <form>
           <div className="blocks">
-            <h4 className="eten">Name</h4>
+            <h4 className="eten">First Name</h4>
             <input
-              onChange={handleName}
+              onChange={handleFirstName}
               type="text"
-              placeholder="Enter your name"
+              placeholder="First Name"
               className="help"
-              value={name}
+              value={firstname}
+            />
+          </div>
+          <div className="blocks">
+            <h4 className="eten">Last Name</h4>
+            <input
+              onChange={handleLastName}
+              type="text"
+              placeholder="Last Name"
+              className="help"
+              value={lastname}
+            />
+          </div>
+          <div className="blocks">
+            <h4 className="eten">User Name</h4>
+            <input
+              onChange={handleUserName}
+              type="text"
+              placeholder="User Name"
+              className="help"
+              value={username}
             />
           </div>
           <div className="blocks">
@@ -82,7 +112,7 @@ const Signup = () => {
             <input
               onChange={handleMail}
               type="text"
-              placeholder="Enter your email"
+              placeholder="Email"
               className="help"
               value={mail}
             />
@@ -92,7 +122,7 @@ const Signup = () => {
             <input
               onChange={handlePhone}
               type="text"
-              placeholder="Enter your phone number"
+              placeholder="Phone Number"
               className="help"
               value={number}
             />
@@ -102,7 +132,7 @@ const Signup = () => {
             <input
               onChange={handlePassword}
               type="text"
-              placeholder="Enter your password"
+              placeholder="Password"
               className="help"
               value={password}
             />
