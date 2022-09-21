@@ -12,7 +12,7 @@ export const updateUserData = async (data) => {
     });
     return response;
   } catch (error) {
-    return error.toJSON();
+    return error.response.data
   }
 };
 
@@ -23,7 +23,7 @@ export const getUserData = async (data) => {
     });
     return response.data;
   } catch (error) {
-    return error.toJSON();
+    return error.response.data
   }
 };
 
@@ -32,7 +32,6 @@ export const registerUser = async (data) => {
         const response = await client.post("/api/users", data)
         return response.data
     } catch (error) {
-        console.log(error)
         return error.response.data
     }
 }
@@ -42,7 +41,7 @@ export const forgetPassword = async (email) => {
         const response = await client.post("/api/users/forgotpassword", email)
         return response.data
     } catch (error) {
-        return error.toJSON()
+        return error.response.data
     }
 }
 
@@ -51,6 +50,16 @@ export const resetPassword = async (data) => {
         const response = await client.post("/api/users/resetpassword", data)
         return response.data
     } catch (error) {
-        return error.toJSON()
+        return error.response.data
+    }
+}
+export const verify = async (token) => {
+    try {
+        const response = await client.get(`/api/users/verify/${token}`)
+        console.log("wwww", response)
+        return response
+    } catch (error) {
+        console.log("eeeee",error)
+        return error.response.data
     }
 }

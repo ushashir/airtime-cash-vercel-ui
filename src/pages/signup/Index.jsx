@@ -57,7 +57,6 @@ const Signup = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    console.log("clicking");
     const data = {
       firstName,
       lastName,
@@ -163,7 +162,7 @@ const Signup = () => {
             <h4 className="eten">Password</h4>
             <input
               onChange={handlePassword}
-              type="text"
+              type="password"
               placeholder="Password"
               className="help"
               value={password}
@@ -173,7 +172,7 @@ const Signup = () => {
             <h4 className="eten-password">Confirm Password</h4>
             <input
               onChange={handleConfirm}
-              type="text"
+              type="password"
               placeholder="Confirm Password"
               className="help"
               value={confirmPassword}
