@@ -36,3 +36,21 @@ export const registerUser = async () => {
         return error.toJSON()
     }
 }
+
+export const forgetPassword = async (email) => {
+    try {
+        const response = await client.post("/forgotpassword", email)
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
+
+export const resetPassword = async (data) => {
+    try {
+        const response = await client.post("/resetpassword", data)
+        return response.data
+    } catch (error) {
+        return error.toJSON()
+    }
+}
