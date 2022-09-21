@@ -31,6 +31,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/email-sent" element={<EmailSent />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
+
+        <Route path="/signupPage" element={<SignupPage />}></Route>
       </Routes>
     </BrowserRouter>
   );
