@@ -1,25 +1,29 @@
 import "./nav.scss";
 import logo from "../../assets/icons/logo.svg";
-import avatar from '../../assets/images/dashboard_avata.png'
+import {useEffect, useState} from "react"
 import { getUserData } from "../../api";
 
 
 
-async function Nav() {
-    const user = await getUserData()
-   console.log(user)
+function Nav(props) {
+    // const[user, setUser] = useState("")
+
+    // useEffect(() => {
+    //     const data = async () => setUser(await getUserData())
+    //     data()  
+    // },[])
+    
+//    console.log(user)
     return (
-        <div className="nav">
         <div className="nav-bar">
             <div>
                 <img src={logo} alt="airtime to cash logo"></img>
             </div>
             <div className="user-bar">
-            <img src={avatar} alt="user avatar" />
-                <p>Ushahemba</p>
+            <img src={props.avatar} alt="user avatar" /> 
+            <p>{ props.userName}</p>
             </div>
-            </div>
-            </div>
+    </div>
   );
 }
 

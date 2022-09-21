@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 function UpdatePage() {
   const [userData, setUserData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [isUploaded, setIsUploaded] = useState(false)
   const navigate = useNavigate();
   useEffect(() => {
     getUserData().then((data) => setUserData(data.response));
@@ -51,7 +51,7 @@ function UpdatePage() {
           });
         }
       };
-
+      setIsUploaded(true)
       reader.readAsDataURL(file);
     }
   };
@@ -79,7 +79,7 @@ function UpdatePage() {
   };
   return (
     <>
-      <Nav />
+      <Nav avatar={ userData.avatar} userName={userData.userName } />
       <div className="update-page-wrapper">
         <div className="update-page-top-bg"></div>
         <div className="update-page-update-form">

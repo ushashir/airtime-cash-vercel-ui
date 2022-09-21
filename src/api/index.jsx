@@ -16,7 +16,7 @@ export const updateUserData = async (data) => {
   }
 };
 
-export const getUserData = async (data) => {
+export const getUserData = async () => {
   try {
     const response = await client.get("/api/users", {
       headers: { Authorization: `Bearer ${token}` },

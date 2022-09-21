@@ -1,12 +1,13 @@
 import React from 'react';
-import Nav from './nav/'
+import Nav from '../../components/nav'
 import './style.scss'
 
 function Dashboard(props) {
+    const value = React.useContext(UserContext);
     return (
         <div>
-            <Nav />
-            <p>Welcome to Dashboad page</p>
+            {/* <Nav /> */}
+            <p>{value}</p>
         </div>
     );
 }
