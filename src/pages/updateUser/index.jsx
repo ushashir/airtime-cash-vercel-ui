@@ -11,7 +11,6 @@ import Swal from "sweetalert2";
 function UpdatePage() {
   const [userData, setUserData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isUploaded, setIsUploaded] = useState(false)
   const navigate = useNavigate();
   useEffect(() => {
     getUserData().then((data) => {
@@ -53,7 +52,7 @@ function UpdatePage() {
           });
         }
       };
-      setIsUploaded(true)
+  
       reader.readAsDataURL(file);
     }
   };
