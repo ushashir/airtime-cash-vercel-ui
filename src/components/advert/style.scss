@@ -1,26 +1,46 @@
 .adv_body{
-    height: 51.25rem;
+    height: 30rem;
     padding-bottom: 40px;
     width: 100vw;
     background-color: #FFF;
+    padding-top: 0rem;
+    margin-top: 0rem;
 }
 
 .adv_box{
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template-rows: 70vw 70vw;
+    grid-template-columns: 100%;
     width: 100%;
-    height:47.5rem;
+    height:90vh;
     // background-color: aqua;
     // background: #fff;
     border-radius: 24px;
+    
+}
+
+.advert_bgdiv{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    background-image: url('../../assets/advert_bg.png');
+        background-size: cover;
+        background-position: center;
+       transform: rotate(0deg);
+            -moz-transform: rotate(90deg);
+            height: 35rem;
+            
 }
 
 .adv_left{
 height: 40%;
+padding-top: 2rem;
 }
 
 .adv_right{
     height: 60%;
+    padding-top: 12rem;
+    display: none;
+    
 }
  .advert_text {
      margin-top: 4rem;
@@ -36,6 +56,7 @@ height: 40%;
      font-size: 1.69rem;
      line-height: 30px;
      color: #03435F;
+     text-align: center;
  }
 
  .advert_text p {
@@ -70,14 +91,33 @@ height: 40%;
             background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
             border-radius: 10px;
 }
+  .phonetouch img {
+      width: 300px;
 
+  }
+
+  .phonetouch {
+    margin-left: 15vw;
+        margin-left: 15vw;
+  }
 
 @media screen and (min-width: 600px) {
+.advert_bgdiv {
+        padding: 0;
+        background-image: url('../../assets/advert_bg.png');
+            background-size: cover;
+            background-position: center;
+            height: 25rem;
+    }
+
+           
+
 .adv_body {
         height: 27.5rem;
         width: 100vw;
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
+      
     }
 .adv_box{
         display: grid;
@@ -86,16 +126,21 @@ height: 40%;
     width: 99vw;
         height: 22.5rem;
         border-radius: 24px;
+   
 }
 .adv_left {
     height: 100%;
     width: 100%;
+    padding-top: 0rem;
     // background-color: aqua;
 }
 
 .adv_right {
     height: 100%;
     width: 100%;
+    display: block;
+        padding-top: 0.2rem;
+            padding-left: 2rem;
 }
 
 .my-btn {
@@ -103,9 +148,40 @@ height: 40%;
     width: 110px;
     height: 44px;
 }
+  .phonetouch img {
+      width: 390px;
+
+  }
+
+  .phonetouch{
+    margin-left: -2rem;
+  }
+
+  .advert_text{
+    margin-top: 10px;
+  }
+
+  .advert_text h2{
+    padding-top: 2.6rem;
+    font-size: 1.4rem;
+    width: 25rem;
+    margin-left: 12vw;
+  }
+
+  .advert_text p{
+    text-align: left;
+    margin-left: 12vw;
+    
+  }
 }
 
 @media screen and (min-width: 950px) {
+.advert_bgdiv{
+    padding: 0;
+    margin: 0;
+    
+}
+
 .adv_body {
         height: 36rem;
         width: 100vw;
@@ -143,6 +219,10 @@ height: 40%;
             height: 100%;
             width: 100%;
             // background-color: aqua;
+            display: block;
+            padding-top: 0rem;
+            padding-left: 4rem;
+
         }
                
                 .advert_text {
@@ -164,7 +244,7 @@ height: 40%;
 
                 .advert_text p{
                     width:25rem;
-                    padding-top: 1.56rem;
+                    padding-top: 3.3rem;
                     padding-bottom: 1.88rem;
                         font-style: normal;
                         font-weight: 400;

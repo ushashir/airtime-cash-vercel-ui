@@ -5,7 +5,41 @@ import logo from "../../assets/icons/logo.svg";
 const Nav = () => {
   
   return (
-    <div className="" >
+    <div className="">
+      <div className="newer">
+        <nav role="navigation">
+          <div id="menuToggle">
+            <input type="checkbox" />
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <ul id="menub">
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/">
+                <li>About Us</li>
+              </a>
+              <a href="/">
+                <li>Products</li>
+              </a>
+              <a href="/">
+                <li>Contact Us</li>
+              </a>
+              <a href="/login">
+                <li>Login</li>
+              </a>
+            </ul>
+          </div>
+        </nav>
+
+        <div className="home-logo">
+          <img src={logo} alt="airtime to cash logo" className="nava"></img>
+        </div>
+      </div>
+
       <div className="body">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input"></label>
@@ -35,11 +69,10 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-            
-                <div className="btn" href="/login">
-                  <a href="/login">Login</a>
-                </div>
-             
+
+              <div className="btn" href="/login">
+                <a href="/login">Login</a>
+              </div>
             </ul>
           </div>
         </nav>

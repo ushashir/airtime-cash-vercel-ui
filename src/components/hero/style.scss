@@ -108,6 +108,8 @@ margin-top: 3.125rem;
     position:static;
     height: 700px;
     width: 100vw;
+    padding-top: 2rem;
+    
 
     }
 
@@ -133,20 +135,45 @@ margin-top: 3.125rem;
 
     .hero_left_text{
         text-align: center;
-        width: 100%;
+        width: 80vw;
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;
         padding-top: 50px 0;
-        padding-left: 17%;
-        padding-right: 17%;
+        margin-left: auto;
+        margin-right: auto;
+        // padding-left: 17%;
+        // padding-right: 17%;
     }
 
     .hero-btn{
         border-radius: 15px;
     }
         .hero-logo img {
-            width: 300px;
-            margin-top: 3px;
+            width: 80vw;
+            margin-top: -19px;
+            margin-left: 15vw;
+            margin-right: 5vw;
+
+            
         }
+        .hero_header{
+            font-size: 1.9rem;
+            width: 80vw;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .hero_subtitle{
+            font-size: 0.9rem;
+        }
+}
+
+
+@media screen and (max-width: 360px){
+.hero-logo img {
+margin-top: 60px;
+}
 }
