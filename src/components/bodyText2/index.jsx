@@ -10,8 +10,7 @@ export default function BodyText1() {
         </div>
         <div className="bodyText1Subtitleb">
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
-            blanditiis at nostrum corporis provident id.
+            Read amazing testimonials from our cherished users all over the world
           </p>
         </div>
       </div>

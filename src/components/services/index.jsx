@@ -14,8 +14,8 @@ export default function Service() {
         <p className="serv_heading">Login or Register</p>
         <br />
         <p className="serv_body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada
-          quam malesuada in ultrices augue ac maecenas.
+          Login to start the seamless journey of converting your excess airtime to cash.
+          Can't login? Register to begin this journey with us!
         </p>
       </div>
 
@@ -23,11 +23,11 @@ export default function Service() {
         <div className="serv_icon">
           <img src={icon2} alt="service icon"></img>
         </div>
-        <p className="serv_heading">Login or Register</p>
+        <p className="serv_heading">Deposit From Dashboard</p>
         <br />
         <p className="serv_body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada
-          quam malesuada in ultrices augue ac maecenas.
+          Deposit surplus airtime on your dashboard by simply making the quickest transfer from your device
+          to your wallet.
         </p>
       </div>
 
@@ -35,11 +35,11 @@ export default function Service() {
         <div className="serv_icon">
           <img src={icon3} alt="service icon"></img>
         </div>
-        <p className="serv_heading">Login or Register</p>
+        <p className="serv_heading">Convert</p>
         <br />
         <p className="serv_body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Malesuada
-          quam malesuada in ultrices augue ac maecenas.
+          Conveniently trade your airtime for cash by
+          interacting with prospective buyers
         </p>
       </div>
     </div>

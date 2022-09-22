@@ -51,7 +51,7 @@ height: 120px;
             padding-left: 3.75rem;
             background-color: white;
                 padding-top: 3.44rem;
-                padding-bottom: 40px;
+                padding-bottom: 20px;
     }
 
 .encompass1 {
@@ -77,9 +77,12 @@ font-size: 0.625rem;
 line-height: 1.625rem;
 }
 
-.bodyText1Subtitle{
+.bodyText1Subtitle p{
 font-size: 0.75rem;
+text-align: left;
 }
+
+
 }
 
 @media screen and (min-width: 950px) {
