@@ -13,8 +13,9 @@ body {
   margin-left: 348px;
   margin-right: 347px;
   width: 745px;
-  height: 1040px;
+  height: 1240px;
   background-color: white;
+  padding-top: 5rem;
 }
 /*
 .narv {
@@ -48,6 +49,10 @@ body {
   line-height: 21.78px;
   color: rgba(33, 51, 79, 1);
   padding-bottom: 40px;
+  text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
 }
 
 .back-btn {
@@ -148,5 +153,88 @@ body {
 }
 
 .kiki {
-  padding-left: 65px;
+text-align: center;
+margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+.account .father form .blocks{
+  width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.father{
+
+    margin-left: auto;
+      margin-right: auto;
+      width: 100vw;   
+      text-align: center;
+      margin-top: 0;
+        margin-bottom: 0;
+}
+
+.father img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.account{
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.kiki{
+
+
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.account form{
+    padding-left: 32%;
+}
+.text{
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+.eten-sign{
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+
+}
+
+
+.etenbtn{
+  padding-left: -15rem;
+}
+
+.wawa{
+  margin-left: -15rem;
+ 
+}
+
+}
+@media screen and (max-width: 600px) {
+
+.account form {
+padding-left: 10vw;
+  }
+
+    .wawa {
+      margin-left: -2rem;
+  
+    }
 }

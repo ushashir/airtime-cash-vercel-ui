@@ -19,15 +19,15 @@ export default function Hero() {
               </h1>
             </div>
             <div className="hero_subtitle">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem
-              recusandae facilis impedit laudantium voluptatibus corporis,
-              adipisci atque error illum fugit?
+              Converting airtime to cash has never been easier. Problem-free transactions, easy cashouts, money alerts,
+              all in less than five seconds!
             </div>
             <a href="/signup">
               <Button
                 value="Get Started"
                 style={{
                   fontSize: "1rem",
+                  width: "9rem",
                   textAlign: "center",
                   textDecoration: "none",
                   borderRadius: "24px",

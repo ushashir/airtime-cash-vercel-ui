@@ -178,13 +178,15 @@ const Signup = () => {
               value={confirmPassword}
             />
           </div>
-          <button onClick={submit} className="eten-sign" type="submit">
-            Sign Up
-          </button>
-          <h4 className="kiki">
-            <span className="dolly">Already have an account?</span>
-            <span className="clem">Sign In</span>
-          </h4>
+          <div className="wawa">
+            <button onClick={submit} className="eten-sign" type="submit">
+              Sign Up
+            </button>
+            <h4 className="kiki">
+              <span className="dolly">Already have an account?</span>
+              <span className="clem">Sign In</span>
+            </h4>
+          </div>
         </form>
       </div>
     </div>

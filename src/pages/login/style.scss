@@ -245,3 +245,57 @@ Link {
 .link {
     text-decoration: none;
 }
+
+
+@media screen and (max-width: 1000px) {
+.loginformb{
+    width: 100vw;
+    height: 100vh;
+}
+.alle{
+    width: 100vw;
+        height: 100vh;
+        background-color: #FFFFFF;
+}
+
+
+}
+
+@media screen and (max-width: 450px) {
+    .loginformb {
+        width: 100vw;
+        height: 100vh;
+            margin-left: auto;
+                margin-right: auto;
+    }
+
+    // .alle {
+    //     width: 100vw;
+    //     height: 100vh;
+    //     background-color: #FFFFFF;
+    //     margin-left: auto;
+    //     margin-right: auto;
+    // }
+
+    .father .test{
+        width: 100vw;
+    }
+        .test {
+            position: absolute;
+        
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+    
+            gap: 40px;
+    
+            width: 100vw;
+            height: 626px;
+    
+            background: #FFFFFF;
+        }
+}
+
