@@ -1,5 +1,5 @@
 .service_body{
-    height: 62rem;
+    height: 38.75rem;
     padding-bottom: 40px;
     background-color: #fff;
 }
@@ -13,15 +13,15 @@ color: var(--color-body)
 }
 
 
+// @media screen and (min-width: 600px) {
+// .service_body {
+//         height: 16.25rem;
+//         padding-bottom: 40px;
+//     }
+
+// }
+
 @media screen and (min-width: 600px) {
-.service_body {
-        height: 26rem;
-        padding-bottom: 40px;
-    }
-
-}
-
-@media screen and (min-width: 950px) {
 .service_body {
         height: 18.75rem;
         padding-bottom: 50px;

@@ -11,7 +11,7 @@ const Nav = () => {
         <label id="hamburger-menu" for="hamburger-input"></label>
         <nav className="nav-bar" id="sidebar-menu">
           <div className="home-logo">
-            <img src={logo} alt="airtime to cash logo"></img>
+            <img src={logo} alt="airtime to cash logo" className="navlog"></img>
           </div>
           <div className="menudiv">
             <ul className="menu">

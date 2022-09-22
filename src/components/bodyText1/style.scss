@@ -16,7 +16,7 @@ color: var(--color-body);
     text-align: center;
     padding-top: 0px;
     margin-top: -110px;
-    width: 34rem;
+    width: 21.25rem;
 
 }
 
@@ -33,12 +33,12 @@ height: 120px;
 .bodytext1 {
         font-style: normal;
         font-weight: 700;
-        font-size: 1rem;
-        line-height: 2rem;
+        font-size: 0.625rem;
+        line-height: 1.25rem;
 }
 .bodyText1Subtitle{
-    margin-top: 0.7rem;
-    font-size: 1.2rem;
+    margin-top: 0.44rem;
+    font-size: 0.75rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -48,18 +48,18 @@ height: 120px;
         margin-top: 0rem;
             margin-left: 0px;
             text-align: left;
-            padding-left: 6rem;
+            padding-left: 3.75rem;
             background-color: white;
-                padding-top: 5.5rem;
-                padding-bottom: 40px;
+                padding-top: 3.44rem;
+                padding-bottom: 20px;
     }
 
 .encompass1 {
 margin-top: 0rem;
 margin-left: 0px;
 text-align: left;
-padding-left: 3rem;
-width: 38rem;
+padding-left: 1.875rem;
+width: 23.75rem;
 height: 24px;
 }
 
@@ -73,13 +73,16 @@ height: 100px;
 
 .bodytext1{
 font-weight: 700;
-font-size: 1rem;
-line-height: 2.6rem;
+font-size: 0.625rem;
+line-height: 1.625rem;
 }
 
-.bodyText1Subtitle{
-font-size: 1.2rem;
+.bodyText1Subtitle p{
+font-size: 0.75rem;
+text-align: left;
 }
+
+
 }
 
 @media screen and (min-width: 950px) {
