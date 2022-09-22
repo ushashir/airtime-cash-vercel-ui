@@ -63,60 +63,58 @@ const Login = () => {
 
     }
     return (
-        <form>
-            <div className='test'>
-                <div className='login-main'>
-                    <div className='logo-div'>
-                        <img src={loginLogo} alt="Airtime 4 cash logo" />
-                    </div >
-
-                    <div className='details-div'>
-                        <p className='login-text'>Login</p>
-                        <div className='L-frame-10'>
-                            <div className='L-frame-9'>
-                                <div className='L-frame-7'>
-                                    <div className='L-frame-6'>
-                                        <div className='L-frame-4'>
-                                            <p className='email-text'>Email/Username</p>
-                                            <div className='L-frame-2'>
-                                                <input type="email"
-                                                    name='email'
-                                                    value={inputs.email || ""}
-                                                    onChange={handleChange}
-                                                    required
-                                                    placeholder='Email/Username'
-                                                />
+        <div className="alle">
+            <form className='loginformb'>
+                <div className='test'>
+                    <div className='login-main'>
+                        <div className='logo-div'>
+                            <img src={loginLogo} alt="Airtime 4 cash logo" />
+                        </div >
+                        <div className='details-div'>
+                            <p className='login-text'>Login</p>
+                            <div className='L-frame-10'>
+                                <div className='L-frame-9'>
+                                    <div className='L-frame-7'>
+                                        <div className='L-frame-6'>
+                                            <div className='L-frame-4'>
+                                                <p className='email-text'>Email/Username</p>
+                                                <div className='L-frame-2'>
+                                                    <input type="email"
+                                                        name='email'
+                                                        value={inputs.email || ""}
+                                                        onChange={handleChange}
+                                                        required
+                                                        placeholder='Email/Username'
+                                                    />
+                                                </div>
                                             </div>
-
-                                        </div>
-                                        <div className='L-frame-5'>
-                                            <div className='password-text'>Password</div>
-                                            <div className='L-frame-3'>
-                                                <input type="password"
-                                                    name="password"
-                                                    value={inputs.password || ""}
-                                                    onChange={handleChange}
-                                                    required
-                                                    placeholder='Enter your password'
-                                                />
+                                            <div className='L-frame-5'>
+                                                <div className='password-text'>Password</div>
+                                                <div className='L-frame-3'>
+                                                    <input type="password"
+                                                        name="password"
+                                                        value={inputs.password || ""}
+                                                        onChange={handleChange}
+                                                        required
+                                                        placeholder='Enter your password'
+                                                    />
+                                                </div>
                                             </div>
                                         </div>
+                                        <Link to="/forgot-password" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
                                     </div>
-                                    <Link to="/forgot-password" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
+                                    <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
                                 </div>
-                                <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
+                                <p style={{
+                                    "color": "red"
+                                }}>{loginError}</p>
+                                <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
                             </div>
-                            <p style={{
-                                "color": "red"
-                            }}>{loginError}</p>
-                            <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
-
                         </div>
-                    </div>
-
+                    </div >
                 </div >
-            </div >
-        </form >
+            </form >
+        </div>
     );
 };
 
