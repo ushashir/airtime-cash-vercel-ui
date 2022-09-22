@@ -8,9 +8,9 @@
                     visibility: hidden;
                    }
 
-.html {
-    font-size: 62.5%;
-}
+// html {
+//     font-size: 62.5%;
+// }
 .burger-shower{
     display: none;
     position: fixed;
@@ -21,7 +21,7 @@
     margin: 0;
     font-family: Inter, Arial, Helvetica, sans-serif;
     color: var(--color-body);
-    font-size: 1.7rem;
+    font-size: 1.0625rem;
     width: 100vw;
     background: #fff;
   
@@ -31,11 +31,11 @@
 h3 {
     color: var(--color-body);
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 2.5rem;
 }
 
 .body p {
-    margin: 1.5rem 1rem;
+    margin: 0.75rem 0.625rem;
 }
 
 .body .nav-bar {
@@ -45,7 +45,7 @@ h3 {
     justify-content: center;
     align-items: center;
     grid-template-columns: 50fr 50fr;
-    grid-template-rows: 9.6rem;
+    grid-template-rows: 6rem;
     position: fixed;
     background-color: #fff;
 }
@@ -69,27 +69,27 @@ h3 {
     justify-content: center;
     visibility: visible;
     list-style-type: none;
-    margin-top: 5rem;
+    margin-top: 4.2rem;
 }
 
 
 .body li {
-    width: 10rem;
-    font-size: 1.5rem;
+    width: 6.25rem;
+    font-size: 0.9375rem;
     font-weight: 500;
     text-decoration: none;
 }
 
 .home-logo{
-    margin-left: 9rem;
+    margin-left: 5.625rem;
 }
 .body{
     height: 96px;
 }
 .body .btn {
-    gap: 1rem;
-    height: 3.9rem;
-    width: 10rem;
+    gap: 0.625rem;
+    height: 2.438rem;
+    width: 6.25rem;
     color: #fff;
     outline: none;
     -webkit-appearance: none;
@@ -104,6 +104,8 @@ h3 {
         outline: none
             /* Removes the border when the input is clicked */
     }
+
+  
 
   background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
   border-radius: 4px;

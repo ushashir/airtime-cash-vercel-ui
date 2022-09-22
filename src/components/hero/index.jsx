@@ -27,7 +27,7 @@ export default function Hero() {
               <Button
                 value="Get Started"
                 style={{
-                  fontSize: "1.6rem",
+                  fontSize: "1rem",
                   textAlign: "center",
                   textDecoration: "none",
                   borderRadius: "24px",

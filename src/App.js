@@ -12,14 +12,15 @@ import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
 
-export const UserContext = React.createContext();
+// export const UserContext = React.createContext();
 
 function App() {
   return (
-    <UserContext.Provider value="Reed">
+    // <UserContext.Provider value="Reed">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
+
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
@@ -32,7 +33,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       </BrowserRouter>
-      </UserContext.Provider>
+      // </UserContext.Provider>
   );
 }
 

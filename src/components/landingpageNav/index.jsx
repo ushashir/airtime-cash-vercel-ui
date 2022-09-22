@@ -2,9 +2,10 @@ import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 
 
-const  Nav = () => {
+const Nav = () => {
+  
   return (
-    <div className="html">
+    <div className="" >
       <div className="body">
         <input type="checkbox" id="hamburger-input" class="burger-shower" />
         <label id="hamburger-menu" for="hamburger-input"></label>
@@ -34,11 +35,11 @@ const  Nav = () => {
                   Contact Us
                 </a>
               </li>
-              <a href="/login">
+            
                 <div className="btn" href="/login">
-                  Login
+                  <a href="/login">Login</a>
                 </div>
-              </a>
+             
             </ul>
           </div>
         </nav>

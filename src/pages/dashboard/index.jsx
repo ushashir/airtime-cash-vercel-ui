@@ -3,11 +3,11 @@ import Nav from '../../components/nav'
 import './style.scss'
 
 function Dashboard(props) {
-    const value = React.useContext(UserContext);
+    // const value = React.useContext(UserContext);
     return (
         <div>
             {/* <Nav /> */}
-            <p>{value}</p>
+            {/* <p>{value}</p> */}
         </div>
     );
 }

@@ -10,8 +10,9 @@ import Advert from '../../components/advert';
 import BodyText2 from '../../components/bodyText2';
 
 function LandingPage(props) {
-    return (
-        <div className='html'>
+  return (
+      <>
+        <div>
             <Nav />
             <Hero />
             <BodyText1 />
@@ -31,6 +32,7 @@ function LandingPage(props) {
           </div>
             <Footer />
         </div>
+        </>
     );
 }
 

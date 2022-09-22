@@ -14,7 +14,9 @@ function UpdatePage() {
   const [isUploaded, setIsUploaded] = useState(false)
   const navigate = useNavigate();
   useEffect(() => {
-    getUserData().then((data) => setUserData(data.response));
+    getUserData().then((data) => {
+      setUserData(data.response)
+    });
     setIsLoading(true);
   }, []);
   console.log("user", userData);
