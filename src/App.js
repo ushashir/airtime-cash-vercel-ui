@@ -12,8 +12,11 @@ import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
 
+// export const UserContext = React.createContext();
+
 function App() {
   return (
+    // <UserContext.Provider value="Reed">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
@@ -29,7 +32,8 @@ function App() {
         <Route path="/signupPage" element={<SignupPage />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
-    </BrowserRouter>
+      </BrowserRouter>
+      // </UserContext.Provider>
   );
 }
 

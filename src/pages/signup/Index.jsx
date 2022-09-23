@@ -184,7 +184,7 @@ const Signup = () => {
             </button>
             <h4 className="kiki">
               <span className="dolly">Already have an account?</span>
-              <span className="clem">Sign In</span>
+              <a href="/login" className="clem">Sign In</a>
             </h4>
           </div>
         </form>

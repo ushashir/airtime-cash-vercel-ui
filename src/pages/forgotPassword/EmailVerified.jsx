@@ -11,9 +11,9 @@ const EmailVerified = () => {
 
   const verifyUser = async () => {
     const res = await verify(token);
-    // console.log(res.status)
+
       if(res.status === 200) setIsVerified(true) 
-    console.log("xxxxx",isVerified)
+      navigate("/dashboard")
   }
   useEffect(() => {
   verifyUser()
