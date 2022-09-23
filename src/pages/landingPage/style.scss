@@ -1,0 +1,116 @@
+.contents {
+    text-align: center;
+}
+
+.testimonal-container{
+    display: grid;
+    grid-template-columns: 25.67vw 25.67vw 25.67vw;
+    grid-template-rows: 30rem;
+    width: 80vw;
+    column-gap: 1.5vw;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+
+}
+.arrow{
+    margin-top: 140px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 11px;
+    font-size: 28px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    background: rgba(0, 0, 0, 0.04);
+  
+}
+.arrow-pos{
+    display: flex;
+    background-color: white;
+    padding: 15px;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    height: 23rem;
+}
+.invi {
+    display: none;
+}
+@media screen and (max-width: 950px) {
+    .testimonial-slider-div p {
+        width: 9rem;
+        margin-left: center;
+        font-size: 0.7rem;
+        line-height: 0.9rem;
+    }
+
+    .arrow-pos{
+height: 21rem;
+   padding-right: 9%;
+   padding-left: 9%;
+    }
+  
+.testimonial-slider-div h4{
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+}
+
+
+.arrow{
+padding-left: 13px;
+padding-right: 13px;
+margin-left: 2px;
+margin-right: 2px;
+}
+.testimonal-container{
+
+    grid-template-columns: 23vw 23vw 23vw;
+}
+.invi{
+    display: none;
+}
+}
+
+@media screen and (max-width: 600px) {
+.invi {
+        display: block;
+        width: 100vw;
+        height: 11rem;
+        background-color:#F5F5F5;
+        margin-top: -5rem;
+    
+    }
+
+    .testi{
+            width: 70vw;
+            margin-left: auto;
+                margin-right: auto;
+                color: var(--color-body);
+    }
+    .invi h4{
+        margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding-top: 2rem;
+    }
+
+    .invi p{
+        width: 9rem;
+            margin-left: auto;
+            font-size: 0.7rem;
+            line-height: 0.9rem;
+            margin-right: auto;
+                text-align: center;
+                padding-top: 1rem;
+    }
+.arrow-pos{
+    visibility: hidden;
+    height: 0;
+}
+
+
+}

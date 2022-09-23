@@ -1,10 +1,10 @@
 .encb {
     background-color: white;
     width: 100vw;
-    padding-top: 30px;
+    padding-top: 100px;
     margin-top: 0rem;
-    padding-bottom: 50px;
-margin-left: auto;
+    padding-bottom: 1px;
+    margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
@@ -13,8 +13,7 @@ margin-left: auto;
     color: var(--color-body);
   
     padding-top: 0px;
-    margin-top: -110px;
-    width: 34rem;
+    width: 21.25rem;
     margin-left: auto;
         margin-right: auto;
         text-align: center;
@@ -25,13 +24,14 @@ margin-left: auto;
 .bodytext1b {
     font-style: normal;
     font-weight: 700;
-    font-size: 1rem;
-    line-height: 2rem;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
 }
 
 .bodyText1Subtitleb {
-    margin-top: 0.7rem;
-    font-size: 1.2rem;
+    margin-top: 0.44rem;
+    margin-bottom: 120px;
+    font-size: 0.75rem;
 }
 
 @media screen and (min-width: 600px) {
@@ -40,7 +40,7 @@ margin-left: auto;
         margin-top: 0rem;
         margin-left: 0px;
         background-color: white;
-        padding-top: 5.5rem;
+        padding-top: 3.44rem;
         padding-bottom: 40px;
     
     }
@@ -48,7 +48,7 @@ margin-left: auto;
     .encompass1b {
         margin-top: 0rem;
         margin-left: 0px;
-        width: 38rem;
+        width: 23.5rem;
         height: 24px;
             margin-left: auto;
                 margin-right: auto;
@@ -58,12 +58,12 @@ margin-left: auto;
 
     .bodytext1b {
         font-weight: 700;
-        font-size: 1rem;
-        line-height: 2.6rem;
+        font-size: 0.625rem;
+        line-height: 1.625rem;
     }
 
     .bodyText1Subtitleb {
-        font-size: 1.2rem;
+        font-size: 0.75rem;
     }
 }
 
@@ -73,14 +73,14 @@ margin-left: auto;
     .encb {
         margin-top: 0rem;
         margin-left: 0px;
-        padding-left: 11rem;
-        padding-top: 7rem;
+        height: 12.5rem;
+        padding-top: 3rem;
     }
 
     .encompass1b {
         margin-top: 0rem;
         margin-left: 0px;
-        width: 77.7rem;
+        width: 70rem;
         height: 24px;
         padding-top: 0rem;
             margin-left: auto;
@@ -91,12 +91,22 @@ margin-left: auto;
 
     .bodytext1b {
         font-weight: 700;
-        font-size: 2.7rem;
-        line-height: 5.6rem;
+        font-size: 2rem;
+        line-height: 3.5rem;
     }
 
     .bodyText1Subtitleb {
-        font-size: 1.8 rem;
+            font-size: 1.1 rem;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 0em;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width: 26rem;
+            padding-top: 1rem;
+
     }
 
 }

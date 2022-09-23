@@ -1,0 +1,61 @@
+.testimonial-slider-div{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 32px 24px;
+gap: 24px;
+
+height: 218px;
+
+background: rgba(0, 0, 0, 0.04);
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.testimonial-sider-header{
+width: 138px;
+height: 26px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 26px;
+/* identical to box height, or 162% */
+
+
+color: #012A4A;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+.testimonial-slider-div p{
+    width: 326px;
+height: 104px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+/* or 162% */
+
+
+color: #012A4A;
+
+       
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}

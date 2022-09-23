@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -11,24 +10,6 @@ import {
 const EmailSent = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = localStorage.getItem("formData");
-    axios
-         .post("http://localhost:7000/api/users/forgotpassword", formData)
-      .then((res) => {
-        if (res.status === 200) {
-          console.log(res);
-          navigate("/reset-password");
-        }
-      })
-      .catch((err) => {
-        if (err) {
-        //   const theError = err.response.data.message;
-        //   setErrorMessage(theError)
-        }
-      });
-  }
 
   return (
     <ForgetPasswordPage className="App">
@@ -42,7 +23,7 @@ const EmailSent = () => {
           </p>
           <p className="second">
             Don't receive the email?{" "}
-            <span className="red-text" onClick={handleSubmit}>Click to resend link</span>
+            <span className="red-text" ><a href="/forgot-password">Click to resend link</a></span>
           </p>
         </div>
 

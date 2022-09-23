@@ -1,6 +1,6 @@
-.html {
-    font-size: 62.5%;
-}
+// .html {
+//     font-size: 62.5%;
+// }
 
 .hero{
     width: 100vw;
@@ -26,10 +26,11 @@
     margin-left: auto;
 }
 
+
 .hero_header{
-    font-size: 6rem;
+    font-size: 3.75rem;
     font-weight: 700;
-    line-height: 7.3rem;
+    line-height: 4.563rem;
     letter-spacing: 0em;
     text-align: left;
     background: linear-gradient(89.39deg, #DE3D6D 18.77%, #F5844C 91.68%);
@@ -40,7 +41,7 @@
 }
 
 .hero_header_div{
-margin-top: 5rem;
+margin-top: 3.125rem;
 }
 
 .hero_subtitle{
@@ -60,38 +61,40 @@ margin-top: 5rem;
 
     .hero_left_text {
         width: 68%;
-        margin-left: 10rem;
-        margin-top: 2rem;
+        margin-left: 6.25rem;
+        margin-top: 1.25rem;
     }
 
 .hero{
     height: 380px;
     margin-top: 0px;
+
+    width: 100vw;
 }
 
     .right{
         width: 100%;
     }
 .hero-logo img{
-    width: 35rem;
+    width: 21.88rem;
     margin-top: 60px;
   
 }
 
     .hero_header {
-        font-size: 2.95rem;
+        font-size: 1.825rem;
         font-weight: 700;
-        line-height: 3.4rem;
+        line-height: 2.125rem;
     }
 
     .hero_header_div {
-        margin-top: 5rem;
-        line-height: 5rem;
+        margin-top: 3.125rem;
+        line-height: 3.125rem;
     }
 
     .hero_subtitle {
         margin-top: 20px;
-        font-size: 1.1rem;
+        font-size: 0.69rem;
         line-height: 19px;
         margin-bottom: 25px;
 
@@ -105,6 +108,8 @@ margin-top: 5rem;
     position:static;
     height: 700px;
     width: 100vw;
+    padding-top: 2rem;
+    
 
     }
 
@@ -130,20 +135,45 @@ margin-top: 5rem;
 
     .hero_left_text{
         text-align: center;
-        width: 100%;
+        width: 80vw;
         margin-left: 0;
         margin-right: 0;
         margin-top: 0;
         padding-top: 50px 0;
-        padding-left: 17%;
-        padding-right: 17%;
+        margin-left: auto;
+        margin-right: auto;
+        // padding-left: 17%;
+        // padding-right: 17%;
     }
 
     .hero-btn{
         border-radius: 15px;
     }
         .hero-logo img {
-            width: 300px;
-            margin-top: 3px;
+            width: 80vw;
+            margin-top: -19px;
+            margin-left: 15vw;
+            margin-right: 5vw;
+
+            
         }
+        .hero_header{
+            font-size: 1.9rem;
+            width: 80vw;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .hero_subtitle{
+            font-size: 0.9rem;
+        }
+}
+
+
+@media screen and (max-width: 360px){
+.hero-logo img {
+margin-top: 60px;
+}
 }

@@ -1,3 +1,240 @@
-h1 {
-    color: green;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #e5e5e5;
+}
+
+.father {
+  margin-top: 80px;
+  margin-bottom: 122px;
+  margin-left: 348px;
+  margin-right: 347px;
+  width: 745px;
+  height: 1240px;
+  background-color: white;
+  padding-top: 5rem;
+}
+/*
+.narv {
+  padding-left: 297px;
+  padding-right: 297px;
+  padding-top: 80px;
+  padding-bottom: 12px;
+}
+*/
+
+.img {
+  width: 151px;
+  height: 56px;
+  margin-left: 297px;
+  margin-right: 297px;
+  margin-bottom: 32px;
+}
+
+.account {
+  margin-bottom: 80px;
+  margin-left: 212.5px;
+  margin-right: 212.5px;
+  width: 370px;
+  height: 800px;
+}
+.text {
+  margin-top: 40px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 21.78px;
+  color: rgba(33, 51, 79, 1);
+  padding-bottom: 40px;
+  text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+.back-btn {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 20px;
+  padding: 7px;
+  width: 87px;
+  height: 32px;
+  color: rgba(33, 51, 79, 1);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.heroicon {
+  width: 16px;
+  height: 13px;
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+.help {
+  width: 320px;
+  height: 48px;
+}
+.eten {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: rgba(33, 51, 79, 1);
+  width: 85px;
+  height: 15px;
+}
+.eten-phone {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: rgba(33, 51, 79, 1);
+  width: 85px;
+  height: 15px;
+}
+
+.eten-password {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: rgba(33, 51, 79, 1);
+  width: 104px;
+  height: 15px;
+}
+::placeholder {
+  color: rgba(196, 196, 196, 1);
+  padding-left: 10px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+}
+
+.eten-sign {
+  width: 320px;
+  height: 48px;
+  padding: 8px 16px 8px 16px;
+  background-image: linear-gradient(91.85deg, #de3d6d 49.47%, #f5844c 100.15%);
+  color: white;
+  font-size: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  line-height: 14.52px;
+  font-style: normal;
+  margin-bottom: 44px;
+}
+
+.dolly {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14.52px;
+  padding-right: 5px;
+  color: rgb(33, 51, 79, 1);
+}
+
+.clem {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14.52px;
+  color: rgba(222, 61, 109, 1);
+  font-weight: bold;
+}
+
+.kiki {
+text-align: center;
+margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+}
+
+
+@media screen and (max-width: 1000px) {
+
+.account .father form .blocks{
+  width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.father{
+
+    margin-left: auto;
+      margin-right: auto;
+      width: 100vw;   
+      text-align: center;
+      margin-top: 0;
+        margin-bottom: 0;
+}
+
+.father img{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.account{
+  width: 100vw;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+}
+
+.kiki{
+
+
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+.account form{
+    padding-left: 32%;
+}
+.text{
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+.eten-sign{
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+
+}
+
+
+.etenbtn{
+  padding-left: -15rem;
+}
+
+.wawa{
+  margin-left: -15rem;
+ 
+}
+
+}
+@media screen and (max-width: 600px) {
+
+.account form {
+padding-left: 10vw;
+  }
+
+    .wawa {
+      margin-left: -2rem;
+  
+    }
 }

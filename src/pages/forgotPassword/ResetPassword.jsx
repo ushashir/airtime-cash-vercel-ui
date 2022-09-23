@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { resetPassword } from "../../api";
 
 // import logo from "../../assets/icons/logo.svg";
 import logoSmall from "../../assets/icons/logoSmall.svg"
@@ -13,6 +13,7 @@ import {
 
 
 const ResetPassword = () => {
+  const {token} = useParams()
     const navigate = useNavigate();
   const [formData, setFormData] = useState({
     password: "",
@@ -29,16 +30,17 @@ const ResetPassword = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     e.stopPropagation();
-    const token = localStorage.getItem("token");
+
+    
 
     // validation 
     if (formData.password !== formData.confirmPassword) {
         setErrorMessage("passwords do not match");
         return
     }
-    
-    
-        
+    const password = formData.password
+    const res = await resetPassword({ token, password })
+        console.log("res",res)
           navigate("/login");
 }
 
@@ -48,25 +50,23 @@ const ResetPassword = () => {
         <ResetContent>
           <div className="logo-and-text">
             <img src={logoSmall} alt="Airtime2CashLogo" />
-            {/* <p>
-              Airtime<span>2Cash</span>
-            </p> */}
+           
           </div>
 
           <h2 className="reset-password">Reset Password</h2>
 
           <form
-            action=""
-            onSubmit={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              axios
-                 .post("http://localhost:7000/users/forgotpassword", formData)
-                .then((res) => {
-                  console.log(res);
-                })
-                .catch((err) => console.log(err));
-            }}
+            // action=""
+            // onSubmit={(e) => {
+            //   e.preventDefault();
+            //   e.stopPropagation();
+            //   axios
+            //      .post("http://localhost:7000/users/forgotpassword", formData)
+            //     .then((res) => {
+            //       console.log(res);
+            //     })
+            //     .catch((err) => console.log(err));
+            // }}
           >
             <div className="inputs-container">
               <label htmlFor="password">New Password</label>
@@ -89,7 +89,7 @@ const ResetPassword = () => {
             </div>
 
             <HeaderLink>
-              <button type="submit">Reset Password</button>
+              <button type="submit" onClick={handleSubmit}>Reset Password</button>
             </HeaderLink>
             <p style ={{
               "color": "red"
