@@ -3,11 +3,12 @@ import Nav from '../../components/nav'
 import "./style.scss"
 import styledComponents from 'styled-components';
 import TabGroup from '../../components/TabGroup';
+import TransactionHistory from '../../components/transactionHistory';
 
 
 
 function Dashboard(props) {
-//css
+    //css
     const Div = styledComponents.div`
         display:flex;
         flex-direction: column;
@@ -57,28 +58,29 @@ function Dashboard(props) {
     background: #DE3D6D;
     border-radius: 24px;
     `
-    const TotalAmount = styledComponents.p 
+    const TotalAmount = styledComponents.p
         `font-weight: 700;
         font-size: 32px;
         line-height: 39px;
         color: #FFFFFF;
         `
-    
+
     return (
         <Div>
             <TopBg> </TopBg>
             <DashboardContainer>
-            <Title>Dashboard</Title>
+                <Title>Dashboard</Title>
                 <WalletBalance>
                     <span className='wallet_bal_title'>Wallet Balance</span>
                     <TotalAmount>₦21,350.00</TotalAmount>
                     <span className='wallet_active_lebal'>Account is active</span>
                 </WalletBalance>
-                
+
                 <div>
                     <TabGroup />
                 </div>
             </DashboardContainer>
+
         </Div>
     );
 }
