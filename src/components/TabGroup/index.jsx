@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
+
 const Tab = styled.button`
   font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-color: #012A4A;
-
+  font-size: 14px;
+  line-height: 17px;
+  color: #012a4a;
 
   background: white;
   border: 0;
@@ -22,26 +22,33 @@ const ButtonGroup = styled.div`
   justify-content: space-between;
   margin: 34px auto;
 `;
-const types = ['Sell Airtime', 'Withdraw balance', 'Manage Bank Account', 'Transaction History'];
+const tabs = [
+  "Sell Airtime",
+  "Withdraw balance",
+  "Manage Bank Account",
+  "Transaction History",
+];
+
 function TabGroup() {
-  const [active, setActive] = useState(types[0]);
+  const [active, setActive] = useState(tabs[0]);
+
   return (
     <>
       <ButtonGroup>
-        {types.map(type => (
-          <Tab
-            key={type}
-            active={active === type}
-            onClick={() => setActive(type)}
-          >
-            {type}
+        {tabs.map((tab) => (
+          <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
+            {tab}
           </Tab>
         ))}
       </ButtonGroup>
-      <p />
-      <p> Your payment selection: {active} </p>
+      {active === tabs[0]
+        ? "sell airtime component"
+        : active === tabs[1]
+        ? "Withdraw balance component"
+        : active === tabs[2]
+        ? "Manage Bank Account component"
+        : "Transaction History"}
     </>
   );
 }
-// Usage
-export default TabGroup
+export default TabGroup;
