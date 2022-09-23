@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Input from '../../components/common/inputField';
 import Nav from '../../components/nav'
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
@@ -38,7 +37,7 @@ function Dashboard() {
                         : active === tabs[1]
                             ? "Withdraw balance component"
                             : active === tabs[2]
-                                ? <Input />
+                                ? "Manage Bank Account component"
                                 : <TransactionHistory />}
                 </div>
             </div>
