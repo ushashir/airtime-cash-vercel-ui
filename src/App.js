@@ -11,19 +11,15 @@ import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
-import TransactionHistory from "./components/transactionHistory";
 
 
-// export const UserContext = React.createContext();
 
 function App() {
   return (
-    // <UserContext.Provider value="Reed">
+    
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
-
-        <Route path="/test" element={<TransactionHistory />}></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
@@ -32,11 +28,10 @@ function App() {
         <Route path="/email-sent" element={<EmailSent />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="/verify/:token" element={<EmailVerified />} />
-        <Route path="/signupPage" element={<SignupPage />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
-    // </UserContext.Provider>
+
   );
 }
 
