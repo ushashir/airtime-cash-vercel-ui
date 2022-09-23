@@ -23,7 +23,6 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
 
-        <Route path="/test" element={<TransactionHistory />}></Route>
         <Route path="/signup" element={<SignupPage />}></Route>
         <Route path="/login" element={<LoginPage />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
