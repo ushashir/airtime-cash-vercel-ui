@@ -1,6 +1,6 @@
 import React from 'react';
 
-async function TransactionHistory() {
+const TransactionHistory = () => {
 
     return (
         <div className='tH-Frame-8747'>

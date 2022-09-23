@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import TransactionHistory from '../transactionHistory';
 const Tab = styled.button`
   font-weight: 400;
 font-size: 14px;
@@ -40,6 +41,7 @@ function TabGroup() {
       </ButtonGroup>
       <p />
       <p> Your payment selection: {active} </p>
+      <TransactionHistory />
     </>
   );
 }
