@@ -11,6 +11,7 @@ import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
+import WithdrawBalance from './components/withdrawBalance'
 
 // export const UserContext = React.createContext();
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/email-sent" element={<EmailSent />} />
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="/verify/:token" element={<EmailVerified />} />
-        <Route path="/signupPage" element={<SignupPage />}></Route>
+        <Route path="/withdraw" element={<WithdrawBalance />}></Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       </BrowserRouter>
