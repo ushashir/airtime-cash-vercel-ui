@@ -24,8 +24,17 @@ const ButtonGroup = styled.div`
   margin: 34px auto;
 `;
 const types = ['Sell Airtime', 'Withdraw balance', 'Manage Bank Account', 'Transaction History'];
+
 function TabGroup() {
   const [active, setActive] = useState(types[0]);
+  const [isActive, setIsActive] = useState({
+    sellAirtime: true,
+    withdrawBalance: false,
+    manageBankAccount: false,
+    transactonHistory: false
+  });
+
+
   return (
     <>
       <ButtonGroup>
@@ -33,7 +42,13 @@ function TabGroup() {
           <Tab
             key={type}
             active={active === type}
-            onClick={() => setActive(type)}
+            onClick={() => {
+              setActive(type)
+              type === 'Sell Airtime' ? setIsActive({ ...isActive, sellAirtime: true }) : setIsActive({ ...isActive, sellAirtime: false })
+              type === 'Withdraw balance' ? setIsActive({ ...isActive, withdrawBalance: true }) : setIsActive({ ...isActive, withdrawBalance: false })
+              type === 'Manage Bank Account' ? setIsActive({ ...isActive, manageBankAccount: true }) : setIsActive({ ...isActive, manageBankAccount: false })
+              type === 'Transaction History' ? setIsActive({ ...isActive, transactonHistory: true }) : setIsActive({ ...isActive, transactonHistory: false })
+            }}
           >
             {type}
           </Tab>
@@ -41,7 +56,7 @@ function TabGroup() {
       </ButtonGroup>
       <p />
       <p> Your payment selection: {active} </p>
-      <TransactionHistory />
+      {isActive.transactonHistory && <TransactionHistory />}
     </>
   );
 }

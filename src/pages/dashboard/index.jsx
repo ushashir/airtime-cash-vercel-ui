@@ -79,7 +79,6 @@ function Dashboard(props) {
                 <div>
                     <TabGroup />
                 </div>
-                {/* <TransactionHistory /> */}
             </DashboardContainer>
 
         </Div>
