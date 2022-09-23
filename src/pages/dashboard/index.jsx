@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import Nav from '../../components/nav'
+import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
 import {Dashboard_wrapper,Tab, TopBg, ButtonGroup,} from "./dashboardCss"
 
@@ -37,7 +38,7 @@ function Dashboard() {
         ? "Withdraw balance component"
         : active === tabs[2]
         ? "Manage Bank Account component"
-        : "Transaction History"}
+        : <TransactionHistory/>}
                 </div>
             </div>
         </Dashboard_wrapper>
