@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
-import styled from "styled-components";
-
-=======
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import TransactionHistory from '../transactionHistory';
->>>>>>> 87d16ce42a5536c4173439c27fd09bdc9411cbdf
 const Tab = styled.button`
   font-weight: 400;
   font-size: 14px;
@@ -28,17 +22,6 @@ const ButtonGroup = styled.div`
   justify-content: space-between;
   margin: 34px auto;
 `;
-<<<<<<< HEAD
-const tabs = [
-  "Sell Airtime",
-  "Withdraw balance",
-  "Manage Bank Account",
-  "Transaction History",
-];
-
-function TabGroup() {
-  const [active, setActive] = useState(tabs[0]);
-=======
 const types = ['Sell Airtime', 'Withdraw balance', 'Manage Bank Account', 'Transaction History'];
 
 function TabGroup() {
@@ -50,26 +33,10 @@ function TabGroup() {
     transactonHistory: false
   });
 
->>>>>>> 87d16ce42a5536c4173439c27fd09bdc9411cbdf
 
   return (
     <>
       <ButtonGroup>
-<<<<<<< HEAD
-        {tabs.map((tab) => (
-          <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-            {tab}
-          </Tab>
-        ))}
-      </ButtonGroup>
-      {active === tabs[0]
-        ? "sell airtime component"
-        : active === tabs[1]
-        ? "Withdraw balance component"
-        : active === tabs[2]
-        ? "Manage Bank Account component"
-        : "Transaction History"}
-=======
         {types.map(type => (
           <Tab
             key={type}
@@ -89,7 +56,6 @@ function TabGroup() {
       <p />
       <p> Your payment selection: {active} </p>
       {isActive.transactonHistory && <TransactionHistory />}
->>>>>>> 87d16ce42a5536c4173439c27fd09bdc9411cbdf
     </>
   );
 }
