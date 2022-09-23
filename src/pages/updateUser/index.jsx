@@ -162,7 +162,8 @@ function UpdatePage() {
                 </span>
               )}
               <label htmlFor="avater">Avater</label>
-              <input
+                <input
+                  className="upload-picture"
                 type="button"
                 value="Update profile picture"
                 onClick={updateProfile}
