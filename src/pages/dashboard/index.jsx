@@ -3,6 +3,7 @@ import Nav from '../../components/nav'
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
 import {Dashboard_wrapper,Tab, TopBg, ButtonGroup,} from "./dashboardCss"
+import ManageAccount from '../../components/manageAccount/manageAccount';
 
 
 
@@ -37,7 +38,7 @@ function Dashboard() {
         : active === tabs[1]
         ? "Withdraw balance component"
         : active === tabs[2]
-        ? "Manage Bank Account component"
+        ? <ManageAccount/>
         : <TransactionHistory/>}
                 </div>
             </div>
