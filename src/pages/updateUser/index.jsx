@@ -168,7 +168,7 @@ function UpdatePage() {
                 value="Update profile picture"
                 onClick={updateProfile}
               />
-              <Button value="save" type="submit" />
+              <Button value="Ayo Soft" type="text" />
             </form>
           )}
         </div>
