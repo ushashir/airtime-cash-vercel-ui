@@ -8,6 +8,7 @@ import BodyText1 from '../../components/bodyText1';
 import Service from '../../components/services';
 import Advert from '../../components/advert';
 import BodyText2 from '../../components/bodyText2';
+import TransactionHistory from '../../components/transactionHistory';
 
 function LandingPage(props) {
   return (

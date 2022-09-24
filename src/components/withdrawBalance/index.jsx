@@ -1,6 +1,7 @@
 import './style.scss'
 // import React from 'react';
 import React, { useState } from 'react';
+import Button from '../common/button';
 
 
 
@@ -40,6 +41,7 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                 <div className='input-field'>
                     <label htmlFor="selectAccount">Select Account</label> <br></br>
                     <input type="text"
+                        className='input-field'
                         name='selectAccount'
                         placeholder='select'
                         value={selectAccount}
@@ -81,7 +83,8 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                         onChange={onChange}
                     />
                 </div>
-               <button>Withdraw</button>
+                
+                < Button value="Withdaw" type="submit" />
                
                 
             </form>

@@ -1,27 +1,19 @@
 .withdraw-balance {
     font-size: medium;
+    margin-left: auto;
+    margin-right: auto;
 }
 // .withdraw-balance p {
 //     font-siz
 // }
-.withdraw-balance > .input-field {
+ .input-field {
     height: 48px;
-        width: 559px;
-        left: 0px;
-        top: 25px;
-        border-radius: 0px;
-        padding: 10px 407px 10px 16px;
+    width: 100%;
+    left: 0px;
+    top: 25px;
+    border-radius: 0px;
+    padding: 10px 407px 10px 16px;
    
 }
 
-.withdraw-balance button {
-    height: 48px;
-        width: 198px;
-        left: 0px;
-        top: 764px;
-        border-radius: 0px;
-        padding: 8px 16px 8px 16px;
-        background-color: red;
-
-}
 
