@@ -5,9 +5,10 @@ function Input(prop) {
         <input
             className="reusableInput"
             type={prop.type}
-            placeholder={prop.placeholder}
             name={prop.name}
             value={prop.value}
+            placeholder={prop.placeholder}
+            onChange={prop.onChange}
         />
     )
 }

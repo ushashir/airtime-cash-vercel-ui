@@ -1,0 +1,31 @@
+
+.form_container{
+    width: 35rem;
+}
+.form_group{
+    margin: 1rem 0rem;
+}
+.form_group .label_container{
+    margin: 0.2rem 0rem;
+}
+.form_group .label_container .form_label{
+text-transform: capitalize;
+width: 98px;
+    height: 17px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #012A4A;
+}
+
+.form_group .input_container{
+    width: 35rem;
+}
+.form_group .input_container .selectAccount, .form_group .input_container .form_input{
+    width: 100%;
+    padding: 0.7rem  1rem;
+    padding: 10px 407px 10px 16px;
+}
+
