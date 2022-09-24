@@ -5,7 +5,6 @@ import Wallet_balance from '../../components/wallet_balance';
 import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime';
-import Withdraw from '../../components/withdrawBalance';
 
 
 
