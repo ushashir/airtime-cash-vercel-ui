@@ -4,6 +4,7 @@ import Nav from '../../components/nav'
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
 import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import SellAirtime from '../../components/sellAirtime';
 
 
 
@@ -34,7 +35,7 @@ function Dashboard() {
                         ))}
                     </ButtonGroup>
                     {active === tabs[0]
-                        ? "sell airtime component"
+                        ? <SellAirtime />
                         : active === tabs[1]
                             ? "Withdraw balance component"
                             : active === tabs[2]
