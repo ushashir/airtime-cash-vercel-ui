@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../common/button'
 import {ManageAccountWrapper} from '../manageAccount/manageAccountCss';
+import Input from '../common/inputField'
 
 function ManageAccount() {
   return (
@@ -18,7 +19,7 @@ function ManageAccount() {
                 <div>
                     <label>Bank Name</label><br/>
                     <select type="text" value='Bank Name' placeholder='Bank Name'>
-                        <option>Select</option>  
+                        <option> Select Bank</option>  
                         <option>GT Bank</option>
                         <option>First Bank</option>
                         <option>Union Bank</option>
@@ -49,6 +50,14 @@ function ManageAccount() {
                         <option>Jaiz Bank</option>
                         <option>FCMB</option>
                     </select>
+                </div>
+                <div>
+                    <label className='labNm'>Account Name</label><br/>
+                    <Input placeholder='Account Name'/>
+                </div>
+                <div>
+                    <label className='labNm'>Account Number</label><br/>
+                    <Input placeholder='Account Number'/>
                 </div>
 
                 

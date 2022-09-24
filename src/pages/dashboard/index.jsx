@@ -3,12 +3,8 @@ import Input from '../../components/common/inputField';
 import Nav from '../../components/nav'
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
-<<<<<<< HEAD
 import {Dashboard_wrapper,Tab, TopBg, ButtonGroup,} from "./dashboardCss"
 import ManageAccount from '../../components/manageAccount/manageAccount';
-=======
-import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
->>>>>>> b9261996e586f93f5e4329907eaf892223c7474e
 
 
 
