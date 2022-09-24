@@ -6,7 +6,7 @@ import EmailSent from "./pages/forgotPassword/EmailSent";
 import ResetPassword from "./pages/forgotPassword/ResetPassword";
 import LandingPage from "./pages/landingPage";
 import LoginPage from "./pages/login/index";
-import SignupPage from "./pages/signup/Index";
+import SignupPage from "./pages/signup";
 import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
