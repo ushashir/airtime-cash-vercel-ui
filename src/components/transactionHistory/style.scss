@@ -4,9 +4,10 @@
     align-items: flex-start;
     padding: 0px;
     gap: 24px;
-    background-color: #FFFFFF;
+
     width: 585px;
     height: 468px;
+    color: #03435F;
 }
 
 .tH-Frame-8744 {
@@ -17,8 +18,8 @@
     gap: 350px;
 
     width: 585px;
-    // height: 99px;
-    height: 120px;
+    height: 99px;
+    // height: 120px;
 
     background: #FFFFFF;
     box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.08);
@@ -59,4 +60,55 @@
 
     background: rgba(52, 168, 83, 0.1);
     border-radius: 100px;
+}
+
+.tH-received {
+    width: 61px;
+    height: 17px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #34A853;
+}
+
+.tH-day_time {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #21334F;
+}
+
+.tH-withdraw {
+    width: 115px;
+    height: 17px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    color: #21334F;
+}
+
+.tH-date {
+    width: 70px;
+    height: 17px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+
+
+    color: #21334F;
 }
