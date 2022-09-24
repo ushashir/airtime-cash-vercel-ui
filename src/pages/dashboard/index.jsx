@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Input from '../../components/common/inputField';
-import Nav from '../../components/nav'
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
 import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import Withdraw from '../../components/withdrawBalance';
 
 
 
@@ -15,8 +15,6 @@ function Dashboard() {
         "Transaction History",
     ];
     const [active, setActive] = useState(tabs[0]);
-
-
 
     return (
         <Dashboard_wrapper>
@@ -36,7 +34,7 @@ function Dashboard() {
                     {active === tabs[0]
                         ? "sell airtime component"
                         : active === tabs[1]
-                            ? "Withdraw balance component"
+                            ? <Withdraw />
                             : active === tabs[2]
                                 ? <Input />
                                 : <TransactionHistory />}
