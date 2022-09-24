@@ -1,7 +1,6 @@
 import  { useState } from 'react';
 import Input from '../../components/common/inputField';
 import Nav from '../../components/nav'
-import Test from '../../components/test';
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
 import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
@@ -40,7 +39,7 @@ function Dashboard() {
                         : active === tabs[1]
                             ? "Withdraw balance component"
                             : active === tabs[2]
-                            ?<Test />
+                            ?"stuff"
                             : <TransactionHistory />}
                 </div>
             </div>
