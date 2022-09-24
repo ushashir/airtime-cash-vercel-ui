@@ -1,89 +1,54 @@
- .network_main_container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 559px;
-    height: 73px;
-}
 
-.network_name_container{
-    width: 57px;
-    height: 17px;
+
+.sellAirtime-container h4 {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 14px;
-    line-height: 17px;
     color: #012A4A;
+    margin-bottom: 2em;
 }
 
-.network_input_container{
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    //padding: 10px 407px 10px 16px;
-    gap: 350px;
-    width: 559px;
-    height: 48px;
-    border: 1px solid #D9D9D9;
-    //order: 1;
-}
-
-.phone_number_main_container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 8px;
-    width: 559px;
-    height: 73px;
-}
-
-.phone_number_name_div{
-    width: 99px;
-    height: 17px;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #012A4A;
-}
-
-.phone_number_input_container{
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 407px 10px 16px;
-    gap: 10px;
-    width: 559px;
-    height: 48px;
-    border: 1px solid #D9D9D9;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-.sellAirtime-btn{
-    gap: 10px;
-    margin-bottom: 3.75rem;
-    margin-top: 20px;
-    
-    width: 198px;
-    height: 48px;
-    color: #fff;
-    border: none;
+.sellAirtime-container Input {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
     outline: none;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        input:focus {
-            outline: none /* Removes the border when the input is clicked */
-           }
-    background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
-    
-} 
+}
+
+.sellAirtime-container label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #012A4A;
+}
+
+#destination {
+    background: #F5F5F5;
+}
+
+#ussd {
+    background: #F5F5F5;
+}
+
+#amount-receive {
+    background: #F5F5F5;
+}
+
+form select {
+    width: 100%;
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    outline: none;
+}
+
+::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #C4C4C4;
+}
