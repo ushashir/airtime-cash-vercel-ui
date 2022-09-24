@@ -2,7 +2,7 @@ import './style.scss'
 // import React from 'react';
 import React, { useState } from 'react';
 import Button from '../common/button';
-// import Input from '../common/inputField';
+import Input from '../common/inputField';
 
 
 
@@ -57,6 +57,7 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                         </select>
                     </div>
                 </div>
+        
                  <div className="form_group">
                     <div className="label_container">
                         <label
@@ -66,14 +67,12 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                             Account Name
                         </label>
                     </div>
-                    <div className="input_container">
-                        <input id='accountName'
-                            className='form_input'
-                            placeholder='ushahemba'
-                            value={accountName}
-                            onChange={onChange}
-                        />
-                    </div>
+                    <Input
+                        type="text"
+                        placeholder="Ushahemba"
+                        onChange={onChange}
+                        value={accountName}
+                    />
                 </div>
                  <div className="form_group">
                     <div className="label_container">
@@ -82,13 +81,13 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                             Account Number
                         </label>
                     </div>
-                    <div className="input_container">
-                        <input id='accountNumber' className='form_input'
-                            placeholder='Account Number'
-                            value={accountName}
-                            onChange={onChange}
-                        />
-                    </div>
+                      <Input
+                        type="text"
+                        placeholder="12366325875"
+                        onChange={onChange}
+                        value={accountNumber}
+                    />
+               
                 </div>
                   <div className="form_group">
                     <div className="label_container">
@@ -96,51 +95,29 @@ const { selectAccount, accountName, accountNumber, amount, password } = withdraw
                             Amount
                         </label>
                     </div>
-                    <div className="input_container">
-                        <input id='amount' className='form_input'
-                            placeholder='Amount'
-                            value={amount}
-                            onChange={onChange}
-                        />
-                    </div>
+                       <Input
+                        type="text"
+                        placeholder="NGN"
+                        onChange={onChange}
+                        value={amount}
+                    />
+    
                 </div>
                  <div className="form_group">
                     <div className="label_container">
                         <label htmlFor='password' className='form_label'>
                             Password
+                      
                         </label>
                     </div>
-                    <div className="input_container">
-                        <input id='password' className='form_input'
-                            placeholder='Password'
-                            value={password}
+                     <Input
+                        type="text"
+                        placeholder="12366325875"
                         onChange={onChange}
-                        />
-                    </div>
-                </div>
-
-                
-                
-        
-                {/* 
-                 <div className=' input-field'>
-                    <label htmlFor="amount">Amount</label> <br></br>
-                    <input type="number"
-                        name='amount'
-                        placeholder='NGN'
-                        value={amount}
-                        onChange={onChange}
+                        value={password}
                     />
+                   
                 </div>
-                 <div className=' input-field'>
-                    <label htmlFor="password">Password</label> <br></br>
-                    <input type="number"
-                        name='password'
-                        placeholder='password'
-                         value={password}
-                        onChange={onChange}
-                    />
-                </div>  */}
                 
                 < Button value="Withdaw" type="submit" />
                

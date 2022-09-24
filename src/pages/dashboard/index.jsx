@@ -16,8 +16,6 @@ function Dashboard() {
     ];
     const [active, setActive] = useState(tabs[0]);
 
-
-
     return (
         <Dashboard_wrapper>
             <TopBg> </TopBg>

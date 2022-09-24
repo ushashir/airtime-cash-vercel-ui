@@ -7,6 +7,8 @@ function Input(prop) {
             type={prop.type}
             name={prop.name}
             value={prop.value}
+            placeholder={prop.placeholder}
+            onChange={prop.onChange}
         />
     )
 }
