@@ -1,0 +1,36 @@
+
+.form_container{
+    width: 35rem;
+}
+.form_group{
+    margin: 1rem 0rem;
+}
+.form_group .label_container{
+    margin: 0.2rem 0rem;
+}
+.form_group .label_container .form_label{
+text-transform: capitalize;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #012A4A;
+}
+
+.form_group .input_container{
+    width: 35rem;
+}
+.form_group .input_container .selectAccount, .form_group .input_container .form_input{
+    width: 100%;
+    padding: 0.7rem  1rem;
+    padding: 10px 407px 10px 16px;
+}
+
+form select {
+    width: 100%;
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    outline: none;
+}

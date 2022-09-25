@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
-import Input from '../../components/common/inputField';
-import Nav from '../../components/nav'
+import  { useState } from 'react';
 import TransactionHistory from '../../components/transactionHistory';
 import Wallet_balance from '../../components/wallet_balance';
-import {Dashboard_wrapper,Tab, TopBg, ButtonGroup,} from "./dashboardCss"
 import ManageAccount from '../../components/manageAccount/manageAccount';
+import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import Withdraw from '../../components/withdrawBalance';
+import SellAirtime from '../../components/sellAirtime/';
+
 
 
 
@@ -17,8 +18,6 @@ function Dashboard() {
     ];
     const [active, setActive] = useState(tabs[0]);
 
-
-
     return (
         <Dashboard_wrapper>
             <TopBg> </TopBg>
@@ -28,21 +27,20 @@ function Dashboard() {
                 }
                 <div>
 
-                <ButtonGroup>
-        {tabs.map((tab) => (
-          <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-            {tab}
-          </Tab>
-        ))}
-      </ButtonGroup>
-      {active === tabs[0]
-        ? "sell airtime component"
-        : active === tabs[1]
-        ? "Withdraw balance component"
-        : active === tabs[2]
-        ? <ManageAccount/>
-        : <TransactionHistory/>}
-                  
+                    <ButtonGroup>
+                        {tabs.map((tab) => (
+                            <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
+                                {tab}
+                            </Tab>
+                        ))}
+                    </ButtonGroup>
+                    {active === tabs[0]
+                        ? <SellAirtime />
+                        : active === tabs[1]
+                            ? <Withdraw />
+                            : active === tabs[2]
+                                ? <ManageAccount />
+                                : <TransactionHistory />}
                 </div>
             </div>
         </Dashboard_wrapper>
