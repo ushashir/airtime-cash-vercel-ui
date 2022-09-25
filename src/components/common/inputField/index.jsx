@@ -1,14 +1,20 @@
 import "./style.scss"
 
-function Input(prop) {
+
+function Input({ isDisabled, type, value, placeholder, name, register, errors }) {
+
     return (
-        <input
-            className="reusableInput"
-            type={prop.type}
-            placeholder={prop.placeholder}
-            name={prop.name}
-            value={prop.value}
-        />
+        <>
+            <input {...register(name)}
+                disabled={isDisabled}
+                className="reusableInput"
+                type={type}
+                name={name}
+                value={value}
+                placeholder={placeholder}
+            />
+            <span className="form-error">{errors[name]?.message}</span>
+        </>
     )
 }
 

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Nav from '../../components/nav'
+import { useState } from 'react';
 import TransactionHistory from '../../components/transactionHistory';
-import Wallet_balance from '../../components/wallet_balance';
-import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import WalletBalance from '../../components/walletBalance';
+import { DashboardWrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import Withdraw from '../../components/withdrawBalance';
+import SellAirtime from '../../components/sellAirtime/';
 
 
 
@@ -15,14 +16,12 @@ function Dashboard() {
     ];
     const [active, setActive] = useState(tabs[0]);
 
-
-
     return (
-        <Dashboard_wrapper>
+        <DashboardWrapper>
             <TopBg> </TopBg>
             <div className="Dashboard_container">
                 {(active === tabs[0] || active === tabs[1]) ?
-                    <Wallet_balance /> : <h2 className="Title">{active}</h2>
+                    <WalletBalance /> : <h2 className="Title">{active}</h2>
                 }
                 <div>
                     <ButtonGroup>
@@ -33,15 +32,15 @@ function Dashboard() {
                         ))}
                     </ButtonGroup>
                     {active === tabs[0]
-                        ? "sell airtime component"
+                        ? <SellAirtime />
                         : active === tabs[1]
-                            ? "Withdraw balance component"
+                            ? <Withdraw />
                             : active === tabs[2]
-                                ? "Manage Bank Account component"
+                                ? "manage bank"
                                 : <TransactionHistory />}
                 </div>
             </div>
-        </Dashboard_wrapper>
+        </DashboardWrapper>
     );
 }
 

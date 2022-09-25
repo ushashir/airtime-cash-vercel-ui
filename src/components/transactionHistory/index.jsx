@@ -7,7 +7,7 @@ const TransactionHistory = () => {
         <div className='tH-Frame-8747'>
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'>Today, 10:15AM</p>
+                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
                     <p className='tH-withdraw'>Withdraw fund</p>
                     <p className='tH-date'>25/5/2022</p>
                 </div>
@@ -21,7 +21,7 @@ const TransactionHistory = () => {
 
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'>Today, 10:15AM</p>
+                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
                     <p className='tH-withdraw'>Withdraw fund</p>
                     <p className='tH-date'>25/5/2022</p>
                 </div>
@@ -35,7 +35,7 @@ const TransactionHistory = () => {
 
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'>Today, 10:15AM</p>
+                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
                     <p className='tH-withdraw'>Withdraw fund</p>
                     <p className='tH-date'>25/5/2022</p>
                 </div>
@@ -49,7 +49,7 @@ const TransactionHistory = () => {
 
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'>Today, 10:15AM</p>
+                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
                     <p className='tH-withdraw'>Withdraw fund</p>
                     <p className='tH-date'>25/5/2022</p>
                 </div>
