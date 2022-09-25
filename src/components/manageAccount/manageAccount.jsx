@@ -8,8 +8,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 function ManageAccount() {
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string().required(),
-    accountNumber: yup.number().required(),
+    accountName: yup.string().required('Please enter a valid Account Name'),
+    accountNumber: yup.number().min(8).max(13).required('Please enter a valid Account Number'),
   });
   const {
     register,
@@ -20,9 +20,7 @@ function ManageAccount() {
     resolver: yupResolver(manageAccountSchema),
   });
   watch();
-  const onSubmit = (data) => {
-    console.log("data");
-    console.log(data)};
+  const onSubmit = (data) => console.log(data);
   return (
     <ManageAccountWrapper>
       <div className="top">
@@ -34,12 +32,20 @@ function ManageAccount() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label>Bank Name</label>
-          <br />
-          <select type="text"  placeholder="Bank Name">
-            <option> Select Bank</option>
+      <div>
+            <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+                <div className="form_group">
+                    <div className="label_container">
+                        <label htmlFor="network" className="form_label">
+                            Bank Name
+                        </label>
+                    </div>
+                    <div className="input_container">
+                        <select 
+                            name="bankName"
+                            placeholder="Select Bank"
+                        >
+                           <option> Select Bank</option>
             <option>GT Bank</option>
             <option>First Bank</option>
             <option>Union Bank</option>
@@ -64,31 +70,42 @@ function ManageAccount() {
             <option>United Bank for Africa</option>
             <option>Heritage Bank</option>
             <option>Keystone Bank</option>
-          </select>
+                        </select>
+                    </div>
+                </div>
+
+                <div className="form_group">
+                    <div className="label_container">
+                        <label htmlFor="accountName" className="form_label">
+                        Account Name
+                        </label>
+                    </div>
+                    <Input register={register}
+                            errors={errors} 
+                        name="accountName"
+                        type="text"
+                        placeholder="Account Name"
+                       
+                    />
+          </div>
+          
+                <div className="form_group">
+                    <div className="label_container">
+                        <label htmlFor="amount" className="form_label">
+                            Account Number
+                        </label>
+                    </div>
+                    <Input register={register}
+                            errors={errors} 
+                        name="accountNumber"
+                        type="number"
+                        placeholder="accountNumber"
+                      
+                    />
+                </div>
+                <Button value="Add Bank" type="submit" />
+            </form>
         </div>
-        <div>
-          <label className="labNm">Account Name</label>
-      
-          <Input
-          register={register}
-          errors={errors}
-          name="accountName"
-            type="text"
-           placeholder="Account Name" />
-        </div>
-        <div>
-          <label className="labNm">Account Number</label>
-       
-          <Input
-            register={register}
-            errors={errors}
-            name="accountNumber"
-            type="number"
-            placeholder="Account Number"
-          />
-        </div>
-      </form>
-      <Button value="Add Bank" type="submit" />
     </ManageAccountWrapper>
   );
 }

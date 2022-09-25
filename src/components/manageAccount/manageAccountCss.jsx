@@ -23,21 +23,6 @@ export const ManageAccountWrapper = styled.div`
     font-family: 'Inter';
     line-height: 17px;
 }
-select{
-    background: rgba(0, 0, 0, 0.04);
-    width: 100%;
-    min-height: 50px;
-    padding: 10px;
-    margin-bottom: 15px;
-    margin : 10px 0;
-    border: none;
-    padding-right: 30px;
-}
-.labNm{
-    margin-top: 10px;
-    color: #012A4A;
-    font-size: 14px;
-    padding-bottom: 10px;
-}
+
 
 `
