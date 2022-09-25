@@ -37,6 +37,7 @@ select{
     margin-top: 10px;
     color: #012A4A;
     font-size: 14px;
+    padding-bottom: 10px;
 }
 
 `
