@@ -1,40 +1,4 @@
 
-
-.sellAirtime-container h4 {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    color: #012A4A;
-    margin-bottom: 2em;
-}
-
-.sellAirtime-container Input {
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    outline: none;
-}
-
-.sellAirtime-container label {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    color: #012A4A;
-}
-
-#destination {
-    background: #F5F5F5;
-}
-
-#ussd {
-    background: #F5F5F5;
-}
-
-#amount-receive {
-    background: #F5F5F5;
-}
-
 form select {
     width: 100%;
     padding: 1em;
@@ -45,10 +9,3 @@ form select {
     outline: none;
 }
 
-::placeholder {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    color: #C4C4C4;
-}

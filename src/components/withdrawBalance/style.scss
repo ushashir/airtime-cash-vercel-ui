@@ -10,10 +10,6 @@
 }
 .form_group .label_container .form_label{
 text-transform: capitalize;
-width: 98px;
-    height: 17px;
-    font-family: 'Inter';
-    font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -29,3 +25,12 @@ width: 98px;
     padding: 10px 407px 10px 16px;
 }
 
+form select {
+    width: 100%;
+    padding: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #D9D9D9;
+    color: #D9D9D9;
+    outline: none;
+}

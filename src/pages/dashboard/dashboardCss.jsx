@@ -12,7 +12,7 @@ export const Dashboard_wrapper = styled.div`
     width: 42.5rem;
     gap: 2rem;
     margin-top: -11.875rem;
-    height: 930px;
+   
     border: 1px solid #d9d9d9;
     background-color: #fff;
   }
