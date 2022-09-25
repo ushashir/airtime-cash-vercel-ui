@@ -21,11 +21,9 @@ const TransactionHistory = () => {
 
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
+
                     <span className='tH-day_time'><b>Today,</b> 10:15AM</span>
                     <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
                     <div className='tH-Frame-8537'>
                         <p className='tH-received'>Received</p>
                     </div>

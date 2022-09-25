@@ -29,8 +29,6 @@ function Withdraw() {
                     </div>
                     <div className="input_container">
                         <select 
-                            register={register}
-                            errors={errors} 
                             name="bank_account"
                             id="selectAccount"
                             className="selectAccount"
