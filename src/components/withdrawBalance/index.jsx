@@ -1,5 +1,5 @@
 import "./style.scss";
-import React, { useState } from "react";
+import React from "react";
 import Button from "../common/button";
 import Input from "../common/inputField";
 import { useForm } from "react-hook-form";
@@ -56,7 +56,7 @@ function Withdraw() {
                         isDisabled={true}
                         type="text"
                         placeholder="Ushahemba"
-                        value="Senior man"
+                       
                     />
                 </div>
                 <div className="form_group">
@@ -71,7 +71,7 @@ function Withdraw() {
                         isDisabled={true}
                         type="text"
                         placeholder="12366325875"
-                        value="12345678909"
+                      
                     />
                 </div>
                 <div className="form_group">
