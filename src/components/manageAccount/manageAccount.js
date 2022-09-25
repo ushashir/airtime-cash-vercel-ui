@@ -29,7 +29,6 @@ function ManageAccount() {
                         <option>Wema Bank</option>
                         <option>Stanbic IBTC Bank</option>
                         <option>Standard Chartered Bank</option>
-                        <option>Heritage Bank</option>
                         <option>Keystone Bank</option>
                         <option>Jaiz Bank</option>
                         <option>FCMB</option>
@@ -43,12 +42,8 @@ function ManageAccount() {
                         <option>Sterling Bank</option>
                         <option>First City Monument Bank</option>
                         <option>United Bank for Africa</option>
-                        <option>Stanbic IBTC Bank</option>
-                        <option>Standard Chartered Bank</option>
                         <option>Heritage Bank</option>
                         <option>Keystone Bank</option>
-                        <option>Jaiz Bank</option>
-                        <option>FCMB</option>
                     </select>
                 </div>
                 <div>
