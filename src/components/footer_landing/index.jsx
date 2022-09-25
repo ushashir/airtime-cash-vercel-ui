@@ -26,9 +26,9 @@ export default function Footer(props) {
             <p>© 2022 Airtime2Cash. All rights reserved</p>
           </div>
           <div className='footer-icons'>
-          <div className="footer-social"><img src={instagramicon} /> </div>
-          <div className="footer-social"><img src={twittericon} /></div>
-          <footer className="footer-social"><img src={youtubeicon} /></footer>
+          <div className="footer-social"><img src={instagramicon}  alt=""/> </div>
+          <div className="footer-social"><img src={twittericon} alt="" /></div>
+          <footer className="footer-social"><img src={youtubeicon} alt="" /></footer>
           </div>
           </div>
       </div>

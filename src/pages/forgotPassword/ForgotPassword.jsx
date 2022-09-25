@@ -23,6 +23,7 @@ function ForgotPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
     e.stopPropagation();
+    console.log("i'm here")
     axios
       .post("http://localhost:7000/api/users/forgotpassword", formData)
       .then((res) => {
@@ -65,9 +66,11 @@ function ForgotPassword() {
               placeholder="Enter your Email"
             />
             <HeaderLink >
+
             <button type="submit" className="reset-btn" onClick={handleSubmit}>
              Reset Password
           </button>
+
             </HeaderLink>
             <HeaderLink secondary={"true"} to={"/login"}>
               <button className="back-btn">Back to Login</button>
