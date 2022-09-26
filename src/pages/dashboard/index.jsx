@@ -5,6 +5,7 @@ import { DashboardWrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
 import ManageAccount from '../../components/manageAccount/manageAccount';
+import ViewAccountDetails from '../../components/veiwAccount';
 
 
 
@@ -39,7 +40,8 @@ function Dashboard() {
                         : active === tabs[1]
                             ? <Withdraw />
                             : active === tabs[2]
-                                ? <ManageAccount />
+                                ?<ViewAccountDetails />
+                                // <ManageAccount />
                                 : <TransactionHistory />}
                 </div>
             </div>
