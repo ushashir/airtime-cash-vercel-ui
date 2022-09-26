@@ -1,11 +1,10 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import TransactionHistory from '../../components/transactionHistory';
-import Wallet_balance from '../../components/wallet_balance';
-import ManageAccount from '../../components/manageAccount/manageAccount';
-import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
+import WalletBalance from '../../components/walletBalance';
+import { DashboardWrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
-import Nav from '../../components/nav';
+import ManageAccount from '../../components/manageAccount/manageAccount';
 
 
 
@@ -20,13 +19,11 @@ function Dashboard() {
     const [active, setActive] = useState(tabs[0]);
 
     return (
-
-        <Dashboard_wrapper>
-            {/* <Nav /> */}
+        <DashboardWrapper>
             <TopBg> </TopBg>
             <div className="Dashboard_container">
                 {(active === tabs[0] || active === tabs[1]) ?
-                    <Wallet_balance /> : <h2 className="Title">{active}</h2>
+                    <WalletBalance /> : <h2 className="Title">{active}</h2>
                 }
                 <div>
 
@@ -46,7 +43,7 @@ function Dashboard() {
                                 : <TransactionHistory />}
                 </div>
             </div>
-        </Dashboard_wrapper>
+        </DashboardWrapper>
     );
 }
 

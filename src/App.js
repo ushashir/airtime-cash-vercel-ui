@@ -30,23 +30,18 @@ function App() {
         <Route path="/resetpassword/:token" element={<ResetPassword />} />
         <Route path="/verify/:token" element={<EmailVerified />} />                                                                             ailVerified />} />
         <Route path="*" element={<PageNotFound />} />
-    
-          <Route path="/login" element={
-            <ProtectedRoute>
-              <LoginPage />
-            </ProtectedRoute>
-            }></Route>
+          <Route path="/login" element={ <LoginPage />} />
+          
           <Route path="/update" element={
             <ProtectedRoute>
- <UpdatePage />
+              <UpdatePage />
             </ProtectedRoute>
            }></Route>
           <Route path="/dashboard" element={
             <ProtectedRoute>
- <Dashboard />
+              <Dashboard />
             </ProtectedRoute>
            }></Route>
-    
         </Routes>
         </UserContext.Provider>
     </BrowserRouter>
