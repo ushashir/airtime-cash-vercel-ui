@@ -68,7 +68,9 @@ export const Dashboard_wrapper = styled.div`
     gap: 2rem;
     margin-top: -11.875rem;
     border: none
-   
+   p{
+    font-size: 0.8rem;
+   }
   }
   }
 `;
@@ -98,5 +100,9 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
+  @media (max-width: 650px) {
+   display: none;
+   /* visibility: hidden; */
+  }
 
 `;

@@ -31,7 +31,7 @@ function ManageAccount() {
     { value: 'Citibank', label: 'Citibank' },
     { value: 'Access Bank', label: 'Access Bank' },
     { value: 'Wema Bank', label: 'Wema Bank' },
-  ]
+  ].sort()
   return (
     <ManageAccountWrapper>
       <div className="top">
