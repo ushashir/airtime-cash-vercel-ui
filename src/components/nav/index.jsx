@@ -1,18 +1,15 @@
 import "./nav.scss";
 import logo from "../../assets/icons/logo.svg";
 import logoicon from "../../assets/icons/logo_icon.svg"
-import { useEffect, useState } from "react";
-import { getUserData } from "../../api";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../context/userContext";
 
-function Nav(props) {
-  const [user, setUser] = useState("");
+function Nav() {
+ 
+  const data = useContext(UserContext)
 
-  useEffect(() => {
-    const data = async () => setUser(await getUserData());
-    data();
-  }, []);
-
-  console.log(user);
+  const user = data.userdata;
+  console.log(user)
   return (
     <>
     <div className="nav">
@@ -27,12 +24,11 @@ function Nav(props) {
         <div className="user-bar">
           <img
             src={
-              props.avatar ||
-              "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-512.png"
+              user.avatar
             }
             alt="user avatar"
           />
-          <p>{props.userName}</p>
+          <p>{user.userName}</p>
         </div>
       </div>
     </div>
