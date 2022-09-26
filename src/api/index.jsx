@@ -57,10 +57,30 @@ export const resetPassword = async (data) => {
 export const verify = async (token) => {
   try {
     const response = await client.get(`/api/users/verify/${token}`)
-    console.log("wwww", response)
     return response
   } catch (error) {
-    console.log("eeeee", error)
+    return error.response.data
+  }
+}
+
+export const createAccount = async (data) => {
+  try {
+    const response = await client.post(`/api/account/`, data, {
+        headers: { Authorization: `Bearer ${token}` },
+    })
+    return response
+  } catch (error) {
+    return error.response.data
+  }
+}
+
+export const getUserAccount = async () => {
+  try {
+    const response = await client.get(`/api/account/`,{
+        headers: { Authorization: `Bearer ${token}` },
+    })
+    return response
+  } catch (error) {
     return error.response.data
   }
 }
