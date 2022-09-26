@@ -21,6 +21,32 @@ function ManageAccount() {
   });
   watch();
   const onSubmit = (data) => console.log(data);
+  const banks = [
+      'GT Bank',
+      'First Bank',
+      'Union Bank',
+      'UnityBank',
+      'Citibank',
+      'Access Bank',
+      'Wema Bank',
+      'Stanbic IBTC Bank',
+      'Standard Chartered Bank',
+      'Keystone Bank',
+      'Jaiz Bank',
+      'FCMB',
+      'Providus Bank',
+      'Skye Bank',
+      'Parallex Bank',
+      'Fidelity Bank',
+      'Ecobank',
+      'UBA',
+      'Zenith Bank',
+      'Sterling Bank',
+      'First City Monument Bank',
+      'United Bank for Africa',
+      'Heritage Bank',
+      'Keystone Bank'
+ ].sort()
   return (
     <ManageAccountWrapper>
       <div className="top">
@@ -45,31 +71,38 @@ function ManageAccount() {
                             name="bankName"
                             placeholder="Select Bank"
                         >
-                           <option> Select Bank</option>
-            <option>GT Bank</option>
-            <option>First Bank</option>
-            <option>Union Bank</option>
-            <option>UnityBank</option>
-            <option>Citibank</option>
-            <option>Access Bank</option>
-            <option>Wema Bank</option>
-            <option>Stanbic IBTC Bank</option>
-            <option>Standard Chartered Bank</option>
-            <option>Keystone Bank</option>
-            <option>Jaiz Bank</option>
-            <option>FCMB</option>
-            <option>Providus Bank</option>
-            <option>Skye Bank</option>
-            <option>Parallex Bank</option>
-            <option>Fidelity Bank</option>
-            <option>Ecobank</option>
-            <option>UBA</option>
-            <option>Zenith Bank</option>
-            <option>Sterling Bank</option>
-            <option>First City Monument Bank</option>
-            <option>United Bank for Africa</option>
-            <option>Heritage Bank</option>
-            <option>Keystone Bank</option>
+                          <option> Select Bank</option>
+                          {banks.map((bank) => {
+                            return (
+                              <option>{bank}</option>
+                            )
+                          })}
+
+                          {/* <option> Select Bank</option>
+                          <option>GT Bank</option>
+                          <option>First Bank</option>
+                          <option>Union Bank</option>
+                          <option>UnityBank</option>
+                          <option>Citibank</option>
+                          <option>Access Bank</option>
+                          <option>Wema Bank</option>
+                          <option>Stanbic IBTC Bank</option>
+                          <option>Standard Chartered Bank</option>
+                          <option>Keystone Bank</option>
+                          <option>Jaiz Bank</option>
+                          <option>FCMB</option>
+                          <option>Providus Bank</option>
+                          <option>Skye Bank</option>
+                          <option>Parallex Bank</option>
+                          <option>Fidelity Bank</option>
+                          <option>Ecobank</option>
+                          <option>UBA</option>
+                          <option>Zenith Bank</option>
+                          <option>Sterling Bank</option>
+                          <option>First City Monument Bank</option>
+                          <option>United Bank for Africa</option>
+                          <option>Heritage Bank</option>
+                          <option>Keystone Bank</option> */}
                         </select>
                     </div>
                 </div>
