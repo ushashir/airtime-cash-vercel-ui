@@ -79,7 +79,6 @@ export const getUserAccount = async () => {
     const response = await client.get(`/api/account/`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    console.log(response)
     return response.data;
   } catch (error) {
     console.log(error)
