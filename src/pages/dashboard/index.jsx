@@ -8,8 +8,8 @@ import ManageAccount from '../../components/manageAccount/manageAccount';
 
 
 
-
 function Dashboard() {
+  
     const tabs = [
         "Sell Airtime",
         "Withdraw balance",
@@ -30,7 +30,7 @@ function Dashboard() {
                     <ButtonGroup>
                         {tabs.map((tab) => (
                             <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-                                {tab}
+                                <span className='tab'>{tab}</span>
                             </Tab>
                         ))}
                     </ButtonGroup>

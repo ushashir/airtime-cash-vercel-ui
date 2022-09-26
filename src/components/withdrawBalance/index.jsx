@@ -5,6 +5,7 @@ import Input from "../common/inputField";
 import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
+import Select from "react-select"
 
 function Withdraw() {
     const withdrawSchema = yup.object().shape({
@@ -16,7 +17,10 @@ function Withdraw() {
     });
     watch()
     const onSubmit = data => console.log(data);
-
+    const options = [
+        {value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)"},
+        {value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)"}
+    ]
     return (
         <div>
             <p>Withdraw </p>
@@ -28,19 +32,14 @@ function Withdraw() {
                         </label>
                     </div>
                     <div>
-                        <select 
-                            name="bank_account"
-                            id="selectAccount"
+                    <Select
+              name="bankAccount"
+                            placeholder="Select Account"
                             className="selectAccount"
-                            placeholder="select"
-                        >
-                            {/* <option>Select</option> */}
-                            <option>UBA(00011122233444)</option>
-                            <option>STERLING(00011122233444)</option>
-                            <option>GTB(00011122233444)</option>
-                            <option>FCMB(00011122233444)</option>
-                            <option>FIDELITY(00011122233444)</option>
-                        </select>
+              isClearable={true}
+              isSearchable={true}
+              options={options}
+            />
                     </div>
                 </div>
 
