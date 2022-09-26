@@ -13,6 +13,7 @@ import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
 import {UserContext} from "./context/userContext"
 import { useState, useMemo } from "react";
+import ProtectedRoute from "./utils/auth";
 
 function App() {
   const [user, setUser] = useState(null )
@@ -30,9 +31,21 @@ function App() {
         <Route path="/verify/:token" element={<EmailVerified />} />                                                                             ailVerified />} />
         <Route path="*" element={<PageNotFound />} />
     
-        <Route path="/login" element={<LoginPage />}></Route>
-        <Route path="/update" element={<UpdatePage />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/login" element={
+            <ProtectedRoute>
+              <LoginPage />
+            </ProtectedRoute>
+            }></Route>
+          <Route path="/update" element={
+            <ProtectedRoute>
+ <UpdatePage />
+            </ProtectedRoute>
+           }></Route>
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+ <Dashboard />
+            </ProtectedRoute>
+           }></Route>
     
         </Routes>
         </UserContext.Provider>

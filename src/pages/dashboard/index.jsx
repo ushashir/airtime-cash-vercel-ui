@@ -6,23 +6,16 @@ import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
 import Nav from '../../components/nav';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBuildingColumns, faMoneyBillTransfer, faSquareArrowUpRight, faPiggyBank } from '@fortawesome/free-solid-svg-icons'
 
-// <FontAwesomeIcon icon={faSquareArrowUpRight} size="2xl" />,
 
-// <FontAwesomeIcon icon={faPiggyBank} size="2xl"/>,
-//      <FontAwesomeIcon icon={faBuildingColumns} size="2xl"/>,
-
-//      <FontAwesomeIcon icon={faMoneyBillTransfer} size="2xl"/>,
 
 function Dashboard() {
+  
     const tabs = [
         "Sell Airtime",
         "Withdraw balance",
         "Manage Bank Account",
         "Transaction History",
-
     ];
     const [active, setActive] = useState(tabs[0]);
 
@@ -40,7 +33,7 @@ function Dashboard() {
                     <ButtonGroup>
                         {tabs.map((tab) => (
                             <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-                                {tab}
+                                <span className='tab'>{tab}</span>
                             </Tab>
                         ))}
                     </ButtonGroup>
