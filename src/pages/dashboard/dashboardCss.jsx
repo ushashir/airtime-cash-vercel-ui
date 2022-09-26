@@ -60,6 +60,17 @@ export const DashboardWrapper = styled.div`
     line-height: 39px;
     color: #ffffff;
   }
+
+  @media (max-width: 650px){
+    .Dashboard_container {
+    padding: 10px;
+    width: 100%;
+    gap: 2rem;
+    margin-top: -11.875rem;
+    border: none
+   
+  }
+  }
 `;
 export const TopBg = styled.div`
   width: 100vw;
@@ -87,4 +98,5 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
+
 `;
