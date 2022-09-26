@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Dashboard_wrapper = styled.div`
+export const DashboardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
