@@ -5,6 +5,7 @@ import Input from "../common/inputField";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Select from "react-select"
 
 function ManageAccount() {
   const manageAccountSchema = yup.object().shape({
@@ -21,6 +22,16 @@ function ManageAccount() {
   });
   watch();
   const onSubmit = (data) => console.log(data);
+
+  const options = [
+    { value: 'GT Bank', label: 'GT Bank' },
+    { value: 'First Bank', label: 'First Bank' },
+    { value: 'Union Bank', label: 'Union Bank' },
+    { value: 'UnityBank', label: 'UnityBank' },
+    { value: 'Citibank', label: 'Citibank' },
+    { value: 'Access Bank', label: 'Access Bank' },
+    { value: 'Wema Bank', label: 'Wema Bank' },
+  ]
   return (
     <ManageAccountWrapper>
       <div className="top">
@@ -40,37 +51,8 @@ function ManageAccount() {
                             Bank Name
                         </label>
                     </div>
-                    <div>
-                        <select 
-                            name="bankName"
-                            placeholder="Select Bank"
-                        >
-                           <option> Select Bank</option>
-            <option>GT Bank</option>
-            <option>First Bank</option>
-            <option>Union Bank</option>
-            <option>UnityBank</option>
-            <option>Citibank</option>
-            <option>Access Bank</option>
-            <option>Wema Bank</option>
-            <option>Stanbic IBTC Bank</option>
-            <option>Standard Chartered Bank</option>
-            <option>Keystone Bank</option>
-            <option>Jaiz Bank</option>
-            <option>FCMB</option>
-            <option>Providus Bank</option>
-            <option>Skye Bank</option>
-            <option>Parallex Bank</option>
-            <option>Fidelity Bank</option>
-            <option>Ecobank</option>
-            <option>UBA</option>
-            <option>Zenith Bank</option>
-            <option>Sterling Bank</option>
-            <option>First City Monument Bank</option>
-            <option>United Bank for Africa</option>
-            <option>Heritage Bank</option>
-            <option>Keystone Bank</option>
-                        </select>
+            <div>
+            <Select name="bankName" isClearable={true} isSearchable={true} options={options} />
                     </div>
                 </div>
 
