@@ -8,7 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 function Withdraw() {
     const withdrawSchema = yup.object().shape({
-        amount: yup.number().required(),
+        amount: yup.number().required("Please enter a valid Amount"),
         password: yup.string().min(6).max(32).required(),
       });
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
@@ -34,7 +34,7 @@ function Withdraw() {
                             className="selectAccount"
                             placeholder="select"
                         >
-                            <option>Select</option>
+                            {/* <option>Select</option> */}
                             <option>UBA(00011122233444)</option>
                             <option>STERLING(00011122233444)</option>
                             <option>GTB(00011122233444)</option>

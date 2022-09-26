@@ -4,6 +4,8 @@ import WalletBalance from '../../components/walletBalance';
 import { DashboardWrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
+import ManageAccount from '../../components/manageAccount/manageAccount';
+
 
 
 
@@ -24,6 +26,7 @@ function Dashboard() {
                     <WalletBalance /> : <h2 className="Title">{active}</h2>
                 }
                 <div>
+
                     <ButtonGroup>
                         {tabs.map((tab) => (
                             <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
@@ -36,7 +39,7 @@ function Dashboard() {
                         : active === tabs[1]
                             ? <Withdraw />
                             : active === tabs[2]
-                                ? "manage bank"
+                                ? <ManageAccount />
                                 : <TransactionHistory />}
                 </div>
             </div>

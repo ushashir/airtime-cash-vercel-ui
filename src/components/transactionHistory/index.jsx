@@ -19,6 +19,7 @@ const TransactionHistory = () => {
                 </div>
             </div>
 
+        
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
                     <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
@@ -32,7 +33,6 @@ const TransactionHistory = () => {
                     <p>N5,000</p>
                 </div>
             </div>
-
             <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
                     <p className='tH-day_time'><b>Today,</b> 10:15AM</p>

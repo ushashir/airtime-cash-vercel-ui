@@ -8,8 +8,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 
 function SellAirtime() {
     const sellAirtime = yup.object().shape({
-        phone: yup.number().required(),
-        amount: yup.number().min(6).max(32).required(),
+        phone: yup.number().min(10).max(12).required(),
+        amount: yup.number().required(),
       });
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(sellAirtime)
