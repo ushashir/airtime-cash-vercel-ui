@@ -81,7 +81,6 @@ export const getUserAccount = async () => {
     });
     return response.data;
   } catch (error) {
-    console.log(error)
     return error.response.data;
   }
 };
