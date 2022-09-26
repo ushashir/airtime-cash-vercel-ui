@@ -20,14 +20,14 @@ function SellAirtime() {
     return (
         <div>
             <p>Sell Airtime </p>
-            <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+            <form  onSubmit={handleSubmit(onSubmit)}>
                 <div className="form_group">
                     <div className="label_container">
                         <label htmlFor="network" className="form_label">
                             Network
                         </label>
                     </div>
-                    <div className="input_container">
+                    <div>
                         <select 
                             name="network"
                             id="network"

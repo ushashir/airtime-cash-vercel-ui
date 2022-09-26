@@ -33,14 +33,14 @@ function ManageAccount() {
       </div>
 
       <div>
-            <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form_group">
                     <div className="label_container">
                         <label htmlFor="network" className="form_label">
                             Bank Name
                         </label>
                     </div>
-                    <div className="input_container">
+                    <div>
                         <select 
                             name="bankName"
                             placeholder="Select Bank"

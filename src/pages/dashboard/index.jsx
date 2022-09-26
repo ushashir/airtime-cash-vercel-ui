@@ -5,6 +5,7 @@ import ManageAccount from '../../components/manageAccount/manageAccount';
 import { Dashboard_wrapper, Tab, TopBg, ButtonGroup, } from "./dashboardCss"
 import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
+import Nav from '../../components/nav';
 
 
 
@@ -19,7 +20,9 @@ function Dashboard() {
     const [active, setActive] = useState(tabs[0]);
 
     return (
+
         <Dashboard_wrapper>
+            {/* <Nav /> */}
             <TopBg> </TopBg>
             <div className="Dashboard_container">
                 {(active === tabs[0] || active === tabs[1]) ?

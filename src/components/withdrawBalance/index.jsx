@@ -20,14 +20,14 @@ function Withdraw() {
     return (
         <div>
             <p>Withdraw </p>
-            <form className="form_container" onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form_group">
                     <div className="label_container">
                         <label htmlFor="selectAccount" className="form_label">
                             Select Account
                         </label>
                     </div>
-                    <div className="input_container">
+                    <div>
                         <select 
                             name="bank_account"
                             id="selectAccount"
