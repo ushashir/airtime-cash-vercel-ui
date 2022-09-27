@@ -28,21 +28,16 @@ function ManageAccount() {
   useEffect(() => {
      const getBanks = async() => {
       const response = await banksList()
-    console.log(response)
+    setBanks(response.data)
     }
     getBanks()
   },[])
- 
-  const options = [
-    // { value: 'GT Bank', label: 'GT Bank' },
-    // { value: 'First Bank', label: 'First Bank' },
-    // { value: 'Union Bank', label: 'Union Bank' },
-    // { value: 'UnityBank', label: 'UnityBank' },
-    // { value: 'Citibank', label: 'Citibank' },
-    // { value: 'Access Bank', label: 'Access Bank' },
-    // { value: 'Wema Bank', label: 'Wema Bank' },
-  ]
-  
+
+
+  const options = []
+  banks.map(bank => {
+    options.push({ value: bank.name, label: bank.name })
+  })
   return (
     <ManageAccountWrapper>
       <div className="top">

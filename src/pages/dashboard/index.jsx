@@ -43,8 +43,9 @@ function Dashboard() {
                             : active === tabs[1]
                                 ? <Withdraw />
                                 : active === tabs[2]
-                                    ? <ViewAccountDetails />
-                                    // <ManageAccount />
+                                    ?
+                                    // <ViewAccountDetails />
+                                    <ManageAccount />
                                     : <TransactionHistory />}
                     </div>
                 </div>
