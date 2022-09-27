@@ -54,12 +54,14 @@ export const resetPassword = async (data) => {
     return error.response.data;
   }
 };
+
 export const verify = async (token) => {
   try {
     const response = await client.get(`/api/users/verify/${token}`);
     return response;
   } catch (error) {
-    return error.response.data;
+    console.log(error);
+    // return error.response.data;
   }
 };
 

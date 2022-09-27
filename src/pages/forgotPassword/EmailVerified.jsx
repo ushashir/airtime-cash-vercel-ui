@@ -9,28 +9,25 @@ const EmailVerified = () => {
   const [isVerified, setIsVerified] = useState(false)
   const navigate = useNavigate();
 
-  const verifyUser = async () => {
+  const verifyUser = async (token) => {
     const res = await verify(token);
-
+    console.log(res)
     if (res.status === 200) setIsVerified(true)
-    navigate("/dashboard")
+    setTimeout(() => {
+    navigate("/login")
+ }, 2000)
+   
   }
   useEffect(() => {
-    verifyUser()
+    verifyUser(token)
   }, [])
 
   return (
-    isVerified ? Swal.fire(
+    isVerified && Swal.fire(
       'Success',
       `Email verified`,
       'success'
     )
-      :
-      Swal.fire(
-        'Oops',
-        "Something went wrong, try again",
-        'error',
-      )
 
   )
 };
