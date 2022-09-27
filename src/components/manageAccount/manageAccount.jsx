@@ -7,13 +7,25 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
 import ViewAccountDetails from "../veiwAccount";
+import BankAccountModal from "../dashboardModal";
 
 function ManageAccount() {
 
+  const [modal, setModal] = useState(false)
   const [show, setShow] = useState(true)
 
   const handleRender = () => {
     setShow(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
+  const closeModal2 = () => {
+    if (modal === true) {
+      setModal(false)
+    }
   }
 
 
@@ -44,7 +56,7 @@ function ManageAccount() {
 
 
   return (
-    <div>
+    <div onClick={closeModal2}>
       {show && (
         <ManageAccountWrapper>
           <div className="top">
@@ -105,14 +117,25 @@ function ManageAccount() {
                   placeholder="accountNumber"
                 />
               </div>
-              <Button value="Add Bank" type="submit" />
+              <div
+                onClick={() => {
+                  setModal(true);
+                }}
+              >
+                <Button value="Add Bank" type="submit" />
+              </div>
             </form>
+            {modal && (
+              <div>
+                <BankAccountModal closeModal={closeModal} />
+              </div>
+            )}
           </div>
         </ManageAccountWrapper>
       )}
 
       {!show && (
-        <ViewAccountDetails handleRender= {handleRender}>
+        <ViewAccountDetails handleRender={handleRender}>
           <div
             onClick={() => {
               setShow(true);
