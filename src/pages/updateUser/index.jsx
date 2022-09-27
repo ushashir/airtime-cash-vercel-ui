@@ -7,10 +7,14 @@ import { updateUserData, getUserData } from "../../api/index";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { useContext } from "react";
+import { UserContext } from "../../context/userContext";
 
 function UpdatePage() {
   const [userData, setUserData] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const { setUserUpdated } = useContext(UserContext)
+
   const navigate = useNavigate();
   useEffect(() => {
     getUserData().then((data) => {
@@ -50,9 +54,10 @@ function UpdatePage() {
             imageUrl: e.target.result,
             imageAlt: "The uploaded picture",
           });
+          setUserUpdated(true);
         }
       };
-  
+
       reader.readAsDataURL(file);
     }
   };
@@ -80,7 +85,7 @@ function UpdatePage() {
   };
   return (
     <>
-      <Nav avatar={ userData.avatar} userName={userData.userName } />
+      <Nav />
       <div className="update-page-wrapper">
         <div className="update-page-top-bg"></div>
         <div className="update-page-update-form">
@@ -162,8 +167,8 @@ function UpdatePage() {
                 </span>
               )}
               <label htmlFor="avater">Avater</label>
-                <input
-                  className="upload-picture"
+              <input
+                className="upload-picture"
                 type="button"
                 value="Update profile picture"
                 onClick={updateProfile}
