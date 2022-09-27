@@ -1,4 +1,4 @@
-import "./nav.scss";
+import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 import logoicon from "../../assets/icons/logo_icon.svg";
 import { useContext, useState } from "react";

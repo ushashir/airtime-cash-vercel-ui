@@ -55,7 +55,7 @@ const Login = () => {
                     localStorage.setItem('token', token);
                     setUser({ ...res.data.response })
                     console.log('THE RES', res.data.response)
-                    return;
+
                     navigate('/dashboard')
                 }
             }).catch((err) => {
