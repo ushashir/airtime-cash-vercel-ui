@@ -19,7 +19,7 @@ function ManageAccount() {
   } = useForm({
     resolver: yupResolver(manageAccountSchema),
   });
-  watch();
+ 
   const onSubmit = (data) => {
     console.log("data");
     console.log(data)};
