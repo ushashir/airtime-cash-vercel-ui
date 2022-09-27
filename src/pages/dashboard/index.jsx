@@ -6,7 +6,7 @@ import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
 import ManageAccount from '../../components/manageAccount/manageAccount';
 import Nav from '../../components/nav';
-import ViewAccountDetails from '../../components/veiwAccount';
+
 
 
 
@@ -31,23 +31,22 @@ function Dashboard() {
                     }
                     <div>
 
-                        <ButtonGroup>
-                            {tabs.map((tab) => (
-                                <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-                                    <span className='tab'>{tab}</span>
-                                </Tab>
-                            ))}
-                        </ButtonGroup>
-                        {active === tabs[0]
-                            ? <SellAirtime />
-                            : active === tabs[1]
-                                ? <Withdraw />
-                                : active === tabs[2]
-                                    ? <ViewAccountDetails />
-                                    // <ManageAccount />
-                                    : <TransactionHistory />}
+                    <ButtonGroup>
+                        {tabs.map((tab) => (
+                            <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
+                                <span className='tab'>{tab}</span>
+                            </Tab>
+                        ))}
+                    </ButtonGroup>
+                    {active === tabs[0]
+                        ? <SellAirtime />
+                        : active === tabs[1]
+                            ? <Withdraw />
+                            : active === tabs[2]
+                                ? <ManageAccount />
+                                : <TransactionHistory />}
                     </div>
-                </div>
+                    </div>
             </DashboardWrapper>
         </>
     );
