@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect} from "react";
 import "./style.scss";
-import Button from "../common/button";
 import { getUserAccount } from "../../api";
-function ViewAccountDetails() {
+function ViewAccountDetails({children, handleRender}) {
   const [account, setAccount] = useState([]);
 
   useEffect(() => {
@@ -21,26 +20,25 @@ function ViewAccountDetails() {
         <div className="mgbordtitle">
           <h1>Bank Account</h1>
         </div>
-        <div className="mgboardsubtitle">
-          <a href="/">View Bank accounts</a>
+        <div className="mgboardsubtitle" onClick={handleRender}>
+          <p>Manage Bank accounts</p>
         </div>
       </div>
-      {userAccounts && userAccounts.map(account => (
-
-        <div className="veiwAccContainer">
-          <div className="veiwAccText">
-            <p>{account.bankName}</p>
-            <p>{account.accountNumber}</p>
-            <p>{account.accountName}</p>
+      {userAccounts &&
+        userAccounts.map((account) => (
+          <div className="veiwAccContainer">
+            <div className="veiwAccText">
+              <p>{account.bankName}</p>
+              <p>{account.accountNumber}</p>
+              <p>{account.accountName}</p>
+            </div>
+            <div className="viewAccBtn">
+              <button>Remove</button>
+            </div>
           </div>
-          <div className="viewAccBtn">
-            <button>Remove</button>
-          </div>
-        </div>
-      ))} 
-      
+        ))}
 
-      <Button value="Add New Bank" type="submit" />
+      {children}
     </div>
   );
 }
