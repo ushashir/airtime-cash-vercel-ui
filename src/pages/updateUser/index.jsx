@@ -173,7 +173,7 @@ function UpdatePage() {
                 value="Update profile picture"
                 onClick={updateProfile}
               />
-              <Button value="Ayo Soft" type="text" />
+              <Button value="Update" type="submit" />
             </form>
           )}
         </div>

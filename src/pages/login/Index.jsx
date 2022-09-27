@@ -1,11 +1,9 @@
 import axios from 'axios';
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
 import loginLogo from '../../assets/icons/loginLogo.svg'
-import { UserContext } from '../../context/userContext';
-import Nav from '../../components/nav';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -16,7 +14,6 @@ const Login = () => {
     const [user, setUser] = useState({});
 
     console.log('user', user)
-    // const { user, setUser } = useContext(UserContext)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -54,11 +51,8 @@ const Login = () => {
             .then((res) => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
-                    console.log(res.data.response)
                     localStorage.setItem('token', token);
                     setUser({ ...res.data.response })
-                    console.log('THE RES', res.data.response)
-                    return;
                     navigate('/dashboard')
                 }
             }).catch((err) => {

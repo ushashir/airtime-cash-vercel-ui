@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../common/button";
 import { ManageAccountWrapper } from "./manageAccountCss";
 import Input from "../common/inputField";
@@ -6,13 +6,16 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
+import { banksList } from "../../api";
 import ViewAccountDetails from "../veiwAccount";
 import BankAccountModal from "../dashboardModal";
 
-function ManageAccount() {
 
-  const [modal, setModal] = useState(false)
+ 
+function ManageAccount() {
+  const [banks, setBanks] = useState([])
   const [show, setShow] = useState(true)
+   const [modal, setModal] = useState(false);
 
   const handleRender = () => {
     setShow(true)
@@ -30,8 +33,8 @@ function ManageAccount() {
 
 
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string().required('Please enter a valid Account Name'),
-    accountNumber: yup.number().min(8).max(13).required('Please enter a valid Account Number'),
+    accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
+    accountNumber: yup.number().min(8).required('This field cannot be empty').typeError('Account number is required'),
   });
   const {
     register,
@@ -42,18 +45,23 @@ function ManageAccount() {
     resolver: yupResolver(manageAccountSchema),
   });
   watch();
+
+  //handle form logic here
   const onSubmit = (data) => console.log(data);
+  
+  useEffect(() => {
+     const getBanks = async() => {
+      const response = await banksList()
+    setBanks(response.data)
+    }
+    getBanks()
+  },[])
 
-  const options = [
-    { value: 'GT Bank', label: 'GT Bank' },
-    { value: 'First Bank', label: 'First Bank' },
-    { value: 'Union Bank', label: 'Union Bank' },
-    { value: 'UnityBank', label: 'UnityBank' },
-    { value: 'Citibank', label: 'Citibank' },
-    { value: 'Access Bank', label: 'Access Bank' },
-    { value: 'Wema Bank', label: 'Wema Bank' },
-  ].sort()
 
+  const options = []
+  banks.map(bank => {
+    options.push({ value: bank.name, label: bank.name })
+  })
 
   return (
     <div onClick={closeModal2}>
@@ -82,10 +90,11 @@ function ManageAccount() {
                 <div>
                   <Select
                     name="bankName"
+                    // {...register(bankName)}
                     isClearable={true}
                     isSearchable={true}
                     options={options}
-                  />
+                  /> 
                 </div>
               </div>
               <div className="form_group">
