@@ -6,10 +6,12 @@ import Withdraw from '../../components/withdrawBalance';
 import SellAirtime from '../../components/sellAirtime/';
 import ManageAccount from '../../components/manageAccount/manageAccount';
 import Nav from '../../components/nav';
+import ViewAccountDetails from '../../components/veiwAccount';
 
 
 
 function Dashboard() {
+
     const tabs = [
         "Sell Airtime",
         "Withdraw balance",
@@ -20,7 +22,7 @@ function Dashboard() {
 
     return (
         <>
-            <Nav />
+            {/* <Nav /> */}
             <DashboardWrapper>
                 <TopBg> </TopBg>
                 <div className="Dashboard_container">
@@ -32,7 +34,7 @@ function Dashboard() {
                         <ButtonGroup>
                             {tabs.map((tab) => (
                                 <Tab key={tab} active={active === tab} onClick={() => setActive(tab)}>
-                                    {tab}
+                                    <span className='tab'>{tab}</span>
                                 </Tab>
                             ))}
                         </ButtonGroup>
@@ -41,7 +43,8 @@ function Dashboard() {
                             : active === tabs[1]
                                 ? <Withdraw />
                                 : active === tabs[2]
-                                    ? <ManageAccount />
+                                    ? <ViewAccountDetails />
+                                    // <ManageAccount />
                                     : <TransactionHistory />}
                     </div>
                 </div>

@@ -11,10 +11,12 @@ import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
-import { UserContext } from "./context/userContext"
-import { useState, useMemo, useEffect } from "react";
+
+import { useState, useEffect } from "react";
 import { isLoggedIn } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
+import { UserContext } from "./context/userContext"
+import ProtectedRoute from "./utils/auth";
 
 function App() {
   const [user, setUser] = useState({ avatar: '', userName: '' });
@@ -36,11 +38,18 @@ function App() {
           <Route path="/resetpassword/:token" element={<ResetPassword />} />
           <Route path="/verify/:token" element={<EmailVerified />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/login" element={<LoginPage />} />
 
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/update" element={<UpdatePage />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-
+          <Route path="/update" element={
+            <ProtectedRoute>
+              <UpdatePage />
+            </ProtectedRoute>
+          }></Route>
+          <Route path="/dashboard" element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }></Route>
         </Routes>
       </UserContext.Provider>
     </BrowserRouter>

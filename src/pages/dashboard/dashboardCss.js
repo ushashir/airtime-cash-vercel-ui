@@ -12,7 +12,7 @@ export const DashboardWrapper = styled.div`
     width: 42.5rem;
     gap: 2rem;
     margin-top: -11.875rem;
-   
+
     border: 1px solid #d9d9d9;
     background-color: #fff;
   }
@@ -60,16 +60,20 @@ export const DashboardWrapper = styled.div`
     line-height: 39px;
     color: #ffffff;
   }
-
-  @media (max-width: 650px){
-    .Dashboard_container {
-    padding: 10px;
-    width: 100%;
-    gap: 2rem;
-    margin-top: -11.875rem;
-    border: none
-   
+  .tab {
+    font-size: clamp(0.625rem, 0.4871rem + 0.6897vw, 0.875rem);
   }
+
+  @media (max-width: 650px) {
+    .Dashboard_container {
+      padding: 10px;
+      width: 100%;
+      gap: 2rem;
+      margin-top: -11.875rem;
+      border: none p {
+        font-size: 0.8rem;
+      }
+    }
   }
 `;
 export const TopBg = styled.div`
@@ -98,5 +102,4 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
-
 `;
