@@ -84,3 +84,14 @@ export const getUserAccount = async () => {
     return error.response.data
   }
 }
+
+export const banksList = async () => {
+  try {
+    const response = await client.get('https://api.flutterwave.com/v3/banks/NG', {
+      headers: { Authorization: `Bearer FLWSECK_TEST-6818130b91e55c59150c23b248e59653-X` },
+    })
+    return(response.data)
+  } catch (error) {
+    return error.response.data
+  }
+}
