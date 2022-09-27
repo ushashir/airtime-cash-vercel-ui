@@ -14,6 +14,7 @@ export const ManageAccountWrapper = styled.div`
     font-weight: 600;
     font-family: 'Inter';
     line-height: 29px;
+    cursor: pointer;
 }
 .top .view{
     font-size: 14px;
@@ -22,6 +23,7 @@ export const ManageAccountWrapper = styled.div`
     font-weight: 400;
     font-family: 'Inter';
     line-height: 17px;
+    cursor: pointer;
 }
 
 
