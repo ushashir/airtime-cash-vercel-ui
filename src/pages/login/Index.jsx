@@ -1,15 +1,18 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, {useContext, useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
 import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
 import loginLogo from '../../assets/icons/loginLogo.svg'
+import { UserContext } from '../../context/userContext';
 
 const Login = () => {
     const navigate = useNavigate();
     const [inputs, setInputs] = useState({ email: "", password: "" });
     const [loginError, setLoginError] = useState("");
     const [clickedLogin, setClickedLogin] = useState(false)
+
+    const {user, setUser} = useContext(UserContext)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -38,7 +41,6 @@ const Login = () => {
         const payload = {}
         payload.password = inputs.password;
         if (regex.test(inputs.email) === false) {
-            console.log("ran")
             payload.userName = inputs.email;
         } else {
             payload.email = inputs.email;
@@ -49,8 +51,9 @@ const Login = () => {
             .then((res) => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
-
+                    console.log(res.data.response)
                     localStorage.setItem('token', token);
+                    setUser({ ...res.data.response })
                     navigate('/dashboard')
                 }
             }).catch((err) => {
