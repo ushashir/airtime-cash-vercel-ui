@@ -16,6 +16,7 @@ function ViewAccountDetails({children, handleRender}) {
   console.log(userAccounts);
   return (
     <div className="mgboardcontainer">
+      {/* <div><img src=""/></div> */}
       <div className="mgboardheader">
         <div className="mgbordtitle">
           <h1>Bank Account</h1>
