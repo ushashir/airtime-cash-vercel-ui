@@ -20,8 +20,8 @@ function ManageAccount() {
 
 
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string().required('Please enter a valid Account Name'),
-    accountNumber: yup.number().min(8).max(13).required('Please enter a valid Account Number'),
+    accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
+    accountNumber: yup.number().min(8).required('This field cannot be empty').typeError('Account number is required'),
   });
   const {
     register,
@@ -77,10 +77,11 @@ function ManageAccount() {
                 <div>
                   <Select
                     name="bankName"
+                    // {...register(bankName)}
                     isClearable={true}
                     isSearchable={true}
                     options={options}
-                  />
+                  /> 
                 </div>
               </div>
               <div className="form_group">
