@@ -1,0 +1,43 @@
+.mgboardheader{
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+  }
+  .mgboardcontainer{
+    width: 100%;
+  }
+
+  .mgboardsubtitle p{
+    color: #DE3D6D;
+      font-size: 0.875rem;
+  }
+
+  .mgbordtitle h1{
+font-size: 1.5rem;
+color : #012A4A;
+  font-weight: 600;
+  }
+
+  .veiwAccContainer{
+    width: 562px;
+    height: 75px;
+    display: flex;
+align-items: center;
+justify-content: space-between;
+background: #FFFFFF;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+font-size: 14px;
+padding: 8px 16px;
+margin-bottom: 1.5rem;
+color: #012A4A;
+}
+
+.viewAccBtn button{
+padding: 10px;
+width: 4.6rem;
+height: 2.31rem;
+border-radius: 100px;
+border: none;
+}

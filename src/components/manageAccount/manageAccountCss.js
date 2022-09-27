@@ -14,6 +14,7 @@ export const ManageAccountWrapper = styled.div`
     font-weight: 600;
     font-family: 'Inter';
     line-height: 29px;
+    cursor: pointer;
 }
 .top .view{
     font-size: 14px;
@@ -22,22 +23,8 @@ export const ManageAccountWrapper = styled.div`
     font-weight: 400;
     font-family: 'Inter';
     line-height: 17px;
+    cursor: pointer;
 }
-select{
-    background: rgba(0, 0, 0, 0.04);
-    width: 100%;
-    min-height: 50px;
-    padding: 10px;
-    margin-bottom: 15px;
-    margin : 10px 0;
-    border: none;
-    padding-right: 30px;
-}
-.labNm{
-    margin-top: 10px;
-    color: #012A4A;
-    font-size: 14px;
-    padding-bottom: 10px;
-}
+
 
 `
