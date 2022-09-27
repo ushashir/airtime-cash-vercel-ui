@@ -83,4 +83,17 @@ export const getUserAccount = async () => {
   } catch (error) {
     return error.response.data;
   }
-};
+}
+
+export const banksList = async () => {
+  try {
+    const response = await axios.get('https://api.paystack.co/bank', {
+      headers: {
+        Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`
+      },
+    })
+    return(response.data)
+  } catch (error) {
+    return error.response.data
+  }
+}
