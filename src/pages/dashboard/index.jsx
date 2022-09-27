@@ -22,7 +22,7 @@ function Dashboard() {
 
     return (
         <>
-            {/* <Nav /> */}
+            <Nav />
             <DashboardWrapper>
                 <TopBg> </TopBg>
                 <div className="Dashboard_container">
