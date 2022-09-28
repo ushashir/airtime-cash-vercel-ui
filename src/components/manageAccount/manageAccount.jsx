@@ -32,10 +32,10 @@ function ManageAccount() {
     }
   }
 
-
+const accountNumberRegex = /^(\d{10,12})$/;
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
-    accountNumber: yup.string().required('This field cannot be empty').typeError('Account number is required'),
+    accountName: yup.string("Please enter a valid Account name").required('Please enter your account name').min(6, "Please enter valid account name"),
+    accountNumber: yup.string().required('Please enter your account number').matches(accountNumberRegex, 'Account number muat be 10 to 12 characters'),
   });
   const {
     register,
