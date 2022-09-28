@@ -11,12 +11,12 @@ import ViewAccountDetails from "../veiwAccount";
 import BankAccountModal from "../dashboardModal";
 
 
- 
+
 function ManageAccount() {
   const [banks, setBanks] = useState([])
   const [show, setShow] = useState(true)
   const [bankName, setBankName] = useState("")
-   const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const handleRender = () => {
     setShow(true)
@@ -53,23 +53,23 @@ const accountNumberRegex = /^(\d{10,12})$/;
 
   //handle form logic here
 
-  const onSubmit = async(data, bank) =>{
+  const onSubmit = async (data, bank) => {
     const bankName = bank.target[1].value;
-    const formData = ({bankName, ...data})
+    const formData = ({ bankName, ...data })
     const res = await createAccount(formData)
-   
+
     if (res.data.message = "Success") {
       setModal(true)
     }
-  } 
-  
+  }
+
   useEffect(() => {
-     const getBanks = async() => {
+    const getBanks = async () => {
       const response = await banksList()
-    setBanks(response.data)
+      setBanks(response.data)
     }
     getBanks()
-  },[])
+  }, [])
 
 
   const options = []
@@ -101,13 +101,13 @@ const accountNumberRegex = /^(\d{10,12})$/;
                   </label>
                 </div>
                 <div>
-                  <Select 
+                  <Select
                     name="bankName"
                     onChange={handleBankChange}
                     isClearable={true}
                     isSearchable={true}
                     options={options}
-                  /> 
+                  />
                 </div>
               </div>
               <div className="form_group">

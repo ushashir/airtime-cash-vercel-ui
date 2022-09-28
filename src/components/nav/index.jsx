@@ -26,7 +26,7 @@ function Nav() {
           <div className="user-bar">
             <img src={user.avatar} alt="user avatar" className="avatar" />
             <p>{user.userName}</p>
-            <span onClick={() =>  setShowDropdown(!showDropdown)}>
+            <span onClick={() => setShowDropdown(prev => !prev)}>
               <img
                 style={{ width: "18px", paddingTop: "5px" }}
                 src={dropDownIcon}
