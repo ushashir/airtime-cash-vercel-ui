@@ -11,15 +11,15 @@ function Withdraw() {
     const withdrawSchema = yup.object().shape({
         amount: yup.number().required("Please enter a valid Amount"),
         password: yup.string().min(6).max(32).required(),
-      });
+    });
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(withdrawSchema)
     });
     watch()
     const onSubmit = data => console.log(data);
     const options = [
-        {value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)"},
-        {value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)"}
+        { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
+        { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" }
     ]
     return (
         <div>
@@ -32,14 +32,14 @@ function Withdraw() {
                         </label>
                     </div>
                     <div>
-                    <Select
-              name="bankAccount"
+                        <Select
+                            name="bankAccount"
                             placeholder="Select Account"
                             className="selectAccount"
-              isClearable={true}
-              isSearchable={true}
-              options={options}
-            />
+                            isClearable={true}
+                            isSearchable={true}
+                            options={options}
+                        />
                     </div>
                 </div>
 
@@ -50,12 +50,12 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="account_name"
                         isDisabled={true}
                         type="text"
                         placeholder="Ushahemba"
-                       
+
                     />
                 </div>
                 <div className="form_group">
@@ -65,12 +65,12 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="account_num"
                         isDisabled={true}
                         type="text"
                         placeholder="12366325875"
-                      
+
                     />
                 </div>
                 <div className="form_group">
@@ -81,7 +81,7 @@ function Withdraw() {
                     </div>
                     <Input
                         register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="amount"
                         type="number"
                         placeholder="NGN"
@@ -94,7 +94,7 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="password"
                         type="password"
                         placeholder="enter password"
