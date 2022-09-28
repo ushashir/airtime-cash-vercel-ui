@@ -8,15 +8,28 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
 import { banksList, createAccount } from "../../api";
 import ViewAccountDetails from "../veiwAccount";
+import BankAccountModal from "../dashboardModal";
 
 
+ 
 function ManageAccount() {
   const [banks, setBanks] = useState([])
   const [show, setShow] = useState(true)
   const [bankName, setBankName] = useState("")
+   const [modal, setModal] = useState(false);
 
   const handleRender = () => {
     setShow(true)
+  }
+
+  const closeModal = () => {
+    setModal(false)
+  }
+
+  const closeModal2 = () => {
+    if (modal === true) {
+      setModal(false)
+    }
   }
 
 
@@ -44,7 +57,10 @@ function ManageAccount() {
     const bankName = bank.target[1].value;
     const formData = ({bankName, ...data})
     const res = await createAccount(formData)
-    console.log(res.data)
+   
+    if (res.data.message = "Success") {
+      setModal(true)
+    }
   } 
   
   useEffect(() => {
@@ -61,7 +77,7 @@ function ManageAccount() {
     options.push({ value: bank.name, label: bank.name })
   })
   return (
-    <div>
+    <div onClick={closeModal2}>
       {show && (
         <ManageAccountWrapper>
           <div className="top">
@@ -123,14 +139,21 @@ function ManageAccount() {
                   placeholder="accountNumber"
                 />
               </div>
-              <Button value="Add Bank" type="submit" />
+              <div>
+                <Button value="Add Bank" type="submit" />
+              </div>
             </form>
+            {modal && (
+              <div>
+                <BankAccountModal closeModal={closeModal} />
+              </div>
+            )}
           </div>
         </ManageAccountWrapper>
       )}
 
       {!show && (
-        <ViewAccountDetails handleRender= {handleRender}>
+        <ViewAccountDetails handleRender={handleRender}>
           <div
             onClick={() => {
               setShow(true);
