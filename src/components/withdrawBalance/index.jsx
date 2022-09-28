@@ -9,13 +9,16 @@ import Select from "react-select"
 
 function Withdraw() {
     const withdrawSchema = yup.object().shape({
-        amount: yup.number().required("Please enter a valid Amount"),
-        password: yup.string().min(6).max(32).required(),
-    });
+        amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
+        password: yup.string().min(6).max(32).required("Please enter a strong password"),
+      });
+
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(withdrawSchema)
     });
     watch()
+
+    //form handling logic here
     const onSubmit = data => console.log(data);
     const options = [
         { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
@@ -50,8 +53,8 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                        errors={errors}
-                        name="account_name"
+                            errors={errors} 
+                        name="accountName"
                         isDisabled={true}
                         type="text"
                         placeholder="Ushahemba"
@@ -65,8 +68,8 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                        errors={errors}
-                        name="account_num"
+                            errors={errors} 
+                        name="accountNumber"
                         isDisabled={true}
                         type="text"
                         placeholder="12366325875"
@@ -83,7 +86,7 @@ function Withdraw() {
                         register={register}
                         errors={errors}
                         name="amount"
-                        type="number"
+                        type="text"
                         placeholder="NGN"
                     />
                 </div>

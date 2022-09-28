@@ -8,9 +8,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
 
 function SellAirtime() {
+    const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   const sellAirtime = yup.object().shape({
-    phone: yup.number().min(10).max(12).required(),
-    amount: yup.number().required(),
+    // phone: yup.number().limit(11).required().typeError("Please enter a valid phone number"),
+      phone: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+    amount: yup.number().positive().required().typeError("Please enter your amount"),
   });
   const {
     register,
@@ -73,7 +75,7 @@ function SellAirtime() {
             register={register}
             errors={errors}
             name="amount"
-            type="number"
+            type="text"
             placeholder="NGN"
           />
         </div>
