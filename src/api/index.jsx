@@ -72,6 +72,7 @@ export const createAccount = async (data) => {
     });
     return response;
   } catch (error) {
+    console.log(error)
     return error.response.data;
   }
 };

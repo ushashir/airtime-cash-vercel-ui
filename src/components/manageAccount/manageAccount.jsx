@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
-import { banksList } from "../../api";
+import { banksList, createAccount } from "../../api";
 import ViewAccountDetails from "../veiwAccount";
 import BankAccountModal from "../dashboardModal";
 
@@ -15,6 +15,7 @@ import BankAccountModal from "../dashboardModal";
 function ManageAccount() {
   const [banks, setBanks] = useState([])
   const [show, setShow] = useState(true)
+  const [bankName, setBankName] = useState("")
    const [modal, setModal] = useState(false);
 
   const handleRender = () => {
@@ -34,7 +35,7 @@ function ManageAccount() {
 
   const manageAccountSchema = yup.object().shape({
     accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
-    accountNumber: yup.number().min(8).required('This field cannot be empty').typeError('Account number is required'),
+    accountNumber: yup.string().required('This field cannot be empty').typeError('Account number is required'),
   });
   const {
     register,
@@ -46,8 +47,21 @@ function ManageAccount() {
   });
   watch();
 
+  const handleBankChange = (selectedOption) => {
+    setBankName({ bankName: selectedOption.value });
+  };
+
   //handle form logic here
-  const onSubmit = (data) => console.log(data);
+
+  const onSubmit = async(data, bank) =>{
+    const bankName = bank.target[1].value;
+    const formData = ({bankName, ...data})
+    const res = await createAccount(formData)
+   
+    if (res.data.message = "Success") {
+      setModal(true)
+    }
+  } 
   
   useEffect(() => {
      const getBanks = async() => {
@@ -62,7 +76,6 @@ function ManageAccount() {
   banks.map(bank => {
     options.push({ value: bank.name, label: bank.name })
   })
-
   return (
     <div onClick={closeModal2}>
       {show && (
@@ -83,14 +96,14 @@ function ManageAccount() {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form_group">
                 <div className="label_container">
-                  <label htmlFor="network" className="form_label">
+                  <label htmlFor="bankName" className="form_label">
                     Bank Name
                   </label>
                 </div>
                 <div>
-                  <Select
+                  <Select 
                     name="bankName"
-                    // {...register(bankName)}
+                    onChange={handleBankChange}
                     isClearable={true}
                     isSearchable={true}
                     options={options}
@@ -122,15 +135,11 @@ function ManageAccount() {
                   register={register}
                   errors={errors}
                   name="accountNumber"
-                  type="number"
+                  type="text"
                   placeholder="accountNumber"
                 />
               </div>
-              <div
-                onClick={() => {
-                  setModal(true);
-                }}
-              >
+              <div>
                 <Button value="Add Bank" type="submit" />
               </div>
             </form>
