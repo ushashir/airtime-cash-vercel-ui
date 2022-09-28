@@ -51,7 +51,6 @@ const Login = () => {
             .then((res) => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
-                    console.log(res.data.response)
                     localStorage.setItem('token', token);
                     setUser({ ...res.data.response })
                     console.log('THE RES', res.data.response)

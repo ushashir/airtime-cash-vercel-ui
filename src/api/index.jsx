@@ -87,6 +87,19 @@ export const getUserAccount = async () => {
   }
 }
 
+export const deleteAccount = async (id) => {
+  try {
+    const response = await axios.delete(`/api/account/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+    })
+    return(response.data)
+  } catch (error) {
+    return error.response.data
+  }
+}
+
 export const banksList = async () => {
   try {
     const response = await axios.get('https://api.paystack.co/bank', {
