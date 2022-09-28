@@ -11,12 +11,12 @@ import ViewAccountDetails from "../veiwAccount";
 import BankAccountModal from "../dashboardModal";
 
 
- 
+
 function ManageAccount() {
   const [banks, setBanks] = useState([])
   const [show, setShow] = useState(true)
   const [bankName, setBankName] = useState("")
-   const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(false);
 
   const handleRender = () => {
     setShow(true)
@@ -32,10 +32,10 @@ function ManageAccount() {
     }
   }
 
-
+const accountNumberRegex = /^(\d{10,12})$/;
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
-    accountNumber: yup.string().required('This field cannot be empty').typeError('Account number is required'),
+    accountName: yup.string("Please enter a valid Account name").required('Please enter your account name').min(6, "Please enter valid account name"),
+    accountNumber: yup.string().required('Please enter your account number').matches(accountNumberRegex, 'Account number muat be 10 to 12 characters'),
   });
   const {
     register,
@@ -53,23 +53,23 @@ function ManageAccount() {
 
   //handle form logic here
 
-  const onSubmit = async(data, bank) =>{
+  const onSubmit = async (data, bank) => {
     const bankName = bank.target[1].value;
-    const formData = ({bankName, ...data})
+    const formData = ({ bankName, ...data })
     const res = await createAccount(formData)
-   
+
     if (res.data.message = "Success") {
       setModal(true)
     }
-  } 
-  
+  }
+
   useEffect(() => {
-     const getBanks = async() => {
+    const getBanks = async () => {
       const response = await banksList()
-    setBanks(response.data)
+      setBanks(response.data)
     }
     getBanks()
-  },[])
+  }, [])
 
 
   const options = []
@@ -101,13 +101,13 @@ function ManageAccount() {
                   </label>
                 </div>
                 <div>
-                  <Select 
+                  <Select
                     name="bankName"
                     onChange={handleBankChange}
                     isClearable={true}
                     isSearchable={true}
                     options={options}
-                  /> 
+                  />
                 </div>
               </div>
               <div className="form_group">
