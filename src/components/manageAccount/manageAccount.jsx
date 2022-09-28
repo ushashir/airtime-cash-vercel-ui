@@ -35,14 +35,14 @@ function ManageAccount() {
 
   //handle form logic here
   const onSubmit = (data) => console.log(data);
-  
+
   useEffect(() => {
-     const getBanks = async() => {
+    const getBanks = async () => {
       const response = await banksList()
-    setBanks(response.data)
+      setBanks(response.data)
     }
     getBanks()
-  },[])
+  }, [])
 
 
   const options = []
@@ -119,7 +119,7 @@ function ManageAccount() {
       )}
 
       {!show && (
-        <ViewAccountDetails handleRender= {handleRender}>
+        <ViewAccountDetails handleRender={handleRender}>
           <div
             onClick={() => {
               setShow(true);
