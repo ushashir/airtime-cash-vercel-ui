@@ -61,7 +61,7 @@ export const DashboardWrapper = styled.div`
     color: #ffffff;
   }
   .tab {
-    font-size: clamp(0.625rem, 0.4871rem + 0.6897vw, 0.875rem);
+    font-size: clamp(0.625rem, 0.6871rem + 0.6897vw, 0.875rem);
   }
 
   @media (max-width: 650px) {
@@ -102,4 +102,10 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
+  @media (max-width: 650px) {
+    flex-direction : column ;
+    text-align: left;
+    
+    }
+  
 `;
