@@ -54,12 +54,14 @@ export const resetPassword = async (data) => {
     return error.response.data;
   }
 };
+
 export const verify = async (token) => {
   try {
     const response = await client.get(`/api/users/verify/${token}`);
     return response;
   } catch (error) {
-    return error.response.data;
+    console.log(error);
+    // return error.response.data;
   }
 };
 
@@ -70,6 +72,7 @@ export const createAccount = async (data) => {
     });
     return response;
   } catch (error) {
+    console.log(error)
     return error.response.data;
   }
 };
@@ -83,17 +86,30 @@ export const getUserAccount = async () => {
   } catch (error) {
     return error.response.data;
   }
-}
+};
+
+export const deleteAccount = async (id) => {
+  try {
+    const response = await client.delete(`/api/account/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
 
 export const banksList = async () => {
   try {
-    const response = await axios.get('https://api.paystack.co/bank', {
+    const response = await axios.get("https://api.paystack.co/bank", {
       headers: {
-        Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`
+        Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`,
       },
-    })
-    return(response.data)
+    });
+    return response.data;
   } catch (error) {
-    return error.response.data
+    return error.response.data;
   }
-}
+};

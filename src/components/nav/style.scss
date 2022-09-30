@@ -22,7 +22,10 @@
   align-items: center;
 }
 
-.user-bar img {
-    width: 3.5rem;
-    height: 3.5rem;
+.avatar{
+  border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    margin-right: 8px;
 }

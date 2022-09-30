@@ -68,7 +68,6 @@ const Signup = () => {
     };
 
     const res = await registerUser(data);
-    console.log(res);
     if (res.message === "Success") {
       Swal.fire("Success", res.response, "success");
       setTimeout(() => {
@@ -76,7 +75,11 @@ const Signup = () => {
       }, 4000);
       return;
     }
-    Swal.fire("Oops", res.message, "error");
+    const x = res.message.issues.map((error) => {
+      return (`<p>${error.message}</p>`)
+    })
+    
+    Swal.fire("Oops", x.join(" "), "error");
   };
 
   return (
@@ -179,9 +182,10 @@ const Signup = () => {
             />
           </div>
           <div className="wawa">
-            <button onClick={submit} className="eten-sign" type="submit">
-              Sign Up
-            </button>
+            <input onClick={submit} className="eten-sign" type="submit" value="Sign Up"/>
+              {/* Sign Up
+            </button> */}
+            {/* <Button type="submit" value="Sign Up" className="eten-sign" /> */}
             <h4 className="kiki">
               <span className="dolly">Already have an account?</span>
               <a href="/login" className="clem">Sign In</a>
