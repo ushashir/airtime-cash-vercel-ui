@@ -6,12 +6,14 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
+import copy from "../../assets/icons/copy.svg"
+import { useState } from "react";
 
 function SellAirtime() {
+  const [select, setSelect] = useState("")
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
   const sellAirtime = yup.object().shape({
-    // phone: yup.number().limit(11).required().typeError("Please enter a valid phone number"),
-      phone: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
+     phone: yup.string().matches(phoneRegExp, 'Phone number is not valid'),
     amount: yup.number().positive().required().typeError("Please enter your amount"),
   });
   const {
@@ -23,6 +25,11 @@ function SellAirtime() {
     resolver: yupResolver(sellAirtime),
   });
   watch();
+
+  const handleSelectChange = (selectedOption) => {
+    setSelect({ network: selectedOption.value });
+  };
+
   const onSubmit = (data) => console.log(data);
   const options = [
     { value: "MTN", label: "MTN" },
@@ -42,6 +49,7 @@ function SellAirtime() {
           </div>
           <div>
             <Select
+              onChange={handleSelectChange}
               name="network"
               placeholder="Select Network"
               isClearable={true}
@@ -68,7 +76,7 @@ function SellAirtime() {
         <div className="form_group">
           <div className="label_container">
             <label htmlFor="amount" className="form_label">
-              Amount to Sell
+              Amount to Transfer
             </label>
           </div>
           <Input
@@ -85,14 +93,19 @@ function SellAirtime() {
               USSD
             </label>
           </div>
+          <div className="inputContainer">
           <Input
             register={register}
             errors={errors}
-            isDisabled={true}
+            // isDisabled={true}
+            isReadOnly = {true}
             name="ussd"
             type="text"
-            placeholder="*780*amount*09088756433*5000#"
-          />
+            value="*780*amount*09088756433*pin#"
+            // placeholder="*780*amount*09088756433*5000#"
+            />
+            <span className="copy"><img src={copy} alt="copy to clipboard" ></img></span>
+          </div>
         </div>
         <div className="form_group">
           <div className="label_container">
