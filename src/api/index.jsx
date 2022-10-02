@@ -72,7 +72,6 @@ export const createAccount = async (data) => {
     });
     return response;
   } catch (error) {
-    console.log(error)
     return error.response.data;
   }
 };
@@ -107,6 +106,40 @@ export const banksList = async () => {
       headers: {
         Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`,
       },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+export const notifyAdmin = async (data) => {
+  try {
+    const response = await client.post("api/transactions",data, {
+      headers: {
+        Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`,
+      },
+    })
+  } catch (error) {
+    return error.response.data
+  }
+} 
+export const checkWalletBalance = async (data) => {
+  try {
+    const response = await client.post("/api/withdraw", data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+
+export const sendTransactionStatus = async (data, route) => {
+  try {
+    const response = await client.post(`/api/withdraw/${route}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
     });
     return response.data;
   } catch (error) {

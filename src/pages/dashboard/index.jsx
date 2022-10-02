@@ -10,7 +10,7 @@ import WithdrawalHistory from "../../components/withdrawalHistory";
 
 function Dashboard() {
   const tabs = [
-    "Sell Airtime",
+    "Transfer Airtime",
     "Withdraw balance",
     "Manage Bank Account",
     "Transaction History",
@@ -41,6 +41,7 @@ function Dashboard() {
                 </Tab>
               ))}
             </ButtonGroup>
+            <div className="component">
             {active === tabs[0] ? (
               <SellAirtime />
             ) : active === tabs[1] ? (
@@ -52,6 +53,8 @@ function Dashboard() {
             ): 
               <WithdrawalHistory />
           }
+              
+              </div>
           </div>
         </div>
       </DashboardWrapper>
