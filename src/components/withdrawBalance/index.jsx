@@ -6,9 +6,12 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
+import { useState } from "react";
 import { checkWalletBalance, sendTransactionStatus } from "../../api";
 
+
 function Withdraw() {
+    const [select, setSelect]= useState("")
     const withdrawSchema = yup.object().shape({
         amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
         password: yup.string().min(6).max(32).required("Please enter a strong password"),
@@ -18,7 +21,9 @@ function Withdraw() {
         resolver: yupResolver(withdrawSchema)
     });
     watch()
-
+    const handleSelectChange = (selectedOption) => {
+        setSelect({ bankAccount: selectedOption.value });
+      };
     //form handling logic here
     const onSubmit = async (data) => {
         const { amount } = data;
@@ -45,6 +50,7 @@ function Withdraw() {
                     </div>
                     <div>
                         <Select
+                        onChange={handleSelectChange}
                             name="bankAccount"
                             placeholder="Select Account"
                             className="selectAccount"
