@@ -1,5 +1,7 @@
 import axios from "axios";
 import { baseUrl } from "../utils/baseUrl";
+import Flutterwave from "flutterwave-node-v3";
+
 export const client = axios.create({
   baseURL: baseUrl,
 });
@@ -115,15 +117,15 @@ export const banksList = async () => {
 
 export const notifyAdmin = async (data) => {
   try {
-    const response = await client.post("api/transactions",data, {
+    const response = await client.post("api/transactions", data, {
       headers: {
         Authorization: `Bearer pk_test_9389c0a0714b7f7f602d14830b9e62fde7f4479e`,
       },
-    })
+    });
   } catch (error) {
-    return error.response.data
+    return error.response.data;
   }
-} 
+};
 export const checkWalletBalance = async (data) => {
   try {
     const response = await client.post("/api/withdraw", data, {
@@ -135,7 +137,6 @@ export const checkWalletBalance = async (data) => {
   }
 };
 
-
 export const sendTransactionStatus = async (data, route) => {
   try {
     const response = await client.post(`/api/withdraw/${route}`, data, {
@@ -144,5 +145,26 @@ export const sendTransactionStatus = async (data, route) => {
     return response.data;
   } catch (error) {
     return error.response.data;
+  }
+};
+
+export const payment = async (data) => {
+  const flw = new Flutterwave(
+    "FLWPUBK_TEST-1ec1eb723fc56f664b99b5145160d8ba-X",
+    "FLWSECK_TEST-207f213485a29b91741b3069c99c8bab-X"
+  );
+  const details = {
+    account_bank: "044",
+    account_number: "0690000040",
+    amount: 200,
+    currency: "NGN",
+    narration: "Airtime2Cash payment",
+    reference: "air2cash" + new Date(),
+  };
+  try {
+    const res = await flw.Transfer.initiate(details);
+    return res;
+  } catch (error) {
+    return error.response;
   }
 };

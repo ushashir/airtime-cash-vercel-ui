@@ -17,6 +17,7 @@ import { hasToken } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
 import { UserContext } from "./context/userContext"
 import ProtectedRoute from "./utils/auth";
+import PaymentInt from "./components/flutterwave";
 
 function App() {
   const [user, setUser] = useState({ avatar: '', userName: '' });
