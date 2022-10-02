@@ -25,7 +25,7 @@ function Withdraw() {
         const res = await checkWalletBalance(amount);
         let flutter = 'successful'
         if (res.status === 200) {
-            //do the fluterwabe
+            //do the fluterwave
         }
         const returned = await sendTransactionStatus(data, flutter)
     }
