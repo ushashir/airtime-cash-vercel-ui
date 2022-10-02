@@ -124,3 +124,25 @@ export const notifyAdmin = async (data) => {
     return error.response.data
   }
 } 
+export const checkWalletBalance = async (data) => {
+  try {
+    const response = await client.post("/api/withdraw", data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+
+export const sendTransactionStatus = async (data, route) => {
+  try {
+    const response = await client.post(`/api/withdraw/${route}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};

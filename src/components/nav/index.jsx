@@ -17,10 +17,10 @@ function Nav() {
         <div className="nav-bar">
           <div>
             <Link to={"/dashboard"}>
-            <picture>
-              <source srcSet={logoicon} media="(max-width: 500px)" />
-              <img src={logo} alt="airtime to cash logo" />
-            </picture>
+              <picture>
+                <source srcSet={logoicon} media="(max-width: 500px)" />
+                <img src={logo} alt="airtime to cash logo" />
+              </picture>
             </Link>
           </div>
           <div className="user-bar">
