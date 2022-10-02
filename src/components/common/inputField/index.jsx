@@ -1,12 +1,12 @@
 import "./style.scss"
 
 
-function Input({ isDisabled, type, value, placeholder, name, register, errors }) {
+function Input({ readOnly, type, value, placeholder, name, register, errors, }) {
 
     return (
         <>
             <input {...register(name)}
-                disabled={isDisabled}
+                readOnly={readOnly}
                 className="reusableInput"
                 type={type}
                 name={name}

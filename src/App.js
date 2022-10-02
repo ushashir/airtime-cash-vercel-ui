@@ -13,7 +13,7 @@ import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
 
 import { useState, useEffect } from "react";
-import { isLoggedIn } from "./utils/isLoggedIn";
+import { hasToken } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
 import { UserContext } from "./context/userContext"
 import ProtectedRoute from "./utils/auth";
@@ -21,15 +21,18 @@ import ProtectedRoute from "./utils/auth";
 function App() {
   const [user, setUser] = useState({ avatar: '', userName: '' });
   const [userUpdated, setUserUpdated] = useState(false);
+  const [logged, setLogged] = useState(false);
+  // const [walletBalance, setWalletBalance] = useState(0)
 
   useEffect(() => {
-    isLoggedIn() && getUserData().then(data => setUser(data.response))
-  }, [userUpdated])
+    hasToken() && getUserData().then(data => setUser(data.response))
+  }, [userUpdated, logged])
+
 
   return (
 
     <BrowserRouter>
-      <UserContext.Provider value={{ user, setUserUpdated }}>
+      <UserContext.Provider value={{ user, setUserUpdated, setLogged }}>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>

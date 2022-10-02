@@ -4,6 +4,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
 import loginLogo from '../../assets/icons/loginLogo.svg'
+import { useContext } from 'react';
+import { UserContext } from '../../context/userContext';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -11,9 +13,7 @@ const Login = () => {
     const [loginError, setLoginError] = useState("");
     const [clickedLogin, setClickedLogin] = useState(false)
 
-    const [user, setUser] = useState({});
-
-    console.log('user', user)
+    const { setUserUpdated, setLogged } = useContext(UserContext)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -52,8 +52,8 @@ const Login = () => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
                     localStorage.setItem('token', token);
-                    setUser({ ...res.data.response })
-                    console.log('THE RES', res.data.response)
+                    setUserUpdated(true);
+                    setLogged(true)
                     navigate('/dashboard')
                 }
             }).catch((err) => {
