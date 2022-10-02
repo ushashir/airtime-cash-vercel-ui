@@ -6,12 +6,13 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
+import { checkWalletBalance, sendTransactionStatus } from "../../api";
 
 function Withdraw() {
     const withdrawSchema = yup.object().shape({
         amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
         password: yup.string().min(6).max(32).required("Please enter a strong password"),
-      });
+    });
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(withdrawSchema)
@@ -19,7 +20,15 @@ function Withdraw() {
     watch()
 
     //form handling logic here
-    const onSubmit = data => console.log(data);
+    const onSubmit = async (data) => {
+        const { amount } = data;
+        const res = await checkWalletBalance(amount);
+        let flutter = 'successful'
+        if (res.status === 200) {
+            //do the fluterwave
+        }
+        const returned = await sendTransactionStatus(data, flutter)
+    }
     const options = [
         { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
         { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" }
@@ -53,12 +62,11 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="accountName"
-                        isDisabled={true}
+                        isReadOnly={true}
                         type="text"
-                        placeholder="Ushahemba"
-
+                        value="Ushahemba"
                     />
                 </div>
                 <div className="form_group">
@@ -68,11 +76,11 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="accountNumber"
-                        isDisabled={true}
+                        readOnly={true}
                         type="text"
-                        placeholder="12366325875"
+                        value="12366325875"
 
                     />
                 </div>
@@ -86,7 +94,7 @@ function Withdraw() {
                         register={register}
                         errors={errors}
                         name="amount"
-                        type="text"
+                        type="number"
                         placeholder="NGN"
                     />
                 </div>
