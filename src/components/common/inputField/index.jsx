@@ -1,7 +1,7 @@
 import "./style.scss"
 
 
-function Input({ readOnly, type, value, placeholder, name, register, errors, }) {
+function Input({ readOnly, type, value, placeholder, name, register, errors }) {
 
     return (
         <>

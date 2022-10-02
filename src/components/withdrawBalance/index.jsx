@@ -7,8 +7,10 @@ import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
 import { checkWalletBalance, sendTransactionStatus } from "../../api";
+import { useState } from "react";
 
 function Withdraw() {
+    const [bankDetails, setBankDetails] = useState();
     const withdrawSchema = yup.object().shape({
         amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
         password: yup.string().min(6).max(32).required("Please enter a strong password"),
@@ -20,14 +22,18 @@ function Withdraw() {
     watch()
 
     //form handling logic here
-    const onSubmit = async (data) => {
-        const { amount } = data;
-        const res = await checkWalletBalance(amount);
-        let flutter = 'successful'
-        if (res.status === 200) {
+    const onSubmit = async (data, e) => {
+        e.preventDefault();
+        const bankName = bankDetails.split('(')[0]
+        const formData = { bankName, ...data }
+        const res = await checkWalletBalance(formData);
+        if (res.status === 201) {
             //do the fluterwave
         }
-        const returned = await sendTransactionStatus(data, flutter)
+        let flutter = 'successful'
+        // let flutter = 'failed'
+        console.log('DATA', formData)
+        const returned = await sendTransactionStatus(formData, flutter);
     }
     const options = [
         { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
@@ -51,6 +57,7 @@ function Withdraw() {
                             isClearable={true}
                             isSearchable={true}
                             options={options}
+                            onChange={(choice) => setBankDetails(choice.value)}
                         />
                     </div>
                 </div>
@@ -66,7 +73,7 @@ function Withdraw() {
                         name="accountName"
                         isReadOnly={true}
                         type="text"
-                        value="Ushahemba"
+                        value="Sea"
                     />
                 </div>
                 <div className="form_group">
@@ -80,7 +87,7 @@ function Withdraw() {
                         name="accountNumber"
                         readOnly={true}
                         type="text"
-                        value="12366325875"
+                        value="1234567890"
 
                     />
                 </div>
