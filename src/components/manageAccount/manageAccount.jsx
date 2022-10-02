@@ -5,36 +5,44 @@ import Input from "../common/inputField";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import Select from "react-select"
-import { banksList } from "../../api";
+import Select from "react-select";
+import { banksList, createAccount } from "../../api";
 import ViewAccountDetails from "../veiwAccount";
 import BankAccountModal from "../dashboardModal";
+import Swal from "sweetalert2";
 
-
- 
 function ManageAccount() {
-  const [banks, setBanks] = useState([])
-  const [show, setShow] = useState(true)
-   const [modal, setModal] = useState(false);
+  const [banks, setBanks] = useState([]);
+  const [show, setShow] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const handleRender = () => {
-    setShow(true)
-  }
+    setShow(true);
+  };
 
   const closeModal = () => {
-    setModal(false)
-  }
+    setModal(false);
+  };
 
   const closeModal2 = () => {
     if (modal === true) {
-      setModal(false)
+      setModal(false);
     }
-  }
+  };
 
-
+  const accountNumberRegex = /^(\d{10,12})$/;
   const manageAccountSchema = yup.object().shape({
-    accountName: yup.string("Please enter a valid Account name").required('This field cannot be empty').min(6),
-    accountNumber: yup.number().min(8).required('This field cannot be empty').typeError('Account number is required'),
+    accountName: yup
+      .string("Please enter a valid Account name")
+      .required("Please enter your account name")
+      .min(6, "Please enter valid account name"),
+    accountNumber: yup
+      .string()
+      .required("Please enter your account number")
+      .matches(
+        accountNumberRegex,
+        "Account number muat be 10 to 12 characters"
+      ),
   });
   const {
     register,
@@ -46,23 +54,35 @@ function ManageAccount() {
   });
   watch();
 
+
+
   //handle form logic here
-  const onSubmit = (data) => console.log(data);
-  
-  useEffect(() => {
-     const getBanks = async() => {
-      const response = await banksList()
-    setBanks(response.data)
+
+  const onSubmit = async (data, bank) => {
+    const bankName = bank.target[1].value;
+    const formData = { bankName, ...data };
+    const res = await createAccount(formData);
+
+    if ((res.Error)) {
+      Swal.fire(res.Error)
     }
-    getBanks()
-  },[])
+    if ((res.data.message = "Success")) {
+      setModal(true);
+    }
+  };
 
+  useEffect(() => {
+    const getBanks = async () => {
+      const response = await banksList();
+      setBanks(response.data);
+    };
+    getBanks();
+  }, []);
 
-  const options = []
-  banks.map(bank => {
-    options.push({ value: bank.name, label: bank.name })
-  })
-
+  const options = [];
+  banks.map((bank) => {
+    options.push({ value: bank.name, label: bank.name });
+  });
   return (
     <div onClick={closeModal2}>
       {show && (
@@ -83,18 +103,18 @@ function ManageAccount() {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="form_group">
                 <div className="label_container">
-                  <label htmlFor="network" className="form_label">
+                  <label htmlFor="bankName" className="form_label">
                     Bank Name
                   </label>
                 </div>
                 <div>
                   <Select
                     name="bankName"
-                    // {...register(bankName)}
+                    placeholder="Select Bank"
                     isClearable={true}
                     isSearchable={true}
                     options={options}
-                  /> 
+                  />
                 </div>
               </div>
               <div className="form_group">
@@ -122,15 +142,11 @@ function ManageAccount() {
                   register={register}
                   errors={errors}
                   name="accountNumber"
-                  type="number"
+                  type="text"
                   placeholder="accountNumber"
                 />
               </div>
-              <div
-                onClick={() => {
-                  setModal(true);
-                }}
-              >
+              <div>
                 <Button value="Add Bank" type="submit" />
               </div>
             </form>

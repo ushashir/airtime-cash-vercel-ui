@@ -6,20 +6,37 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
+import { useState } from "react";
+import { checkWalletBalance, sendTransactionStatus } from "../../api";
+
 
 function Withdraw() {
+    const [select, setSelect]= useState("")
     const withdrawSchema = yup.object().shape({
-        amount: yup.number().required("Please enter a valid Amount"),
-        password: yup.string().min(6).max(32).required(),
-      });
+        amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
+        password: yup.string().min(6).max(32).required("Please enter a strong password"),
+    });
+
     const { register, watch, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(withdrawSchema)
     });
     watch()
-    const onSubmit = data => console.log(data);
+    const handleSelectChange = (selectedOption) => {
+        setSelect({ bankAccount: selectedOption.value });
+      };
+    //form handling logic here
+    const onSubmit = async (data) => {
+        const { amount } = data;
+        const res = await checkWalletBalance(amount);
+        let flutter = 'successful'
+        if (res.status === 200) {
+            //do the fluterwave
+        }
+        const returned = await sendTransactionStatus(data, flutter)
+    }
     const options = [
-        {value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)"},
-        {value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)"}
+        { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
+        { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" }
     ]
     return (
         <div>
@@ -32,14 +49,15 @@ function Withdraw() {
                         </label>
                     </div>
                     <div>
-                    <Select
-              name="bankAccount"
+                        <Select
+                        onChange={handleSelectChange}
+                            name="bankAccount"
                             placeholder="Select Account"
                             className="selectAccount"
-              isClearable={true}
-              isSearchable={true}
-              options={options}
-            />
+                            isClearable={true}
+                            isSearchable={true}
+                            options={options}
+                        />
                     </div>
                 </div>
 
@@ -50,12 +68,11 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
-                        name="account_name"
-                        isDisabled={true}
+                        errors={errors}
+                        name="accountName"
+                        isReadOnly={true}
                         type="text"
-                        placeholder="Ushahemba"
-                       
+                        value="Ushahemba"
                     />
                 </div>
                 <div className="form_group">
@@ -65,12 +82,12 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
-                        name="account_num"
-                        isDisabled={true}
+                        errors={errors}
+                        name="accountNumber"
+                        readOnly={true}
                         type="text"
-                        placeholder="12366325875"
-                      
+                        value="12366325875"
+
                     />
                 </div>
                 <div className="form_group">
@@ -81,7 +98,7 @@ function Withdraw() {
                     </div>
                     <Input
                         register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="amount"
                         type="number"
                         placeholder="NGN"
@@ -94,7 +111,7 @@ function Withdraw() {
                         </label>
                     </div>
                     <Input register={register}
-                            errors={errors} 
+                        errors={errors}
                         name="password"
                         type="password"
                         placeholder="enter password"

@@ -1,32 +1,53 @@
 import { useState, useEffect } from "react";
 import "./style.scss";
-import { getUserAccount, deleteAccount } from "../../api";
+import { getUserAccount, deleteAccount, getUserData } from "../../api";
+import Swal from "sweetalert2";
 // import axios from "axios";
 function ViewAccountDetails({ children, handleRender }) {
   const [watchChanges, setWatchChanges] = useState(true);
   const [account, setAccount] = useState([]);
 
-   const getAccount = async () => {
-     const response = await getUserAccount();
-     setAccount(response.response);
-   };
-   
+  const getAccount = async () => {
+    const response = await getUserAccount();
+    setAccount(response.response);
+  };
+
   useEffect(() => {
     getAccount();
   }, [watchChanges]);
 
   const handleDelete = async (id) => {
-    const res = await deleteAccount(id);
-    setWatchChanges(!watchChanges);
-
-    console.log(res);
+    let res;
+    Swal.fire({
+      title: "Enter your username to remove bank account",
+      input: "text",
+      inputAttributes: {
+        autocapitalize: "off",
+      },
+      showCancelButton: true,
+      confirmButtonText: "Remove",
+      showLoaderOnConfirm: true,
+      preConfirm: async (input) => {
+        try {
+          const response = await getUserData();
+          response.response.userName === input
+            ? (res = await deleteAccount(id))
+            : (res = { message: "Wrong username, try again" });
+        } catch (error) {
+          Swal.showValidationMessage(`Request failed: ${error}`);
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading(),
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setWatchChanges(!watchChanges);
+        Swal.fire(res.message);
+      }
+    });
   };
 
-  // const userAccounts = account.response;
-  // console.log(userAccounts);
   return (
     <div className="mgboardcontainer">
-      {/* <div><img src=""/></div> */}
       <div className="mgboardheader">
         <div className="mgbordtitle">
           <h1>Bank Account</h1>

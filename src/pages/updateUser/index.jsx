@@ -22,7 +22,6 @@ function UpdatePage() {
     });
     setIsLoading(true);
   }, []);
-  console.log("user", userData);
   const {
     register,
     handleSubmit,
@@ -48,7 +47,6 @@ function UpdatePage() {
         const res = await updateUserData({ avatar: e.target.result });
 
         if (res.status === 200) {
-          console.log("is uploaded");
           Swal.fire({
             title: "Your uploaded picture",
             imageUrl: e.target.result,
@@ -92,7 +90,7 @@ function UpdatePage() {
           <img src={logo} alt="logo" />
           <h3>Basic information</h3>
           {!isLoading ? (
-            "Loading"
+            <div className="loading"></div>
           ) : (
             <form
               className="update-page-form-data"
