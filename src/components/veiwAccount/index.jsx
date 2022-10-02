@@ -10,7 +10,7 @@ function ViewAccountDetails({ children, handleRender }) {
      const response = await getUserAccount();
      setAccount(response.response);
    };
-  
+   
   useEffect(() => {
     getAccount();
   }, [watchChanges]);
