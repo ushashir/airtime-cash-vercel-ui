@@ -14,7 +14,6 @@ import Swal from "sweetalert2";
 function ManageAccount() {
   const [banks, setBanks] = useState([]);
   const [show, setShow] = useState(true);
-  const [bankName, setBankName] = useState("");
   const [modal, setModal] = useState(false);
 
   const handleRender = () => {
@@ -55,9 +54,7 @@ function ManageAccount() {
   });
   watch();
 
-  const handleBankChange = (selectedOption) => {
-    setBankName({ bankName: selectedOption.value });
-  };
+
 
   //handle form logic here
 
@@ -113,7 +110,7 @@ function ManageAccount() {
                 <div>
                   <Select
                     name="bankName"
-                    onChange={handleBankChange}
+                    placeholder="Select Bank"
                     isClearable={true}
                     isSearchable={true}
                     options={options}
