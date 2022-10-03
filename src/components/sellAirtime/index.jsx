@@ -9,6 +9,7 @@ import Select from "react-select"
 import copy from "../../assets/icons/copy.svg"
 import Swal from "sweetalert2";
 import { notifyAdmin } from "../../api";
+import loading from "../../assets/icons/loading.svg"
 
 function SellAirtime() {
   const [ussd, setUssd] = useState("")
@@ -81,8 +82,32 @@ let inputs = (watch());
   const onSubmit = async () => { 
     const {phone, amount} = inputs
     const data = { phone, amount, network }
+   
+   Swal.fire({
+    html: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+    <circle cx="37" cy="50" fill="#de3d6d" r="13">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="37;63;37" begin="-0.5s"></animate>
+    </circle>
+    <circle cx="63" cy="50" fill="#f5844c" r="13">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="37;63;37" begin="0s"></animate>
+    </circle>
+    <circle cx="37" cy="50" fill="#de3d6d" r="13">
+      <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="37;63;37" begin="-0.5s"></animate>
+      <animate attributeName="fill-opacity" values="0;0;1;1" calcMode="discrete" keyTimes="0;0.499;0.5;1" dur="1s" repeatCount="indefinite"></animate>
+    </circle>`,
+     text: 'Processing, please wait...',
+     background: "#FFFFFF00",
+    customClass: {
+      confirmButton: "display:none"
+    },
+    showConfirmButton: false,
+    showCancelButton: false
+    })
+  
     const res = await notifyAdmin(data)
-    //handle await delay
+  
+     
+    
     if (res.status === 201) {
       Swal.fire({
         icon: 'success',
@@ -98,7 +123,6 @@ let inputs = (watch());
         text: res.error,
         confirmButtonText: "Okay",
         confirmButtonColor: "#DE3D6D",
-        
       }) 
     }
 
