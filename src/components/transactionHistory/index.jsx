@@ -1,64 +1,46 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import { userTx } from '../../api';
 import './style.scss'
 
 const TransactionHistory = () => {
+const [tx, setTx]= useState([])
 
+const getTx = async()=>{
+    const transactions = await userTx()
+    setTx(transactions.data.response)
+ } 
+    useEffect(()=>{
+        getTx()
+    },[])
+console.log(tx)
     return (
+
         <div className='tH-Frame1-8747'>
-            <div className='tH-Frame2-8744'>
-                <div className='tH-Frame3-8743'>
-                    <p className='tH-day_time1'><b>Status:</b></p>
-                    <p className='tH-withdraw2'><b>Airtime Amount:</b></p>
-                    <p className='tH-withdraw2'><b>Network:</b></p>
-                    <p className='tH-date3'><b>Date of Transaction:</b></p>
-                </div>
-                <div className='tH-Frame4-8650'>
-                        <p className='tH-received1'>Received</p>
-                        
-                 </div>
-             </div>
-
-{/* 
-            <div className='tH-Frame-8744'>
+            {
+            tx.map((oneTx)=>{
+                return(
+                
+                    <div className='tH-Frame-8744'>
                 <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
+                    <p className='tH-day_time'><b>{new Date(oneTx.createdAt).toLocaleDateString('en-US', {
+                        weekday: 'long'})}, </b> 
+                        {new Date(oneTx.createdAt).toLocaleTimeString('en-US', {
+                        hour: '2-digit', minute:'2-digit'
+                    })} </p>
+                    <p className='tH-withdraw'>{oneTx.network}</p>
+                    <p className='tH-date'>{new Date(oneTx.createdAt).toLocaleString().slice(0, 10)}</p>
                 </div>
                 <div className='tH-Frame-8650'>
                     <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
+                        <p className='tH-received'>{oneTx.status}</p>
                     </div>
-                    <p>N5,000</p>
+                    <p style={{paddingRight: "10px"}}>₦{oneTx.amount}</p>
                 </div>
             </div>
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
-                    </div>
-                    <p>N5,000</p>
-                </div>
-            </div>
-
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
-                    </div>
-                    <p>N5,000</p>
-                </div>
-            </div> */}
+                )
+})
+}
         </div>
     );
 }

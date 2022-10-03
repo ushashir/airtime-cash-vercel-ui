@@ -1,67 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useState } from 'react'
+import { userWithdawalHistory } from '../../api';
 import './style.scss'
 
 const WithdrawalHistory = () => {
+        const [wx, setWx] = useState([])
 
-    return (
-        <div className='tH-Frame-8747'>
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
-                    </div>
-                    <p>N5,000</p>
-                </div>
-            </div>
+        const getWx = async()=>{
+            const withdrawal = await userWithdawalHistory()
+            setWx(withdrawal.data.response)
+        } 
 
+        useEffect(()=>{
+            getWx()
+        },[])
+    console.log(wx)
 
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
+        return (
+            <div className='tH-Frame1-8747'>
+            {
+                wx.map((oneWx)=>{
+                    return(
+                <div className='tH-Frame-8744'>
+                    <div className='tH-Frame-8743'>
+                        <p className='tH-day_time'><b>{new Date(oneWx.createdAt).toLocaleDateString('en-US', {
+                            weekday: 'long'})},</b> {new Date(oneWx.createdAt).toLocaleTimeString('en-US', {
+                                hour: '2-digit', minute:'2-digit'
+                            })}</p>
+                        <p className='tH-withdraw'>Withdraw fund</p>
+                        <p className='tH-date'>{new Date(oneWx.createdAt).toLocaleString().slice(0, 10)}</p>
                     </div>
-                    <p>N5,000</p>
-                </div>
-            </div>
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
+                    <div className='tH-Frame-8650'>
+                        <div className='tH-Frame-8537'>
+                            <p className='tH-received'>{oneWx.status}</p>
+                        </div>
+                        <p>{oneWx.amount}</p>
                     </div>
-                    <p>N5,000</p>
                 </div>
-            </div>
-
-            <div className='tH-Frame-8744'>
-                <div className='tH-Frame-8743'>
-                    <p className='tH-day_time'><b>Today,</b> 10:15AM</p>
-                    <p className='tH-withdraw'>Withdraw fund</p>
-                    <p className='tH-date'>25/5/2022</p>
-                </div>
-                <div className='tH-Frame-8650'>
-                    <div className='tH-Frame-8537'>
-                        <p className='tH-received'>Received</p>
-                    </div>
-                    <p>N5,000</p>
-                </div>
-            </div>
+                    )
+            })
+        }
         </div>
-    );
-}
+         
+            
+   
+    )}
 
 export default WithdrawalHistory;
