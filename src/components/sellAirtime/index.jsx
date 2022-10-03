@@ -81,7 +81,8 @@ let inputs = (watch());
   const onSubmit = async () => { 
     const {phone, amount} = inputs
     const data = { phone, amount, network }
-      const res = await notifyAdmin(data)
+    const res = await notifyAdmin(data)
+    //handle await delay
     if (res.status === 201) {
       Swal.fire({
         icon: 'success',
@@ -94,7 +95,7 @@ let inputs = (watch());
       Swal.fire({
         icon: 'error',
         titleText: 'Not sent',
-        text: 'Something went wrong, please try again',
+        text: res.error,
         confirmButtonText: "Okay",
         confirmButtonColor: "#DE3D6D",
         
