@@ -11,53 +11,81 @@ import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
-
+import { RecoilRoot } from "recoil";
 import { useState, useEffect } from "react";
 import { isLoggedIn } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
-import { UserContext } from "./context/userContext"
+import { UserContext } from "./context/userContext";
 import ProtectedRoute from "./utils/auth";
+import Layout from "./pages/Admin-dashboard/Layout/layout";
+import Overview from "./pages/Admin-dashboard/overview/overview";
+import Transaction from "./pages/Admin-dashboard/transactions/transaction";
 
 function App() {
-  const [user, setUser] = useState({ avatar: '', userName: '' });
+  const [user, setUser] = useState({ avatar: "", userName: "" });
   const [userUpdated, setUserUpdated] = useState(false);
 
   useEffect(() => {
-    isLoggedIn() && getUserData().then(data => setUser(data.response))
-  }, [userUpdated])
+    isLoggedIn() && getUserData().then((data) => setUser(data.response));
+  }, [userUpdated]);
 
   return (
+    <>
+      <RecoilRoot>
+        <BrowserRouter>
+          <UserContext.Provider value={{ user, setUserUpdated }}>
+            <Routes>
+              <Route path="/" element={<LandingPage />}></Route>
+              <Route path="/signup" element={<SignupPage />}></Route>
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/email-sent" element={<EmailSent />} />
+              <Route path="/resetpassword/:token" element={<ResetPassword />} />
+              <Route path="/verify/:token" element={<EmailVerified />} />
+              <Route path="*" element={<PageNotFound />} />
+              <Route path="/login" element={<LoginPage />} />
 
-    <BrowserRouter>
-      <UserContext.Provider value={{ user, setUserUpdated }}>
-        <Routes>
-          <Route path="/" element={<LandingPage />}></Route>
-          <Route path="/signup" element={<SignupPage />}></Route>
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/email-sent" element={<EmailSent />} />
-          <Route path="/resetpassword/:token" element={<ResetPassword />} />
-          <Route path="/verify/:token" element={<EmailVerified />} />
-          <Route path="*" element={<PageNotFound />} />
-          <Route path="/login" element={<LoginPage />} />
-
-          <Route path="/update" element={
-            <ProtectedRoute>
-              <UpdatePage />
-            </ProtectedRoute>
-          }></Route>
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }></Route>
-        </Routes>
-      </UserContext.Provider>
-    </BrowserRouter>
-
+              <Route
+                path="/update"
+                element={
+                  <ProtectedRoute>
+                    <UpdatePage />
+                  </ProtectedRoute>
+                }
+              ></Route>
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              ></Route>
+              <Route
+                exact
+                path="/admin/*"
+                element={
+                  <ProtectedRoute>
+                    <Layout>
+                      <Routes>
+                        <Route exact path="/" element={<Overview />} />{" "}
+                        <Route
+                          exact
+                          path="/transactions"
+                          element={<Transaction />}
+                        />{" "}
+                      </Routes>
+                    </Layout>
+                  </ProtectedRoute>
+                }
+              ></Route>
+            </Routes>
+          </UserContext.Provider>
+        </BrowserRouter>
+      </RecoilRoot>
+    </>
   );
 }
 
 export default App;
 
 // import all your pages and do your routing here
-
