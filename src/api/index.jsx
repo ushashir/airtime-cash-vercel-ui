@@ -72,7 +72,6 @@ export const createAccount = async (data) => {
     });
     return response;
   } catch (error) {
-    console.log(error)
     return error.response.data;
   }
 };
@@ -114,6 +113,18 @@ export const banksList = async () => {
   }
 };
 
+export const notifyAdmin = async (data) => {
+  try {
+    const response = await client.post("/api/notify/",data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response
+  } catch (error) {
+    return error.response.data
+  }
+} 
 export const checkWalletBalance = async (data) => {
   try {
     const response = await client.post("/api/withdraw", data, {
@@ -131,7 +142,7 @@ export const sendTransactionStatus = async (data, route) => {
     const response = await client.post(`/api/withdraw/${route}`, data, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    return response.data;
+    return response;
   } catch (error) {
     return error.response.data;
   }

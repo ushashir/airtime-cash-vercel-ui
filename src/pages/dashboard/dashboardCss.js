@@ -12,7 +12,6 @@ export const DashboardWrapper = styled.div`
     width: 42.5rem;
     gap: 2rem;
     margin-top: -11.875rem;
-
     border: 1px solid #d9d9d9;
     background-color: #fff;
   }
@@ -61,7 +60,10 @@ export const DashboardWrapper = styled.div`
     color: #ffffff;
   }
   .tab {
-    font-size: clamp(0.625rem, 0.4871rem + 0.6897vw, 0.875rem);
+    font-size: clamp(0.625rem, 0.6871rem + 0.6897vw, 0.875rem);
+  }
+  .component{
+    transition: all 0.8s ease;
   }
 
   @media (max-width: 650px) {
@@ -88,6 +90,8 @@ export const Tab = styled.button`
   line-height: 17px;
   color: #012a4a;
 
+  transition: border-bottom 1.2s ease-out;
+
   background: white;
   border: 0;
   outline: 0;
@@ -102,4 +106,11 @@ export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
+  transition: all 0.5s ease-out;
+  @media (max-width: 650px) {
+    flex-direction : column ;
+    text-align: left;
+    
+    }
+  
 `;

@@ -19,12 +19,12 @@ const UserProfileDropdown = ({ showDropdown }) => {
             <img src={ProfileIcon} alt="Account icon" /> <span>Account</span>{" "}
           </DropdownItem>
         </Link>
-        <DropdownItem>
+        {/* <DropdownItem>
           <img src={SettingsIcon} alt="Setting icon" /> <span>Settings</span>{" "}
         </DropdownItem>
         <DropdownItem>
           <img src={HelpIcon} alt="Help icon" /> <span>Help Center</span>
-        </DropdownItem>
+        </DropdownItem> */}
         <DropdownItem style={{cursor:"pointer"}} onClick={() => handleLogout()}>
 
             <img src={LogoutIcon} alt="Logout icon" /> <span>Logout</span>

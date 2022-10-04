@@ -90,7 +90,7 @@ function UpdatePage() {
           <img src={logo} alt="logo" />
           <h3>Basic information</h3>
           {!isLoading ? (
-            "Loading"
+            <div className="loading"></div>
           ) : (
             <form
               className="update-page-form-data"
