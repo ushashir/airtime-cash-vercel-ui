@@ -1,15 +1,9 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import { getUserData } from "../../api"
+import { BankContext } from "../../context/userContext";
 
 const WalletBalance = () => {
-    // const { WalletBalance } = useContext(UserContext);
-    const [walletBalance, setWalletBalance] = useState('')
-    useEffect(() => {
-        getUserData().then((res) => {
-            const balance = res.response.wallet;
-            setWalletBalance(balance)
-        })
-    }, [])
+    const { walletBalance } = useContext(BankContext);
     return (
         <>
             <h2 className='Title'>Dashboard</h2>

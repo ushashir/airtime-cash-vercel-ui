@@ -15,14 +15,24 @@ import EmailVerified from "./pages/forgotPassword/EmailVerified";
 import { useState, useEffect } from "react";
 import { hasToken } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
-import { UserContext } from "./context/userContext"
+import { UserContext, BankContext } from "./context/userContext"
 import ProtectedRoute from "./utils/auth";
+
 
 function App() {
   const [user, setUser] = useState({ avatar: '', userName: '' });
   const [userUpdated, setUserUpdated] = useState(false);
   const [logged, setLogged] = useState(false);
-  // const [walletBalance, setWalletBalance] = useState(0)
+  const [walletBalance, setWalletBalance] = useState(0)
+  const [updateWallet, setUpdateWallet] = useState(false);
+    
+  
+  useEffect(() => {
+        getUserData().then((res) => {
+            const balance = res.response.wallet;
+            setWalletBalance(balance)
+        })
+    }, [updateWallet])
 
   useEffect(() => {
     hasToken() && getUserData().then(data => setUser(data.response))
@@ -50,7 +60,9 @@ function App() {
           }></Route>
           <Route path="/dashboard" element={
             <ProtectedRoute>
-              <Dashboard />
+              <BankContext.Provider value={{walletBalance, setUpdateWallet}}>
+                <Dashboard />
+              </BankContext.Provider>
             </ProtectedRoute>
           }></Route>
         </Routes>

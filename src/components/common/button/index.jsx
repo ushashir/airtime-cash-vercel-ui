@@ -1,12 +1,13 @@
 import "./style.scss";
 
-function Button(prop) {
+function Button({ value, type, style, disabled }) {
   return (
     <input
       className="btn"
-      value={prop.value}
-      type={prop.type}
-      style={prop.style}
+      value={value}
+      type={type}
+      style={style}
+      disabled={disabled}
     />
   );
 }
