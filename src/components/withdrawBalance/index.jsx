@@ -17,8 +17,6 @@ function Withdraw() {
     const [clicked, setClicked] = useState(false);
     const { setUpdateWallet } = useContext(BankContext);
 
-
-
     const withdrawSchema = yup.object().shape({
         amount: yup
             .number()
@@ -140,9 +138,9 @@ function Withdraw() {
                         register={register}
                         errors={errors}
                         name="accountName"
-                        isReadOnly={true}
                         type="text"
-                        value="Sea"
+                        placeholder="Account Name"
+
                     />
                 </div>
                 <div className="form_group">
