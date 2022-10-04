@@ -1,4 +1,3 @@
-
 export const bankCodes = [
   {
     "name": "Access Bank",
