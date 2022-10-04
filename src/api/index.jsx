@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "../utils/baseUrl";
+
 export const client = axios.create({
   baseURL: baseUrl,
 });
@@ -72,7 +73,6 @@ export const createAccount = async (data) => {
     });
     return response;
   } catch (error) {
-    console.log(error)
     return error.response.data;
   }
 };
@@ -113,3 +113,70 @@ export const banksList = async () => {
     return error.response.data;
   }
 };
+
+export const notifyAdmin = async (data) => {
+  try {
+    const response = await client.post("/api/notify/",data, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    return response
+  } catch (error) {
+    return error.response.data;
+  }
+};
+export const checkWalletBalance = async (data) => {
+  try {
+    const response = await client.post("/api/withdraw", data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+export const sendTransactionStatus = async (data, route) => {
+  try {
+    const response = await client.post(`/api/withdraw/${route}`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+};
+
+export const payment = async (data) => {
+  try {
+    const response = await client.post(`/api/users/payment`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+}
+
+  export const userTx = async () => {
+  try {
+    const response = await client.get("/api/usertxhistory",{
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+}; 
+
+export const userWithdawalHistory = async() => {
+  try{
+    const response = await client.get("/api/withdraw", {
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}

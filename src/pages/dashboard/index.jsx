@@ -6,13 +6,15 @@ import Withdraw from "../../components/withdrawBalance";
 import SellAirtime from "../../components/sellAirtime/";
 import ManageAccount from "../../components/manageAccount/manageAccount";
 import Nav from "../../components/nav";
+import WithdrawalHistory from "../../components/withdrawalHistory";
 
 function Dashboard() {
   const tabs = [
-    "Sell Airtime",
+    "Transfer Airtime",
     "Withdraw balance",
     "Manage Bank Account",
     "Transaction History",
+    "Withdrawal History"
   ];
   const [active, setActive] = useState(tabs[0]);
 
@@ -39,15 +41,20 @@ function Dashboard() {
                 </Tab>
               ))}
             </ButtonGroup>
+            <div className="component">
             {active === tabs[0] ? (
               <SellAirtime />
             ) : active === tabs[1] ? (
               <Withdraw />
             ) : active === tabs[2] ? (
               <ManageAccount />
-            ) : (
+            ) : active === tabs[3]?(
               <TransactionHistory />
-            )}
+            ): 
+              <WithdrawalHistory />
+          }
+              
+              </div>
           </div>
         </div>
       </DashboardWrapper>

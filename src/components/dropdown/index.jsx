@@ -1,6 +1,4 @@
 import ProfileIcon from "../../assets/icons/profile.svg";
-import SettingsIcon from "../../assets/icons/settings.svg";
-import HelpIcon from "../../assets/icons/help.svg";
 import LogoutIcon from "../../assets/icons/logout.svg";
 import styled from "styled-components";
 import { useNavigate, Link } from "react-router-dom";
@@ -19,12 +17,6 @@ const UserProfileDropdown = ({ showDropdown }) => {
             <img src={ProfileIcon} alt="Account icon" /> <span>Account</span>{" "}
           </DropdownItem>
         </Link>
-        <DropdownItem>
-          <img src={SettingsIcon} alt="Setting icon" /> <span>Settings</span>{" "}
-        </DropdownItem>
-        <DropdownItem>
-          <img src={HelpIcon} alt="Help icon" /> <span>Help Center</span>
-        </DropdownItem>
         <DropdownItem style={{cursor:"pointer"}} onClick={() => handleLogout()}>
 
             <img src={LogoutIcon} alt="Logout icon" /> <span>Logout</span>
@@ -42,7 +34,6 @@ const Dropdown = styled.div`
   right: 5px;
   background-color: #fff;
   width: 226px;
-  height: 180px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   z-index: 100;
   display: ${({ showDropdown }) => (showDropdown ? "block" : "none")};

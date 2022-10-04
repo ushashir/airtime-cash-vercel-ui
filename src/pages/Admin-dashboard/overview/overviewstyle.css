@@ -16,7 +16,8 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 1.5em;
+    margin-top: 0em;
 }
 
 table td,
@@ -45,4 +46,35 @@ table th {
 .act:hover{
   font-size:30px;
   opacity: 0.5;
+}
+.pageCount{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 20px;
+}
+.pageCount button{
+  background-color: #03435F;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+.pageCount button:hover{
+  background-color: #012A4A;
+}
+.index{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.Str{
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 15px;
 }

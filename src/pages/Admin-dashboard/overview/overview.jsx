@@ -85,28 +85,44 @@ const Overview = () => {
           })}
         </tbody>
       </table>
-      <div>
-        <button onClick={() => gotoPage(1)} disabled={!canPreviousPage}>
+      <div className="pageCount">
+        <button
+          onClick={() => gotoPage(1)}
+          disabled={!canPreviousPage}
+          className="btn-space"
+        >
           {"<<"}
         </button>{" "}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+        <button
+          onClick={() => previousPage()}
+          disabled={!canPreviousPage}
+          className="btn-space"
+        >
           Previous
         </button>{" "}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
+        <button
+          onClick={() => nextPage()}
+          disabled={!canNextPage}
+          className="btn-space"
+        >
           Next
         </button>{" "}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+        <button
+          onClick={() => gotoPage(pageCount - 1)}
+          disabled={!canNextPage}
+          className="btn-space"
+        >
           {">>"}
         </button>{" "}
-        <span>
+        <span className="index">
           Page{" "}
-          <strong>
-            {pageIndex + 1} of {pageOptions.length}
+          <strong className="Str">
+            {pageIndex + 1}</strong> of <strong className="Str"> {pageOptions.length}
           </strong>{" "}
         </span>
       </div>
 
-        {ShowModal && <Editcancel />}
+      {ShowModal && <Editcancel />}
     </>
   );
 };
