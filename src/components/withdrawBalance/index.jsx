@@ -10,7 +10,7 @@ import { checkWalletBalance, sendTransactionStatus } from "../../api";
 import { useState } from "react";
 
 function Withdraw() {
-    const [bankDetails, setBankDetails] = useState();
+    const [bankDetails, setBankDetails] = useState("");
     const withdrawSchema = yup.object().shape({
         amount: yup.number().positive().required("Please enter a valid Amount").typeError("Please enter valid number"),
         password: yup.string().min(6).max(32).required("Please enter a strong password"),
@@ -27,7 +27,7 @@ function Withdraw() {
         const bankName = bankDetails.split('(')[0]
         const formData = { bankName, ...data }
         const res = await checkWalletBalance(formData);
-        if (res.status === 201) {
+        if (res.status === 200) {
             //do the fluterwave
         }
         let flutter = 'successful'
@@ -68,7 +68,8 @@ function Withdraw() {
                             Account Name
                         </label>
                     </div>
-                    <Input register={register}
+                    <Input
+                        register={register}
                         errors={errors}
                         name="accountName"
                         isReadOnly={true}
@@ -82,7 +83,8 @@ function Withdraw() {
                             Account Number
                         </label>
                     </div>
-                    <Input register={register}
+                    <Input
+                        register={register}
                         errors={errors}
                         name="accountNumber"
                         readOnly={true}
