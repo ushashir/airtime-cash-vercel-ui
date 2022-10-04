@@ -9,7 +9,6 @@ import Select from "react-select"
 import copy from "../../assets/icons/copy.svg"
 import Swal from "sweetalert2";
 import { notifyAdmin } from "../../api";
-import loading from "../../assets/icons/loading.svg"
 
 function SellAirtime() {
   const [ussd, setUssd] = useState("")

@@ -147,3 +147,25 @@ export const sendTransactionStatus = async (data, route) => {
     return error.response.data;
   }
 };
+
+export const userTx = async()=>{
+  try {
+    const response = await client.get("/api/usertxhistory",{
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+}
+
+export const userWithdawalHistory = async() => {
+  try{
+    const response = await client.get("/api/withdraw", {
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
