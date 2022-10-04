@@ -11,11 +11,14 @@ import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 function Nav() {
   const { user } = useContext(UserContext);
   const [showDropdown, setShowDropdown] = useState(false);
+  const imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
   const ref = useRef(null);
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
-      setShowDropdown(false);
+
+      setShowDropdown(false)
+
     }
   };
   useEffect(() => {
@@ -29,11 +32,15 @@ function Nav() {
             <Link to={"/dashboard"}>
               <picture>
                 <source srcSet={logoicon} media="(max-width: 500px)" />
+<<<<<<< HEAD
                 <img
                   src={logo}
                   alt="airtime to cash logo"
                   style={{ padding: "10px" }}
                 />
+=======
+                <img src={logo} alt="airtime to cash logo" style={{ padding: "10px" }} />
+>>>>>>> 3c00252992919a6be0b2fb075e54c99c037d1f65
               </picture>
             </Link>
           </div>
@@ -42,6 +49,7 @@ function Nav() {
               style={{
                 display: "flex",
                 gap: "2px",
+<<<<<<< HEAD
                 alignItems: "center",
               }}
               ref={ref}
@@ -52,6 +60,12 @@ function Nav() {
                 alt="user avatar"
                 className="avatar"
               />
+=======
+                alignItems: "center"
+              }}
+              ref={ref} onClick={() => setShowDropdown(prev => !prev)}>
+              <img src={imageAvatar} alt="user avatar" className="avatar" />
+>>>>>>> 3c00252992919a6be0b2fb075e54c99c037d1f65
               <p>{user.userName}</p>
               <img
                 style={{ width: "18px", paddingTop: "5px" }}
