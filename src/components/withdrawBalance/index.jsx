@@ -6,11 +6,23 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select";
-import { useState } from "react";
-import { checkWalletBalance, sendTransactionStatus, payment } from "../../api";
+import { checkWalletBalance, payment, sendTransactionStatus } from "../../api";
+import { useState, useContext } from "react";
+import { bankCodes } from "../../utils/data/bankcodes";
+import { BankContext } from "../../context/userContext";
 
-export default function Withdraw() {
-  const [select, setSelect] = useState("");
+function Withdraw() {
+  // console.log(bankCode
+
+  //   fetch("http://localhost:3000/bankCodes")
+  //     .then(response => response.json())
+  //   .then(json => setBankCodes(json))
+
+  const [bankDetails, setBankDetails] = useState("");
+    const { setUpdateWallet } = useContext(BankContext);
+
+    
+    
   const withdrawSchema = yup.object().shape({
     amount: yup
       .number()
@@ -23,7 +35,6 @@ export default function Withdraw() {
       .max(32)
       .required("Please enter a strong password"),
   });
-
   const {
     register,
     watch,
@@ -33,28 +44,32 @@ export default function Withdraw() {
     resolver: yupResolver(withdrawSchema),
   });
   watch();
-
   //form handling logic here
-  const onSubmit = async (data) => {
-    const { amount } = data;
-    // const res = await checkWalletBalance(amount);
-    // let flutter = 'successful'
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    let bankCode;
+    const bankName = bankDetails.split("(")[0];
+    bankCodes.map((bank) => {
+      if (bankName === bank.name) {
+        bankCode = bank.code;
+      }
+    });
+    const formData = { bankCode, bankName, ...data };
+    const res = await checkWalletBalance(formData);
 
+    let flutterStatus;
+    if (res.message === "Success") {
+    const result = await payment(formData);
     //do the fluterwave
-    // const res = await payment(data)
-    console.log(res);
-
-    // axios.post("https://api.flutterwave.com/v3/transfers", {
-    //     name: "John Doe",
-    //   })
-    //   .then(function (response) {
-    //     return response;
-    //   })
-    //   .catch(function (error) {
-    //     return error;
-    //   });
+    const status = result.data.response.status;
+    status === "success"
+        ? (flutterStatus = "successful")
+        : (flutterStatus = "failed");
+    }
+    console.log("DATA", formData);
+      const returned = await sendTransactionStatus(formData, flutterStatus);
+      setUpdateWallet(prev => !prev);
   };
-
   const options = [
     { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
     { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" },
@@ -71,17 +86,16 @@ export default function Withdraw() {
           </div>
           <div>
             <Select
-              // onChange={handleSelectChange}
               name="bankAccount"
               placeholder="Select Account"
               className="selectAccount"
               isClearable={true}
               isSearchable={true}
               options={options}
+              onChange={(choice) => setBankDetails(choice.value)}
             />
           </div>
         </div>
-
         <div className="form_group">
           <div className="label_container">
             <label htmlFor="accountName" className="form_label">
@@ -94,7 +108,7 @@ export default function Withdraw() {
             name="accountName"
             isReadOnly={true}
             type="text"
-            value="Ushahemba"
+            value="Sea"
           />
         </div>
         <div className="form_group">
@@ -109,7 +123,7 @@ export default function Withdraw() {
             name="accountNumber"
             readOnly={true}
             type="text"
-            value="12366325875"
+            value="1234567890"
           />
         </div>
         <div className="form_group">
@@ -140,9 +154,9 @@ export default function Withdraw() {
             placeholder="enter password"
           />
         </div>
-
-        <Button value="Withdaw" type="submit" />
+        <Button value="Withdraw" type="submit" />
       </form>
     </div>
   );
 }
+export default Withdraw;

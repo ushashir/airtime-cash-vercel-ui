@@ -78,24 +78,30 @@ let inputs = (watch());
 }
 
 
-  const onSubmit = () => { 
+  const onSubmit = async () => { 
     const {phone, amount} = inputs
     const data = { phone, amount, network }
-    const response = sendTx(data) 
-    console.log(data)
-    const sendTx = async(data) => {
       const res = await notifyAdmin(data)
-      console.log(res)
+    if (res.status === 201) {
+      Swal.fire({
+        icon: 'success',
+        titleText: 'Notification Sent',
+        text: 'Admin has been notified, your wallet would be credited soon',
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#DE3D6D",
+      }) 
+    }else{
+      Swal.fire({
+        icon: 'error',
+        titleText: 'Not sent',
+        text: 'Something went wrong, please try again',
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#DE3D6D",
+        
+      }) 
     }
 
-    Swal.fire({
-      icon: 'success',
-      titleText: 'Notification Sent',
-      text: 'Admin has been notified, your wallet would be credited soon',
-      confirmButtonText: "Okay",
-      confirmButtonColor: "#DE3D6D",
-      
-    })    
+     
   };
   const options = [
     { value: "MTN", label: "MTN" },
