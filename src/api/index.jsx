@@ -1,5 +1,6 @@
 import axios from "axios";
 import { baseUrl } from "../utils/baseUrl";
+
 export const client = axios.create({
   baseURL: baseUrl,
 });
@@ -122,9 +123,9 @@ export const notifyAdmin = async (data) => {
     })
     return response
   } catch (error) {
-    return error.response.data
+    return error.response.data;
   }
-} 
+};
 export const checkWalletBalance = async (data) => {
   try {
     const response = await client.post("/api/withdraw", data, {
@@ -136,7 +137,6 @@ export const checkWalletBalance = async (data) => {
   }
 };
 
-
 export const sendTransactionStatus = async (data, route) => {
   try {
     const response = await client.post(`/api/withdraw/${route}`, data, {
@@ -147,3 +147,36 @@ export const sendTransactionStatus = async (data, route) => {
     return error.response.data;
   }
 };
+
+export const payment = async (data) => {
+  try {
+    const response = await client.post(`/api/users/payment`, data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+}
+
+  export const userTx = async () => {
+  try {
+    const response = await client.get("/api/usertxhistory",{
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response;
+  } catch (error) {
+    return error.response.data;
+  }
+}; 
+
+export const userWithdawalHistory = async() => {
+  try{
+    const response = await client.get("/api/withdraw", {
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
