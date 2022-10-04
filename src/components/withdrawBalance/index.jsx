@@ -6,9 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select"
-import { useState } from "react";
 import { checkWalletBalance, sendTransactionStatus } from "../../api";
-
+import { useState } from "react";
 
 function Withdraw() {
     const [bankDetails, setBankDetails] = useState("");
@@ -21,9 +20,7 @@ function Withdraw() {
         resolver: yupResolver(withdrawSchema)
     });
     watch()
-    const handleSelectChange = (selectedOption) => {
-        setBankDetails({ bankAccount: selectedOption.value });
-    };
+
     //form handling logic here
     const onSubmit = async (data, e) => {
         e.preventDefault();
@@ -54,14 +51,13 @@ function Withdraw() {
                     </div>
                     <div>
                         <Select
-                            onChange={handleSelectChange}
                             name="bankAccount"
                             placeholder="Select Account"
                             className="selectAccount"
                             isClearable={true}
                             isSearchable={true}
                             options={options}
-                        // onChange={(choice) => setBankDetails(choice.value)}
+                            onChange={(choice) => setBankDetails(choice.value)}
                         />
                     </div>
                 </div>
@@ -125,7 +121,7 @@ function Withdraw() {
                     />
                 </div>
 
-                <Button value="Withdaw" type="submit" />
+                <Button value="Withdraw" type="submit" />
             </form>
         </div>
     );

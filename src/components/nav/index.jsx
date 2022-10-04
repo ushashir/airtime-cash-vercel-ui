@@ -10,6 +10,7 @@ import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 function Nav() {
   const { user } = useContext(UserContext);
   const [showDropdown, setShowDropdown] = useState(false);
+  const imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
 
   return (
     <>
@@ -24,7 +25,7 @@ function Nav() {
             </Link>
           </div>
           <div className="user-bar">
-            <img src={user.avatar} alt="user avatar" className="avatar" />
+            <img src={imageAvatar} alt="user avatar" className="avatar" />
             <p>{user.userName}</p>
             <span onClick={() => setShowDropdown(prev => !prev)}>
               <img
