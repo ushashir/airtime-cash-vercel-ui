@@ -4,6 +4,7 @@ import logoicon from "../../assets/icons/logo_icon.svg";
 import { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
+import avatar from "../../assets/icons/avatar.svg";
 import UserProfileDropdown from "../dropdown";
 import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 
@@ -15,9 +16,11 @@ function Nav() {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
+
       setShowDropdown(false)
+
     }
-  }
+  };
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
   });
@@ -29,7 +32,15 @@ function Nav() {
             <Link to={"/dashboard"}>
               <picture>
                 <source srcSet={logoicon} media="(max-width: 500px)" />
+<<<<<<< HEAD
+                <img
+                  src={logo}
+                  alt="airtime to cash logo"
+                  style={{ padding: "10px" }}
+                />
+=======
                 <img src={logo} alt="airtime to cash logo" style={{ padding: "10px" }} />
+>>>>>>> 3c00252992919a6be0b2fb075e54c99c037d1f65
               </picture>
             </Link>
           </div>
@@ -38,10 +49,23 @@ function Nav() {
               style={{
                 display: "flex",
                 gap: "2px",
+<<<<<<< HEAD
+                alignItems: "center",
+              }}
+              ref={ref}
+              onClick={() => setShowDropdown((prev) => !prev)}
+            >
+              <img
+                src={user.avatar || avatar}
+                alt="user avatar"
+                className="avatar"
+              />
+=======
                 alignItems: "center"
               }}
               ref={ref} onClick={() => setShowDropdown(prev => !prev)}>
               <img src={imageAvatar} alt="user avatar" className="avatar" />
+>>>>>>> 3c00252992919a6be0b2fb075e54c99c037d1f65
               <p>{user.userName}</p>
               <img
                 style={{ width: "18px", paddingTop: "5px" }}
