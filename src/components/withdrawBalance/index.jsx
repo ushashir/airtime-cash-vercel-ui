@@ -38,6 +38,7 @@ function Withdraw() {
         resolver: yupResolver(withdrawSchema),
     });
     watch();
+
     //form handling logic here
     const onSubmit = async (data, e) => {
         e.preventDefault();
@@ -52,6 +53,7 @@ function Withdraw() {
         });
         const formData = { bankCode, bankName, ...data };
         console.log('formData', formData)
+
         Swal.fire({
             html: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <circle cx="37" cy="50" fill="#de3d6d" r="13">
@@ -186,7 +188,7 @@ function Withdraw() {
                         placeholder="enter password"
                     />
                 </div>
-                <Button value="Withdraw" type="submit" disabled={false} />
+                <Button value="Withdraw" type="submit" disabled={clicked} />
             </form>
         </div>
     );
