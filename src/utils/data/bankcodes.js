@@ -42,7 +42,7 @@ export const bankCodes = [
     "ussd": ""
   },
   {
-    "name": "Ecobank Nigeria",
+    "name": "Ecobank",
     "slug": "ecobank-nigeria",
     "code": "050",
     "ussd": "*326#"

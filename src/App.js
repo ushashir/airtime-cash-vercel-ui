@@ -25,21 +25,20 @@ import Transaction from "./pages/Admin-dashboard/transactions/transaction";
 function App() {
   const [user, setUser] = useState({ avatar: "", userName: "" });
   const [userUpdated, setUserUpdated] = useState(false);
-  const [logged, setLogged] = useState(false);
   const [walletBalance, setWalletBalance] = useState(0)
   const [updateWallet, setUpdateWallet] = useState(false);
-    
-  
+
+
   useEffect(() => {
-        getUserData().then((res) => {
-            const balance = res.response.wallet;
-            setWalletBalance(balance)
-        })
-    }, [updateWallet])
+    getUserData().then((res) => {
+      const balance = res.response.wallet;
+      setWalletBalance(balance)
+    })
+  }, [updateWallet])
 
   useEffect(() => {
     hasToken() && getUserData().then(data => setUser(data.response))
-  }, [userUpdated, logged])
+  }, [userUpdated])
 
   return (
     <>
@@ -55,22 +54,28 @@ function App() {
               <Route path="/verify/:token" element={<EmailVerified />} />
               <Route path="*" element={<PageNotFound />} />
               <Route path="/login" element={<LoginPage />} />
+              {/* <Route path="/login" element={
+                <BankContext.Provider value={{ setUpdateWallet }}>
+                  <LoginPage />
+                </BankContext.Provider>
+              }></Route> */}
 
-          <Route path="/update" element={
-            <ProtectedRoute>
-              <UpdatePage />
-            </ProtectedRoute>
-          }></Route>
-          <Route path="/dashboard" element={
-            <ProtectedRoute>
-              <BankContext.Provider value={{walletBalance, setUpdateWallet}}>
-                <Dashboard />
-              </BankContext.Provider>
-            </ProtectedRoute>
-          }></Route>
-      
+              <Route path="/update" element={
+                <ProtectedRoute>
+                  <UpdatePage />
+                </ProtectedRoute>
+              }></Route>
+
+              <Route path="/dashboard" element={
+                <ProtectedRoute>
+                  <BankContext.Provider value={{ walletBalance, setUpdateWallet }}>
+                    <Dashboard />
+                  </BankContext.Provider>
+                </ProtectedRoute>
+              }></Route>
+
 //admin
-       <Route
+              <Route
                 exact
                 path="/admin/*"
                 element={
@@ -89,11 +94,11 @@ function App() {
                 }
               ></Route>
 
-        </Routes>
+            </Routes>
           </UserContext.Provider>
         </BrowserRouter>
-          </RecoilRoot>
-      </>
+      </RecoilRoot>
+    </>
 
   );
 }

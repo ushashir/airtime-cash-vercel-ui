@@ -43,13 +43,15 @@ function Withdraw() {
         e.preventDefault();
         setClicked(false)
         let bankCode;
-        const bankName = bankDetails.split("(")[0];
+        // const bankName = bankDetails.split("(")[0];
+        const bankName = bankDetails
         bankCodes.map((bank) => {
             if (bankName === bank.name) {
                 bankCode = bank.code;
             }
         });
         const formData = { bankCode, bankName, ...data };
+        console.log('formData', formData)
         Swal.fire({
             html: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <circle cx="37" cy="50" fill="#de3d6d" r="13">
@@ -76,12 +78,12 @@ function Withdraw() {
         let flutterStatus;
         if (res.message === "Success") {
             const result = await payment(formData);
-            console.log('resss',)
+            console.log('resss', result)
             const status = result.data.response.data.status;
             if (status === "FAILED") {
                 flutterStatus = "failed";
                 Swal.fire({
-                    icon: 'success',
+                    icon: 'error',
                     titleText: 'error',
                     text: 'Transaction failed',
                     confirmButtonText: "Okay",
@@ -103,8 +105,8 @@ function Withdraw() {
         setUpdateWallet(prev => !prev);
     };
     const options = [
-        { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
-        { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" },
+        { value: "UBA", label: "UBA" },
+        { value: "Ecobank", label: "Ecobank" },
     ];
     return (
         <div>
@@ -153,9 +155,7 @@ function Withdraw() {
                         register={register}
                         errors={errors}
                         name="accountNumber"
-                        readOnly={true}
                         type="text"
-                        value="1234567890"
                     />
                 </div>
                 <div className="form_group">
