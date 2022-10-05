@@ -1,20 +1,20 @@
 :root {
     --color-body: #03435F;
     --color-testimonial: #59C378;
-    --color-menu:  #012A4A;
+    --color-menu: #012A4A;
 }
-      
-                   .home-logo2{
-                    visibility: hidden;
-                   }
+
+.home-logo2 {
+    visibility: hidden;
+}
 
 // html {
 //     font-size: 62.5%;
 // }
-.burger-shower{
+.burger-shower {
     display: none;
     position: fixed;
-  
+
 }
 
 .newer {
@@ -28,7 +28,7 @@
     font-size: 1.0625rem;
     width: 100vw;
     background: #fff;
-  
+
 }
 
 .body h2,
@@ -63,12 +63,12 @@ h3 {
     transform: scale(0.54);
 }
 
- .menu a:active {
+.menu a:active {
     color: #DE3D6D;
 }
 
 
- .menudiv ul {
+.menudiv ul {
     display: flex;
     justify-content: center;
     visibility: visible;
@@ -84,12 +84,14 @@ h3 {
     text-decoration: none;
 }
 
-.home-logo{
+.home-logo {
     margin-left: 5.625rem;
 }
-.body{
+
+.body {
     height: 96px;
 }
+
 .body .btn {
     gap: 0.625rem;
     height: 2.438rem;
@@ -109,236 +111,248 @@ h3 {
             /* Removes the border when the input is clicked */
     }
 
-  
 
-  background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
-  border-radius: 4px;
 
- 
+    background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
+    border-radius: 4px;
+
+
+}
+
+.avatarsection {
+    height: 6.12rem;
+    width: 6.25rem;
+    text-align: center;
+    margin-top: -9px;
+    cursor: pointer;
 }
 
 
 
 
 @media screen and (max-width: 950px) {
-.body{
-    width: 100vw;
-    padding-left: 0;
-    padding-right: 0;
-}
+    .body {
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-    .body .nav-bar{
+    .body .nav-bar {
         overflow: hidden;
         width: 100vw;
         grid-template-columns: 25vw 46vw;
         justify-items: start;
         justify-content: center;
         padding-left: 0;
-    
-        
+
+
     }
 
 
-.menudiv {
-    margin-top: 20px;
-    margin-left: 50px;
-}
+    .menudiv {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
 
-.body li {
-    width: 4rem;
-    font-size: 0.7rem;
-}
+    .body li {
+        width: 4rem;
+        font-size: 0.7rem;
+    }
 
-.home_link{
-    margin-left: 20px;
-}
+    .home_link {
+        margin-left: 20px;
+    }
 
- .home-logo {
-     margin-left: 0.8rem;
-     margin-top: 0.625rem;
- }
- .body .btn {
-     width: 5rem;
-.nav-bar{
-    background: #fff;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    width: 80vw;
-}
- .navlog {
-     width: 4rem;
- }
+    .home-logo {
+        margin-left: 0.8rem;
+        margin-top: 0.625rem;
+    }
+
+    .body .btn {
+        width: 5rem;
+
+        .nav-bar {
+            background: #fff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            width: 80vw;
+        }
+
+        .navlog {
+            width: 4rem;
+        }
 
 
-     .menudiv ul{
-        margin-top: 1rem;
-     }
-        
+        .menudiv ul {
+            margin-top: 1rem;
+        }
+
         //    .hamburger-menu .home-logo2 {
         //        visibility: hidden;
         //    }
 
 
+    }
+
+    .newer {
+        display: none;
+    }
+
 }
 
-.newer {
-    display: none;
-}
-
-}
 @media screen and (max-width: 600px) {
 
-.newer{
-    display: block;
-    padding-bottom: 40px;
-    background-color: #fff;
-    width: 100vw;
-}
+    .newer {
+        display: block;
+        padding-bottom: 40px;
+        background-color: #fff;
+        width: 100vw;
+    }
 
-.nava{
-    margin-left: 40vw;
-}
+    .nava {
+        margin-left: 40vw;
+    }
 
-#menuToggle {
-    display: block;
-    position: relative;
-    top: 50px;
-    left: 50px;
+    #menuToggle {
+        display: block;
+        position: relative;
+        top: 50px;
+        left: 50px;
 
-    z-index: 1;
+        z-index: 1;
 
-    -webkit-user-select: none;
-    user-select: none;
-}
+        -webkit-user-select: none;
+        user-select: none;
+    }
 
-#menuToggle a {
-    text-decoration: none;
-    color: #fff;
+    #menuToggle a {
+        text-decoration: none;
+        color: #fff;
 
-    transition: color 0.3s ease;
-}
+        transition: color 0.3s ease;
+    }
 
-#menuToggle a:hover {
-    color: tomato;
-}
+    #menuToggle a:hover {
+        color: tomato;
+    }
 
 
-#menuToggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
+    #menuToggle input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
 
-    cursor: pointer;
+        cursor: pointer;
 
-    opacity: 0;
-    /* hide this */
-    z-index: 2;
-    /* and place it over the hamburger */
+        opacity: 0;
+        /* hide this */
+        z-index: 2;
+        /* and place it over the hamburger */
 
-    -webkit-touch-callout: none;
-}
+        -webkit-touch-callout: none;
+    }
 
-/*
+    /*
  * Just a quick hamburger
  */
-#menuToggle span {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
+    #menuToggle span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
 
-    background: var(--color-body);
-    border-radius: 3px;
+        background: var(--color-body);
+        border-radius: 3px;
 
-    z-index: 1;
+        z-index: 1;
 
-    transform-origin: 4px 0px;
+        transform-origin: 4px 0px;
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        opacity 0.55s ease;
-}
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+            opacity 0.55s ease;
+    }
 
-#menuToggle span:first-child {
-    transform-origin: 0% 0%;
-}
+    #menuToggle span:first-child {
+        transform-origin: 0% 0%;
+    }
 
-#menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
+    #menuToggle span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
 
-/* 
+    /* 
  * Transform all the slices of hamburger
  * into a crossmark.
  */
-#menuToggle input:checked~span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #fff;
-}
+    #menuToggle input:checked~span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #fff;
+    }
 
-/*
+    /*
  * But let's hide the middle one.
  */
-#menuToggle input:checked~span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
+    #menuToggle input:checked~span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
 
-/*
+    /*
  * Ohyeah and the last one should go the other direction
  */
-#menuToggle input:checked~span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-}
+    #menuToggle input:checked~span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
 
-/*
+    /*
  * Make this absolute positioned
  * at the top left of the screen
  */
-.home-logo img{
-    display: block;
-}
+    .home-logo img {
+        display: block;
+    }
 
-#menub {
-    position: absolute;
-    width: 200px;
-    margin: -100px 0 0 -50px;
-    padding: 50px;
-    padding-top: 125px;
+    #menub {
+        position: absolute;
+        width: 200px;
+        margin: -100px 0 0 -50px;
+        padding: 50px;
+        padding-top: 125px;
 
-    background: var(--color-body);
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-    border-radius: 5px;
-    /* to stop flickering of text in safari */
+        background: var(--color-body);
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        border-radius: 5px;
+        /* to stop flickering of text in safari */
 
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
+        transform-origin: 0% 0%;
+        transform: translate(-100%, 0);
 
-    transition: transform 0.7s cubic-bezier(0.77, 0.2, 0.05, 1.0);
-}
+        transition: transform 0.7s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    }
 
-#menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
 
-/*
+    /*
  * And let's slide it in from the left
  */
-#menuToggle input:checked~ul {
-    transform: none;
-}
+    #menuToggle input:checked~ul {
+        transform: none;
+    }
 
 
 
-.body{
-    display: none;
-}
+    .body {
+        display: none;
+    }
 }

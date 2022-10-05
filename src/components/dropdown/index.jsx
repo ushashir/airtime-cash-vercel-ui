@@ -5,22 +5,23 @@ import { useNavigate, Link } from "react-router-dom";
 
 const UserProfileDropdown = ({ showDropdown }) => {
   const navigate = useNavigate();
+
   const handleLogout = () => {
+    console.log('I ran')
     localStorage.removeItem("token");
     navigate("/login");
   };
+
   return (
     <>
       <Dropdown showDropdown={showDropdown}>
-        <Link to="/update" style={{textDecoration:"none"}}>
+        <Link to="/update" style={{ textDecoration: "none" }}>
           <DropdownItem>
             <img src={ProfileIcon} alt="Account icon" /> <span>Account</span>{" "}
           </DropdownItem>
         </Link>
-        <DropdownItem style={{cursor:"pointer"}} onClick={() => handleLogout()}>
-
-            <img src={LogoutIcon} alt="Logout icon" /> <span>Logout</span>
-      
+        <DropdownItem style={{ cursor: "pointer" }} onClick={handleLogout}>
+          <img src={LogoutIcon} alt="Logout icon" /> <span>Logout</span>
         </DropdownItem>
       </Dropdown>
     </>

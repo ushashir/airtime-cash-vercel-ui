@@ -1,9 +1,20 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../context/userContext";
+import { hasToken } from "../../utils/isLoggedIn";
 
 
 const Nav = () => {
-  
+  const { user } = useContext(UserContext);
+  const imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
+  const [logged, setLogged] = useState(false)
+
+
+  useEffect(() => {
+    hasToken() && setLogged(true)
+  }, [])
+
   return (
     <div className="">
       <div className="newer">
@@ -28,9 +39,13 @@ const Nav = () => {
               <a href="/">
                 <li>Contact Us</li>
               </a>
-              <a href="/login">
-                <li>Login</li>
-              </a>
+              {
+                !logged && (
+                  <a href="/login">
+                    <li>Login</li>
+                  </a>
+                )
+              }
             </ul>
           </div>
         </nav>
@@ -69,10 +84,19 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-
-              <div className="btn" href="/login">
-                <a href="/login">Login</a>
-              </div>
+              {
+                logged
+                  ? (
+                    <div className="avatarsection">
+                      <img src={imageAvatar} alt="user avatar" className="avatar" />
+                    </div>
+                  )
+                  : (
+                    <div className="btn" href="/login">
+                      <a href="/login">Login</a>
+                    </div>
+                  )
+              }
             </ul>
           </div>
         </nav>
