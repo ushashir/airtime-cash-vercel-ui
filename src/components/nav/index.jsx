@@ -4,7 +4,6 @@ import logoicon from "../../assets/icons/logo_icon.svg";
 import { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
-import avatar from "../../assets/icons/avatar.svg";
 import UserProfileDropdown from "../dropdown";
 import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 
@@ -16,8 +15,7 @@ function Nav() {
   let imageAvatar;
   !user
     ? imageAvatar = 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png'
-    : imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
-
+    : imageAvatar = user.avatar;
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
 
