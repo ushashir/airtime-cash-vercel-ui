@@ -4,6 +4,7 @@ import logoicon from "../../assets/icons/logo_icon.svg";
 import { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
+import avatar from "../../assets/icons/avatar.svg";
 import UserProfileDropdown from "../dropdown";
 import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 
@@ -19,9 +20,11 @@ function Nav() {
 
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
+
       setShowDropdown(false)
+
     }
-  }
+  };
   useEffect(() => {
     document.addEventListener("click", handleClickOutside, true);
   });
@@ -42,7 +45,8 @@ function Nav() {
               style={{
                 display: "flex",
                 gap: "2px",
-                alignItems: "center"
+
+                alignItems: "center",
               }}
               ref={ref} onClick={() => setShowDropdown(prev => !prev)}>
               <img src={imageAvatar} alt="user avatar" className="avatar" />
