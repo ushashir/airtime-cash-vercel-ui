@@ -5,7 +5,7 @@ import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
 import loginLogo from '../../assets/icons/loginLogo.svg'
 import { useContext } from 'react';
-import { UserContext } from '../../context/userContext';
+import { BankContext, UserContext } from '../../context/userContext';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -14,6 +14,7 @@ const Login = () => {
     const [clickedLogin, setClickedLogin] = useState(false)
 
     const { setUserUpdated, setLogged } = useContext(UserContext)
+    const { setUpdateWallet } = useContext(BankContext)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -52,9 +53,10 @@ const Login = () => {
                 if (res.status === 200) {
                     const token = res.data.response.token;
                     localStorage.setItem('token', token);
-                    setUserUpdated(true);
-                    setLogged(true)
                     navigate('/dashboard')
+                    setUserUpdated(prev => !prev);
+                    // setLogged(true)
+                    setUpdateWallet(prev => !prev)
                 }
             }).catch((err) => {
                 if (err) {

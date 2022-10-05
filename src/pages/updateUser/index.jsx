@@ -52,7 +52,7 @@ function UpdatePage() {
             imageUrl: e.target.result,
             imageAlt: "The uploaded picture",
           });
-          setUserUpdated(true);
+          setUserUpdated(prev => !prev);
         }
       };
 

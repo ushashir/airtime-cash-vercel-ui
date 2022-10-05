@@ -22,27 +22,26 @@ import ProtectedRoute from "./utils/auth";
 function App() {
   const [user, setUser] = useState({ avatar: '', userName: '' });
   const [userUpdated, setUserUpdated] = useState(false);
-  const [logged, setLogged] = useState(false);
   const [walletBalance, setWalletBalance] = useState(0)
   const [updateWallet, setUpdateWallet] = useState(false);
-    
-  
+
+
   useEffect(() => {
-        getUserData().then((res) => {
-            const balance = res.response.wallet;
-            setWalletBalance(balance)
-        })
-    }, [updateWallet])
+    getUserData().then((res) => {
+      const balance = res.response.wallet;
+      setWalletBalance(balance)
+    })
+  }, [updateWallet])
 
   useEffect(() => {
     hasToken() && getUserData().then(data => setUser(data.response))
-  }, [userUpdated, logged])
+  }, [userUpdated])
 
 
   return (
 
     <BrowserRouter>
-      <UserContext.Provider value={{ user, setUserUpdated, setLogged }}>
+      <UserContext.Provider value={{ user, setUserUpdated }}>
         <Routes>
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
@@ -51,16 +50,22 @@ function App() {
           <Route path="/resetpassword/:token" element={<ResetPassword />} />
           <Route path="/verify/:token" element={<EmailVerified />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="/login" element={<LoginPage />} />
+
+          <Route path="/login" element={
+            <BankContext.Provider value={{ setUpdateWallet }}>
+              <LoginPage />
+            </BankContext.Provider>
+          }></Route>
 
           <Route path="/update" element={
             <ProtectedRoute>
               <UpdatePage />
             </ProtectedRoute>
           }></Route>
+
           <Route path="/dashboard" element={
             <ProtectedRoute>
-              <BankContext.Provider value={{walletBalance, setUpdateWallet}}>
+              <BankContext.Provider value={{ walletBalance, setUpdateWallet }}>
                 <Dashboard />
               </BankContext.Provider>
             </ProtectedRoute>
