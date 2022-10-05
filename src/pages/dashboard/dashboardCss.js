@@ -102,29 +102,34 @@ export const Tab = styled.button`
   display:none
 }
 label[for*="0"]:before {
-  content: "\e529";
+  content: "\f1d8";
+  font-size: 18px;
 }
 label[for*="1"]:before {
-  content: "\f1cb";
+  content: "\f4c0";
+  font-size: 18px;
 }
 label[for*="2"]:before {
-  content: "\f1cb";
+  content: "\f19c";
+  font-size: 18px;
 }
 label[for*="3"]:before {
-  content: "\f1cb";
+  content: "\f0ec";
+  font-size: 18px;
 }
 label[for*="4"]:before {
-  content: "\f1cb";
+  content: "\f1da";
+  font-size: 18px;
 }
-label:hover {
+label:hover, label:active {
   color: #DE3D6D;
   cursor: pointer;
 }
 input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid orange;
-  border-bottom: 1px solid #fff;
+  color: #DE3D6D;
+  
+  transition: color 1.2s ease-out;
+
   }
   @media screen and (max-width: 650px) {
    label {
