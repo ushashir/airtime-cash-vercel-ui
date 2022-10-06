@@ -1,0 +1,89 @@
+.testiBody{
+    background: #fff;
+}
+
+.testimonialContainer{
+    width: 95%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 15px;
+    height: 280px;
+    
+}
+
+.testimonialBox{
+    height: 218px;
+    background: rgba(0, 0, 0, 0.04);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        letter-spacing: 0em;
+        text-align: left;
+        width: 30%;
+        margin-top: 1rem;
+    padding: 32px 24px;
+
+}
+
+.scrollRight{
+    transform: scalex(-1);
+    margin-top: 4rem;
+}
+.scroll{
+    height: 100px;
+}
+
+.scrollLeft{
+    margin-top: 4rem;
+}
+
+@media only screen and (max-width: 1200px) {
+.testimonialBox{
+    height: 290px;
+        padding: 32px 14px;
+}
+
+.testimonialContainer {
+    height: 320px;
+    gap: 12px
+}
+}
+
+@media only screen and (max-width: 600px) {
+    .testimonialContainer {
+            flex-direction: column;
+        }
+.testi{
+    display: none;
+}
+                .testimonialContainer {
+                    flex-direction: column;
+        
+                }
+
+                .scroll{
+                    display: none;
+                }
+
+                // .testiBody{
+                //     height: 230px
+                // }
+
+                                .testimonialContainer {
+                                    width: 90%;
+                                    display: flex;
+                          
+                                    gap: 10px;
+                                    // height: 10vh;
+                
+                                }
+                
+                                .testimonialBox {
+                                    height: 218px;
+                                    font-size: 14px;
+                                    width: 100%;
+                                    padding: 32px 24px;
+                
+                                }
+}

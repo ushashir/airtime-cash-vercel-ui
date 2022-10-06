@@ -76,7 +76,9 @@ const Login = () => {
                                 <img src={loginLogo} alt="Airtime 4 cash logo" />
                             </div >
                             <div className='details-div'>
-                                <p className='login-text'>Login</p>
+                                <div className="ololo">
+                                    <p className='login-text'>Login</p>
+                                </div>
                                 <div className='L-frame-10'>
                                     <div className='L-frame-9'>
                                         <div className='L-frame-7'>
@@ -106,14 +108,18 @@ const Login = () => {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <Link to="/forgot-password" className='link'><p className='forgot_password-text'>Forgot Password?</p></Link>
+                                            <div className="lala">
+                                                <Link to="/forgot-password" className='link lolo'><p className='forgot_password-text'>Forgot Password?</p></Link>
+                                            </div>
                                         </div>
                                         <input className='login-btn' type="submit" value="Login" onClick={handleSubmit} disabled={clickedLogin === true ? true : false} />
                                     </div>
                                     <p style={{
                                         "color": "red"
                                     }}>{loginError}</p>
-                                    <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
+                                    <div className="lololo">
+                                        <p className="no_account-message">Don't have an account? <Link to="../signup" className='link'><span className='create_account'> Create an account</span></Link></p>
+                                    </div>
                                 </div>
                             </div>
                         </div >

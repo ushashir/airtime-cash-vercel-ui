@@ -1,12 +1,13 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
+import smalllogo from "../../assets/images/mobilehomelogo.png";
 
 
 const Nav = () => {
   
   return (
-    <div className="">
-      <div className="newer">
+    <div>
+      {/* <div className="newer">
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -37,6 +38,27 @@ const Nav = () => {
 
         <div className="home-logo">
           <img src={logo} alt="airtime to cash logo" className="nava"></img>
+        </div>
+        <img src={smalllogo} alt="airtime to cash logo" className="nava"></img>
+      </div> */}
+
+      {/* <div className="phoneMenu">
+     
+      </div> */}
+
+      <div className="mobileMenu">
+        <div className="mobileMenuLogo">
+          <img src={logo} alt="airtime to cash logo"></img>
+        </div>
+
+        <div className="mobileMenuHamburger">
+          <div className="hamburgerLineAll">
+            <div className="hamburgerLine"></div>
+            <div className="hamburgerLine"></div>
+            <div className="hamburgerLine"></div>
+          </div>
+
+          <div className="mobileMenuDropdown"></div>
         </div>
       </div>
 
@@ -69,10 +91,11 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-
-              <div className="btn" href="/login">
-                <a href="/login">Login</a>
-              </div>
+              <a href="/login">
+                <div className="btn navHomeBtn" href="/login">
+                  Login
+                </div>
+              </a>
             </ul>
           </div>
         </nav>
