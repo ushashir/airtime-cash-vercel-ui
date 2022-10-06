@@ -191,3 +191,14 @@ export const allTx = async() => {
     return error.response.data
   }
 }
+
+export const addToWallet = async (data) => {
+  try {
+    const response = await client.patch("/api/wallet", data,{
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
