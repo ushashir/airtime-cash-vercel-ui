@@ -20,6 +20,7 @@ import ProtectedRoute from "./utils/auth";
 import Layout from "./pages/Admin-dashboard/Layout/layout";
 import Overview from "./pages/Admin-dashboard/overview/overview";
 import Transaction from "./pages/Admin-dashboard/transactions/transaction";
+import Admin from "./pages/admin";
 
 
 function App() {
@@ -54,11 +55,6 @@ function App() {
               <Route path="/verify/:token" element={<EmailVerified />} />
               <Route path="*" element={<PageNotFound />} />
               <Route path="/login" element={<LoginPage />} />
-              {/* <Route path="/login" element={
-                <BankContext.Provider value={{ setUpdateWallet }}>
-                  <LoginPage />
-                </BankContext.Provider>
-              }></Route> */}
 
               <Route path="/update" element={
                 <ProtectedRoute>
@@ -74,7 +70,7 @@ function App() {
                 </ProtectedRoute>
               }></Route>
 
-//admin
+
               <Route
                 exact
                 path="/admin/*"
@@ -82,7 +78,7 @@ function App() {
                   <ProtectedRoute>
                     <Layout>
                       <Routes>
-                        <Route exact path="/" element={<Overview />} />{" "}
+                        <Route exact path="/" element={<Admin />} />{" "}
                         <Route
                           exact
                           path="/transactions"

@@ -59,9 +59,9 @@ export const DashboardWrapper = styled.div`
     line-height: 39px;
     color: #ffffff;
   }
-  .tab {
+  /* .tab {
     font-size: clamp(0.625rem, 0.6871rem + 0.6897vw, 0.875rem);
-  }
+  } */
   .component{
     transition: all 0.8s ease;
   }
@@ -89,28 +89,77 @@ export const Tab = styled.button`
   font-size: 14px;
   line-height: 17px;
   color: #012a4a;
-
   transition: border-bottom 1.2s ease-out;
-
   background: white;
   border: 0;
   outline: 0;
-  ${({ active }) =>
-    active &&
-    `
-border-bottom: 1px solid #DE3D6D;
+  ${({ active }) => active && `border-bottom: 1px solid #DE3D6D;`};
+  input{
+    display:none
+  };
+  label:before {
+  font-family: fontawesome;
+  display:none
+}
+label[for*="0"]:before {
+  content: "\f1d8";
+  font-size: 18px;
+}
+label[for*="1"]:before {
+  content: "\f4c0";
+  font-size: 18px;
+}
+label[for*="2"]:before {
+  content: "\f19c";
+  font-size: 18px;
+}
+label[for*="3"]:before {
+  content: "\f0ec";
+  font-size: 18px;
+}
+label[for*="4"]:before {
+  content: "\f1da";
+  font-size: 18px;
+}
+label:hover, label:active {
+  color: #DE3D6D;
+  cursor: pointer;
+}
+input:checked + label {
+  color: #DE3D6D;
+  
+  transition: color 1.2s ease-out;
 
-`}
+  }
+  @media screen and (max-width: 650px) {
+   label {
+    font-size: 0;
+  }
+   label:before {
+    margin: 0;
+    display:block;
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+ label {
+    padding: 15px;
+  }
+}
+
+
 `;
 export const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 34px auto;
   transition: all 0.5s ease-out;
-  @media (max-width: 650px) {
+  /* @media (max-width: 650px) {
     flex-direction : column ;
     text-align: left;
     
-    }
+    } */
   
 `;
