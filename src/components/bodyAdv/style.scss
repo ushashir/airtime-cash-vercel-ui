@@ -8,18 +8,19 @@
 }
 
 .adv_box{
-    display: grid;
-    grid-template-rows: 70vw 70vw;
-    grid-template-columns: 100%;
-    width: 100%;
-    height:90vh;
+    display: flex;
+    flex-direction: column;
+    // grid-template-rows: 70vw 70vw;
+    // grid-template-columns: 100%;
+    // width: 100%;
+    // height:90vh;
     // background-color: aqua;
     // background: #fff;
     border-radius: 24px;
     
 }
 
-.advert_bgdiv{
+.adv_bgdiv{
     padding-top: 0rem;
     padding-bottom: 0rem;
     background-image: url('../../assets/advert_bg.png');
@@ -28,6 +29,7 @@
        transform: rotate(0deg);
             -moz-transform: rotate(90deg);
             height: 35rem;
+          
             
 }
 
@@ -42,13 +44,14 @@ padding-top: 2rem;
     display: none;
     
 }
- .advert_text {
+ .adv_text {
      margin-top: 4rem;
  }
 
- .advert_content h2 {
+ .adv_content h2 {
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 1rem;
      width: 80%;
      height: 8.44rem;
      font-style: normal;
@@ -56,20 +59,21 @@ padding-top: 2rem;
      font-size: 1.69rem;
      line-height: 30px;
      color: #03435F;
-     text-align: center;
+     text-align: left;
  }
 
- .advert_text p {
+ .adv_text p {
     margin-left: auto;
         margin-right: auto;
-     width: 18.75rem;
-     padding-top: 0rem;
+     width: 80%;
+     padding-top: 1rem;
      padding-bottom: 1.875rem;
      font-style: normal;
      font-weight: 400;
      font-size: 14px;
      line-height: 24px;
      color: #03435F;
+     text-align: left;
  }
 
 .my-btn{
@@ -77,7 +81,7 @@ padding-top: 2rem;
             margin-right: auto;
             text-align: center;
             padding-bottom: 2.34rem;
-            width: 110px;
+            width: 90%;
             height: 44px;
             color: #fff;
             border: none;
@@ -91,6 +95,13 @@ padding-top: 2rem;
             background: linear-gradient(92.1deg, #DE3D6D 55.67%, #F5844C 101.51%);
             border-radius: 10px;
 }
+
+.adv_btn{
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+cursor: pointer;
+}
   .phonetouch img {
       width: 300px;
 
@@ -102,7 +113,7 @@ padding-top: 2rem;
   }
 
 @media screen and (min-width: 600px) {
-.advert_bgdiv {
+.adv_bgdiv {
         padding: 0;
         background-image: url('../../assets/advert_bg.png');
             background-size: cover;
@@ -157,26 +168,31 @@ padding-top: 2rem;
     margin-left: -2rem;
   }
 
-  .advert_text{
+  .adv_text{
     margin-top: 10px;
   }
 
-  .advert_text h2{
+  .adv_text h2{
     padding-top: 2.6rem;
     font-size: 1.4rem;
     width: 25rem;
     margin-left: 12vw;
   }
 
-  .advert_text p{
+  .adv_text p{
     text-align: left;
     margin-left: 12vw;
     
   }
+  .adv_btn {
+
+      text-align: left;
+      margin-left: 92px;
+  }
 }
 
 @media screen and (min-width: 950px) {
-.advert_bgdiv{
+.adv_bgdiv{
     padding: 0;
     margin: 0;
     
@@ -200,13 +216,14 @@ padding-top: 2rem;
             column-gap: 0;
             
     }
-    .advert_bgdiv{
+    .adv_bgdiv{
         width: 80vw;
         height: 32.2rem;
         // background-color: #F5844C;
                 background-image: url('../../assets/advert_bg.png');
                     background-size: cover;
                         background-position: center;
+                       
 
     }
         .adv_left {
@@ -225,11 +242,11 @@ padding-top: 2rem;
 
         }
                
-                .advert_text {
+                .adv_text {
                     margin-top: 4rem;
                 }
 
-                     .advert_content h2{
+                     .adv_content h2{
             
                         width: 525px;
                         margin-left: 5.3rem;
@@ -242,7 +259,7 @@ padding-top: 2rem;
                        
                 }
 
-                .advert_text p{
+                .adv_text p{
                     width:25rem;
                     padding-top: 3.3rem;
                     padding-bottom: 1.88rem;
@@ -273,4 +290,6 @@ font-size: 16px;
                     width: 510px;
                     
                 }
+
+                               
             }

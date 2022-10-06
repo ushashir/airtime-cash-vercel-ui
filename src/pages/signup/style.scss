@@ -10,8 +10,9 @@ body {
 .father {
   margin-top: 80px;
   margin-bottom: 122px;
-  margin-left: 348px;
-  margin-right: 347px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
   width: 745px;
   height: 1240px;
   background-color: white;
@@ -72,12 +73,15 @@ body {
 }
 
 .blocks {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+
   padding: 0px;
   gap: 8px;
   margin-bottom: 30px;
+  width: 100%;
+}
+
+.blocks input{
+  width: 100%;
 }
 .help {
   width: 320px;
@@ -162,11 +166,22 @@ margin-left: auto;
 
 @media screen and (max-width: 1000px) {
 
-.account .father form .blocks{
-  width: 100vw;
-    margin-left: auto;
-    margin-right: auto;
+// .account .father form .blocks{
+//   width: 90%;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+.account {
+  text-align: center;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
 }
+
 
 .father{
 
@@ -176,6 +191,8 @@ margin-left: auto;
       text-align: center;
       margin-top: 0;
         margin-bottom: 0;
+        // padding-left: 120px;
+        // padding-right: 120px;
 }
 
 .father img{
@@ -183,15 +200,7 @@ margin-left: auto;
   margin-right: auto;
 }
 
-.account{
-  width: 100vw;
-  margin-left: 0;
-  margin-right: 0;
-  padding-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
 
-}
 
 .kiki{
 
@@ -202,7 +211,8 @@ margin-left: auto;
 }
 
 .account form{
-    padding-left: 32%;
+    // padding-left: 32%;
+    width: 90%;
 }
 .text{
   margin-left: 0;
@@ -221,8 +231,8 @@ margin-left: auto;
   padding-left: -15rem;
 }
 
-.wawa{
-  margin-left: -15rem;
+.wawa input{
+width: 100%;
  
 }
 
@@ -233,8 +243,14 @@ margin-left: auto;
 padding-left: 10vw;
   }
 
-    .wawa {
-      margin-left: -2rem;
-  
-    }
+ .account {
+   text-align: center;
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 0;
+   margin-top: 0;
+   margin-bottom: 0;
+
+ }
 }

@@ -87,3 +87,25 @@ hr{
     text-align: left;
     padding-left: 15%;
 }
+
+@media only screen and (max-width: 600px) {
+    .footerimage img{
+width: 180px;
+    }
+
+    .footerUL{
+        flex-direction: column;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .footer-icons{
+        padding-left: 85px;
+    }
+
+        .footer-icons img {
+            width: 1.2rem;
+            padding-right: 0.1rem;
+        }
+}

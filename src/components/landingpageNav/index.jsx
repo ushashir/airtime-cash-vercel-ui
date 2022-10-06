@@ -1,5 +1,6 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
+import smalllogo from "../../assets/images/mobilehomelogo.png";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../context/userContext";
 import { hasToken } from "../../utils/isLoggedIn";
@@ -18,8 +19,8 @@ const Nav = () => {
   }, [])
 
   return (
-    <div className="">
-      <div className="newer">
+    <div>
+      {/* <div className="newer">
         <nav role="navigation">
           <div id="menuToggle">
             <input type="checkbox" />
@@ -55,6 +56,27 @@ const Nav = () => {
         <div className="home-logo">
           <img src={logo} alt="airtime to cash logo" className="nava"></img>
         </div>
+        <img src={smalllogo} alt="airtime to cash logo" className="nava"></img>
+      </div> */}
+
+      {/* <div className="phoneMenu">
+     
+      </div> */}
+
+      <div className="mobileMenu">
+        <div className="mobileMenuLogo">
+          <img src={logo} alt="airtime to cash logo"></img>
+        </div>
+
+        <div className="mobileMenuHamburger">
+          <div className="hamburgerLineAll">
+            <div className="hamburgerLine"></div>
+            <div className="hamburgerLine"></div>
+            <div className="hamburgerLine"></div>
+          </div>
+
+          <div className="mobileMenuDropdown"></div>
+        </div>
       </div>
 
       <div className="body">
@@ -86,22 +108,31 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-              {
-                logged
-                  ? (
-                    <div className="avatarsection">
-                      <img src={imageAvatar} alt="user avatar" className="avatar" />
-                      <Link to='/dashboard'>
-                        <img src={forwardArrow} alt="enter" className="avatar" width="5" height="6" />
-                      </Link>
-                    </div>
-                  )
-                  : (
-                    <div className="btn" href="/login">
-                      <a href="/login">Login</a>
-                    </div>
-                  )
-              }
+              {/* <a href="/login">
+                <div className="btn navHomeBtn" href="/login">
+                  Login
+                </div>
+              </a> */}
+              {logged ? (
+                <div className="avatarsection">
+                  <img src={imageAvatar} alt="user avatar" className="avatar" />
+                  <Link to="/dashboard">
+                    <img
+                      src={forwardArrow}
+                      alt="enter"
+                      className="avatar"
+                      width="5"
+                      height="6"
+                    />
+                  </Link>
+                </div>
+              ) : (
+                <a href="/login">
+                  <div className="btn" href="/login">
+                    Login
+                  </div>
+                </a>
+              )}
             </ul>
           </div>
         </nav>
