@@ -77,15 +77,15 @@ const Admin = () => {
                   <td data-label="Actions">
                         <span className="table_actions" onClick={e=>setId(tx.id)}>...</span>
                           {id === tx.id &&
-                            //   <Fragment>
-                            //   <div  className="dropdownContent">
-                            //   <button onClick={toggleModal} className="edit">Edit</button>
-                            //   {/* <button onClick={e=>setId(-1)} className="cancel">Cancel</button> */}
-                            //   </div>
-                            //   {showModal && <AmountModal data={[tx.email, tx.amount]} />}
-                            //   </Fragment>
+                              <Fragment>
+                              <div  className="dropdownContent">
+                              <button onClick={toggleModal} className="edit">Edit</button>
+                              {/* <button onClick={e=>setId(-1)} className="cancel">Cancel</button> */}
+                              </div>
+                              {showModal && <AmountModal data={[tx.email, tx.amount]} />}
+                              </Fragment>
                              
-                                  <Dropdown data={tx} setId={setId} />
+                                //   <Dropdown data={tx} setId={setId} />
                             
                               }
                   </td>
