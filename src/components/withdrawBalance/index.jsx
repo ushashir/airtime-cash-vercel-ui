@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select";
-import { checkWalletBalance, payment, sendTransactionStatus } from "../../api";
-import { useState, useContext } from "react";
+import { checkWalletBalance, getUserAccount, payment, sendTransactionStatus } from "../../api";
+import { useState, useContext, useEffect } from "react";
 import { bankCodes } from "../../utils/data/bankcodes";
 import { BankContext } from "../../context/userContext";
 import Swal from "sweetalert2";
@@ -16,6 +16,19 @@ function Withdraw() {
     const [bankDetails, setBankDetails] = useState("");
     const [clicked, setClicked] = useState(false);
     const { setUpdateWallet } = useContext(BankContext);
+    const [accounts, setAccounts] = useState([]);
+    // const [accountDetails, setAccountDetails] = useState([]);
+
+    console.log("REDD", accounts)
+    const getAccount = async () => {
+        const response = await getUserAccount();
+        const accns = response.response
+        setAccounts(accns)
+    };
+
+    useEffect(() => {
+        getAccount();
+    }, []);
 
     const withdrawSchema = yup.object().shape({
         amount: yup
@@ -106,10 +119,13 @@ function Withdraw() {
         const returned = await sendTransactionStatus(formData, flutterStatus);
         setUpdateWallet(prev => !prev);
     };
-    const options = [
-        { value: "UBA", label: "UBA" },
-        { value: "Ecobank", label: "Ecobank" },
-    ];
+
+    const options = []
+    accounts.map((account) => {
+        let details = { value: account.bankName, label: account.bankName };
+        options.push(details)
+    })
+
     return (
         <div>
             <p>Withdraw </p>
