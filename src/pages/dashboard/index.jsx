@@ -31,13 +31,14 @@ function Dashboard() {
           )}
           <div>
             <ButtonGroup>
-              {tabs.map((tab) => (
+              {tabs.map((tab,index) => (
                 <Tab
                   key={tab}
                   active={active === tab}
                   onClick={() => setActive(tab)}
                 >
-                  <span className="tab">{tab}</span>
+                  <input id={"tab"+index} type="radio" name="tabs" />
+                  <label htmlFor={"tab"+index} className="tab">{tab}</label>
                 </Tab>
               ))}
             </ButtonGroup>

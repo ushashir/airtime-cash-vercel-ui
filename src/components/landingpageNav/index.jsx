@@ -1,10 +1,23 @@
 import "./style.scss";
 import logo from "../../assets/icons/logo.svg";
 import smalllogo from "../../assets/images/mobilehomelogo.png";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../../context/userContext";
+import { hasToken } from "../../utils/isLoggedIn";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
-  
+  const { user } = useContext(UserContext);
+  const imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
+  const forwardArrow = 'https://media.istockphoto.com/vectors/arrow-line-vector-icon-on-white-background-vector-id1093587922?k=20&m=1093587922&s=612x612&w=0&h=nknwVyikzurWM1Ai6NaKL6VD5gi0pbOCb2CW3LNpH4A='
+  const [logged, setLogged] = useState(false)
+
+
+  useEffect(() => {
+    hasToken() && setLogged(true)
+  }, [])
+
   return (
     <div>
       {/* <div className="newer">
@@ -29,9 +42,13 @@ const Nav = () => {
               <a href="/">
                 <li>Contact Us</li>
               </a>
-              <a href="/login">
-                <li>Login</li>
-              </a>
+              {
+                !logged && (
+                  <a href="/login">
+                    <li>Login</li>
+                  </a>
+                )
+              }
             </ul>
           </div>
         </nav>
@@ -91,11 +108,31 @@ const Nav = () => {
                   Contact Us
                 </a>
               </li>
-              <a href="/login">
+              {/* <a href="/login">
                 <div className="btn navHomeBtn" href="/login">
                   Login
                 </div>
-              </a>
+              </a> */}
+              {logged ? (
+                <div className="avatarsection">
+                  <img src={imageAvatar} alt="user avatar" className="avatar" />
+                  <Link to="/dashboard">
+                    <img
+                      src={forwardArrow}
+                      alt="enter"
+                      className="avatar"
+                      width="5"
+                      height="6"
+                    />
+                  </Link>
+                </div>
+              ) : (
+                <a href="/login">
+                  <div className="btn" href="/login">
+                    Login
+                  </div>
+                </a>
+              )}
             </ul>
           </div>
         </nav>

@@ -1,20 +1,20 @@
 :root {
     --color-body: #03435F;
     --color-testimonial: #59C378;
-    --color-menu:  #012A4A;
+    --color-menu: #012A4A;
 }
-      
-                   .home-logo2{
-                    visibility: hidden;
-                   }
+
+.home-logo2 {
+    visibility: hidden;
+}
 
 // html {
 //     font-size: 62.5%;
 // }
-.burger-shower{
+.burger-shower {
     display: none;
     position: fixed;
-  
+
 }
 
 
@@ -86,12 +86,12 @@ h3 {
     transform: scale(0.54);
 }
 
- .menu a:active {
+.menu a:active {
     color: #DE3D6D;
 }
 
 
- .menudiv ul {
+.menudiv ul {
     display: flex;
     justify-content: center;
     visibility: visible;
@@ -107,12 +107,14 @@ h3 {
     text-decoration: none;
 }
 
-.home-logo{
+.home-logo {
     margin-left: 5.625rem;
 }
-.body{
+
+.body {
     height: 96px;
 }
+
 .body .btn {
     gap: 0.625rem;
     height: 2.438rem;
@@ -132,12 +134,20 @@ h3 {
             /* Removes the border when the input is clicked */
     }
 
-  
-
-  background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
-  border-radius: 4px;
 
 
+    // background: linear-gradient(101.31deg, #DE3D6D 42.62%, #F5844C 104.19%);
+    // border-radius: 4px;
+
+
+}
+
+.avatarsection {
+    height: 6.12rem;
+    width: 6.25rem;
+    text-align: center;
+    margin-top: -9px;
+    cursor: pointer;
 }
 
 
@@ -166,24 +176,24 @@ h3 {
         justify-items: start;
         justify-content: center;
         padding-left: 0;
-    
-        
+
+
     }
 
 
-.menudiv {
-    margin-top: 20px;
-    margin-left: 50px;
-}
+    .menudiv {
+        margin-top: 20px;
+        margin-left: 50px;
+    }
 
-.body li {
-    width: 4rem;
-    font-size: 0.7rem;
-}
+    .body li {
+        width: 4rem;
+        font-size: 0.7rem;
+    }
 
-.home_link{
-    margin-left: 20px;
-}
+    .home_link {
+        margin-left: 20px;
+    }
 
  .home-logo {
      margin-left: 0.8rem;
@@ -202,17 +212,32 @@ h3 {
      width: 4rem;
  }
 
+    .body .btn {
+        width: 5rem;
 
-     .menudiv ul{
-        margin-top: 1rem;
-     }
-        
+        .nav-bar {
+            background: #fff;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            width: 80vw;
+        }
+
+        .navlog {
+            width: 4rem;
+        }
+
+
+        .menudiv ul {
+            margin-top: 1rem;
+        }
+
         //    .hamburger-menu .home-logo2 {
         //        visibility: hidden;
         //    }
 
 
-}
+    }
 
 // .newer {
 //     display: none;
@@ -520,4 +545,5 @@ border-radius: 4px;
                 .hamburgerLineAll {
                     margin-top: 9px;
                 }
+}
 }
