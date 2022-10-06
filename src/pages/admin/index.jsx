@@ -4,6 +4,7 @@ import ContentLoader from "react-content-loader";
 import "./admin.scss";
 import { useRef } from "react";
 import AmountModal from "../../components/modal";
+import Dropdown from "../../components/dropdownAdmin";
 const Admin = () => {
   const [transactions, setTransactions] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +31,11 @@ const Admin = () => {
   }, []);
   console.log(transactions);
 
-
+//     const toggleModal = () => {
+//         console.log("ffff")
+//         setId(-1)
+//         setShowModal(true)
+// }
 
   const MyLoader = () => (
     <ContentLoader
@@ -72,13 +77,16 @@ const Admin = () => {
                   <td data-label="Actions">
                         <span className="table_actions" onClick={e=>setId(tx.id)}>...</span>
                           {id === tx.id &&
-                              <Fragment>
-                              <div  className="dropdownContent">
-                              <button onClick={e=>setShowModal(true)} className="edit">Edit</button>
-                              <button onClick={e=>setId(-1)} className="cancel">Cancel</button>
-                              </div>
-                              showModal && <AmountModal data={[tx.email, tx.amount]} />
-                              </Fragment>
+                            //   <Fragment>
+                            //   <div  className="dropdownContent">
+                            //   <button onClick={toggleModal} className="edit">Edit</button>
+                            //   {/* <button onClick={e=>setId(-1)} className="cancel">Cancel</button> */}
+                            //   </div>
+                            //   {showModal && <AmountModal data={[tx.email, tx.amount]} />}
+                            //   </Fragment>
+                             
+                                  <Dropdown data={tx} setId={setId} />
+                            
                               }
                   </td>
                 </tr>
