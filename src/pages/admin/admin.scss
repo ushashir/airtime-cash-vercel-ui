@@ -38,6 +38,42 @@ table {
     cursor: pointer;
     font-weight: bold;
   }
+
+  .dropdownContent{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 0px;
+
+position: absolute;
+width: 15%;
+right: 10px;
+
+/* Basic/White */
+
+background: #FFFFFF;
+/* Gray/100 */
+
+border: 1px solid #F5F5F5;
+/* Shadow/300 */
+
+box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.1), 0px 2px 4px -2px rgba(33, 33, 33, 0.06);
+border-radius: 8px;
+  }
+  .dropdownContent button{
+    all: unset;
+    cursor: pointer;
+    padding: 12px 24px;
+  }
+  .dropdownContent .edit:hover {
+    color: #00A3E0;
+    transition: color 0.5s ease; 
+  }
+  .dropdownContent .cancel:hover {
+    color: #FFA500;
+    transition: color 0.5s ease; 
+  }
+  
   @media screen and (max-width: 600px) {
     table {
       border: 0;
@@ -84,6 +120,10 @@ table {
     
     table td:last-child {
       border-bottom: 0;
+    }
+    .dropdownContent{
+        flex-direction: row;
+        width: 50%;
     }
   }
   
