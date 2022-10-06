@@ -1,25 +1,27 @@
 import React from 'react';
 import Nav from '../../components/landingpageNav';
 import Hero from '../../components/hero';
-import TestimonialSlider from '../../components/testimonialSlider';
+// import TestimonialSlider from '../../components/testimonialSlider';
 import './style.scss'
 import Footer from '../../components/footer_landing';
 import BodyText1 from '../../components/bodyText1';
 import Service from '../../components/services';
-import Advert from '../../components/advert';
+import Advert from '../../components/bodyAdv';
 import BodyText2 from '../../components/bodyText2';
+import Testimonial from '../../components/testimonial';
 
 function LandingPage(props) {
   return (
     <>
-      <div>
+      <div className='landingPg'>
         <Nav />
         <Hero />
         <BodyText1 />
         <Service />
         <Advert />
         <BodyText2 />
-        <div className="arrow-pos">
+        <Testimonial />
+        {/* <div className="arrow-pos">
           <div className="arrow">&lt;</div>
           <div className="testimonal-container">
             <TestimonialSlider
@@ -46,9 +48,9 @@ function LandingPage(props) {
               Amazing platform! I have been transacting with
               Airtime2Cash for 2 months now and so far, it still looks promising.
             </p>
-          </div>
-        </div>
-        <Footer />
+          </div> */}
+         
+        <Footer /> 
       </div>
     </>
   );
