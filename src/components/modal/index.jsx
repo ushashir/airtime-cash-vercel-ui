@@ -47,6 +47,7 @@ const AmountModal = (data) => {
             showCancelButton: false
           })
         const payload = ({ ...input, email })
+        console.log(payload)
         const res = await addToWallet(payload)
         console.log(res)
         if (res.status === 200) {

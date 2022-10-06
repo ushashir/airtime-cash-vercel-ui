@@ -79,8 +79,8 @@ const Admin = () => {
                           {id === tx.id &&
                               <Fragment>
                               <div  className="dropdownContent">
-                              <button onClick={toggleModal} className="edit">Edit</button>
-                              {/* <button onClick={e=>setId(-1)} className="cancel">Cancel</button> */}
+                              <button onClick={e=> setShowModal(true)} className="edit">Edit</button>
+                              <button onClick={e=>setId(-1)} className="cancel">Cancel</button>
                               </div>
                               {showModal && <AmountModal data={[tx.email, tx.amount]} />}
                               </Fragment>
