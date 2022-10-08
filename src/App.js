@@ -43,7 +43,6 @@ function App() {
 
   return (
     <>
-      <RecoilRoot>
         <BrowserRouter>
           <UserContext.Provider value={{ user, setUserUpdated }}>
             <Routes>
@@ -93,7 +92,6 @@ function App() {
             </Routes>
           </UserContext.Provider>
         </BrowserRouter>
-      </RecoilRoot>
     </>
 
   );

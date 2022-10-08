@@ -4,7 +4,6 @@ import ContentLoader from "react-content-loader";
 import "./admin.scss";
 import { useRef } from "react";
 import AmountModal from "../../components/modal";
-import Dropdown from "../../components/dropdownAdmin";
 const Admin = () => {
   const [transactions, setTransactions] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -36,6 +35,9 @@ const Admin = () => {
 //         setId(-1)
 //         setShowModal(true)
 // }
+  const closeModal = () => {
+    setShowModal(false)
+  }
 
   const MyLoader = () => (
     <ContentLoader
@@ -82,7 +84,7 @@ const Admin = () => {
                               <button onClick={e=> setShowModal(true)} className="edit">Edit</button>
                               <button onClick={e=>setId(-1)} className="cancel">Cancel</button>
                               </div>
-                              {showModal && <AmountModal data={[tx.email, tx.amount]} />}
+                        {showModal && <AmountModal data={[tx.email, tx.amount]} onChange={closeModal} />}
                               </Fragment>
                              
                                 //   <Dropdown data={tx} setId={setId} />

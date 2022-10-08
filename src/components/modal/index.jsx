@@ -69,51 +69,56 @@ const AmountModal = (data) => {
           }
 
     }
+    function handleChange(event) {
+      data.onChange(false);
+  }
 
     return (
-        <>
-            <div className="modalWrapper">
+      <>
+        
+          <div className="modalWrapper">
             <div className="modalContainer">
-                    <h2 className="modalTitle">Confirm Amount</h2>
-                    <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="form_group">
-          <div className="label_container">
-            <label htmlFor="amount" className="form_label">
-              Amount sent
-            </label>
-          </div>
+              <span className="closeModal" onClick={handleChange}>X</span>
+              <h2 className="modalTitle">Confirm Amount</h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <div className="form_group">
+                  <div className="label_container">
+                    <label htmlFor="amount" className="form_label">
+                      Amount sent
+                    </label>
+                  </div>
           
-          <Input
-            register={register}
-            errors={errors}
-            name="amount"
-            type="text"
-            placeholder="Enter amount"
-          />
-        </div>
-                    <div className="form_group">
-          <div className="label_container">
-            <label htmlFor="amount_recieved" className="form_label">
-              Amount recieved
-            </label>
+                  <Input
+                    register={register}
+                    errors={errors}
+                    name="amount"
+                    type="text"
+                    placeholder="Enter amount"
+                  />
+                </div>
+                <div className="form_group">
+                  <div className="label_container">
+                    <label htmlFor="amount_recieved" className="form_label">
+                      Amount recieved
+                    </label>
+                  </div>
+                  <Input
+                    register={register}
+                    errors={errors}
+                    isDisabled={true}
+                    name="amount_recieved"
+                    type="text"
+                    value={record[1] * 0.7}
+                    placeholder="Enter amount"
+                  />
+                </div>
+                <div style={{ margin: "0 auto" }}>
+                  <Button type="submit" value="Confirm" style={{ marginBottom: "33px" }} />
+                </div>
+              </form>
+            </div>
           </div>
-          <Input
-            register={register}
-                            errors={errors}
-                            isDisabled={true}
-            name="amount_recieved"
-                            type="text"
-                            value={record[1] * 0.7}
-            placeholder="Enter amount"
-          />
-                    </div>
-                    <div style={{margin:"0 auto"}}>
-                    <Button type="submit" value="Confirm" style={{marginBottom: "33px"}}/>
-                    </div>
-                    </form>
-        </div>
-        </div>
-           
+        }
         </>
     )
 }
