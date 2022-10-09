@@ -104,7 +104,7 @@ function SellAirtime() {
     })
 
     const res = await notifyAdmin(data)
-
+console.log(res)
 
 
     if (res.status === 201) {

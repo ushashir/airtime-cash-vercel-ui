@@ -2,7 +2,6 @@ import Input from "../common/inputField"
 import "./modal.scss"
 import { useForm } from "react-hook-form";
 import Button from "../common/button";
-import { useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { addToWallet } from "../../api";
@@ -10,7 +9,9 @@ import Swal from "sweetalert2";
 
 const AmountModal = (data) => {
     const record = data.data
-    const email = record[0]
+  const email = record[0]
+  const txId = record[2]
+  const txStatus = "sent"
 
     const amountSchema = yup.object().shape({
         amount: yup.number().positive().required().typeError("Please enter your amount"),
@@ -46,7 +47,7 @@ const AmountModal = (data) => {
             showConfirmButton: false,
             showCancelButton: false
           })
-        const payload = ({ ...input, email })
+        const payload = ({ ...input, email,txId, txStatus })
         console.log(payload)
         const res = await addToWallet(payload)
         console.log(res)
@@ -67,9 +68,9 @@ const AmountModal = (data) => {
               confirmButtonColor: "#DE3D6D",
             })
           }
-
+          handleChange()
     }
-    function handleChange(event) {
+    function handleChange() {
       data.onChange(false);
   }
 
@@ -93,7 +94,7 @@ const AmountModal = (data) => {
                     errors={errors}
                     name="amount"
                     type="text"
-                    placeholder="Enter amount"
+                    placeholder={record[1]}
                   />
                 </div>
                 <div className="form_group">
@@ -118,7 +119,7 @@ const AmountModal = (data) => {
               </form>
             </div>
           </div>
-        }
+        
         </>
     )
 }

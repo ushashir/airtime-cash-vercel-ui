@@ -11,11 +11,12 @@ const Admin = () => {
     const [id, setId] = useState(-1)
     const ref = useRef(null)
  
-    const handleCloseDropdown = (e) => {
+  const handleCloseDropdown = (e) => {
         if(ref.current && !ref.current.contains(e.target)){
             setId(-1)
         }
     }
+
     useEffect(() => {
         document.addEventListener("click", handleCloseDropdown, true)
     })
@@ -30,11 +31,7 @@ const Admin = () => {
   }, []);
   console.log(transactions);
 
-//     const toggleModal = () => {
-//         console.log("ffff")
-//         setId(-1)
-//         setShowModal(true)
-// }
+
   const closeModal = () => {
     setShowModal(false)
   }
@@ -54,7 +51,7 @@ const Admin = () => {
   return (
     <>
       <table>
-        <caption>Admin Dashboard</caption>
+        <caption>Pending Transactions</caption>
 
         {isLoading && <MyLoader style={{ margin: "0 auto" }} />}
 
@@ -69,22 +66,22 @@ const Admin = () => {
         </thead>
         <tbody>
           {transactions &&
-            transactions.map((tx) => {
+            transactions.filter((item)=>item.status === "pending").map((tx) => {
               return (
                 <tr>
-                  <td data-label="Email">{tx.email}</td>
-                  <td data-label="Phone Number">{tx.phone}</td>
-                  <td data-label="Amount Sent">{tx.amount}</td>
-                  <td data-label="Amount to Recieve">{tx.amountToReceive}</td>
-                  <td data-label="Actions">
+                  <td className="email" data-label="Email">{tx.email}</td>
+                  <td className="phone" data-label="Phone Number">{tx.phone}</td>
+                  <td className="toSend" data-label="Amount Sent">₦{tx.amount}</td>
+                  <td className="toRecieve" data-label="Amount to Recieve">₦{tx.amountToReceive}</td>
+                  <td className="action" data-label="Actions">
                         <span className="table_actions" onClick={e=>setId(tx.id)}>...</span>
                           {id === tx.id &&
                               <Fragment>
                               <div  className="dropdownContent">
                               <button onClick={e=> setShowModal(true)} className="edit">Edit</button>
-                              <button onClick={e=>setId(-1)} className="cancel">Cancel</button>
+                             <button onClick={e=>setId(-1)} className="cancel">Cancel</button>
                               </div>
-                        {showModal && <AmountModal data={[tx.email, tx.amount]} onChange={closeModal} />}
+                        {showModal && <AmountModal data={[tx.email, tx.amount, id]} onChange={closeModal} />}
                               </Fragment>
                              
                                 //   <Dropdown data={tx} setId={setId} />
