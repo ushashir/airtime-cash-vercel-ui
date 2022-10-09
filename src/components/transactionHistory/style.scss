@@ -1,3 +1,7 @@
+.tH-Frame1-8747{
+    max-height: 450px;
+    overflow: auto;  
+}
 .tH-Frame-8747 {
     display: flex;
     flex-direction: column;
@@ -67,12 +71,9 @@
 }
 
 .tH-day_time {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: clamp(0.75rem, 0.5938rem + 0.5vw, 0.875rem);
     line-height: 17px;
-    /* identical to box height */
     color: #21334F;
 }
 
@@ -102,4 +103,17 @@
 
 
     color: #21334F;
+}
+
+.th-status{
+    width: 61px;
+    height: 17px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.5938rem + 0.5vw, 0.875rem);
+    line-height: 17px;
+
+    color: #1847e5;
 }

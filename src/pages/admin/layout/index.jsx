@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
+import { MdOutlineDashboardCustomize,MdOutlinePending } from "react-icons/md";
 import { GrClose, GrTransaction } from "react-icons/gr";
-import {
-  FaBars,
-  FaRegChartBar,
-  FaCommentAlt,
-  FaShoppingBag,
-  FaThList,
-} from "react-icons/fa";
+import {  FaBars,} from "react-icons/fa";
 import { NavLink } from "react-router-dom";
-import { SideBarStyle } from "../Layout/layoutstyle";
+import { SideBarStyle } from "../layout/layoutStyle";
 import Nav from "../../../components/nav/index";
 
 const Layout = ({ children }) => {
@@ -29,9 +23,14 @@ const Layout = ({ children }) => {
   });
   const menuItem = [
     {
-      path: "/admin/",
+      path: "/admin/stats",
       name: "Overview",
       icon: <MdOutlineDashboardCustomize />,
+    },
+    {
+      path: "/admin/",
+      name: "Pending",
+      icon: <MdOutlinePending />,
     },
     {
       path: "/admin/transactions",
