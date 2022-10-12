@@ -4,16 +4,18 @@ import logoicon from "../../assets/icons/logo_icon.svg";
 import { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../context/userContext";
-import avatar from "../../assets/icons/avatar.svg";
 import UserProfileDropdown from "../dropdown";
 import dropDownIcon from "../../assets/icons/dropdownicon.svg";
 
 function Nav() {
   const { user } = useContext(UserContext);
   const [showDropdown, setShowDropdown] = useState(false);
-  const imageAvatar = user.avatar || 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png';
   const ref = useRef(null);
 
+  let imageAvatar;
+  !user
+    ? imageAvatar = 'https://www.nicepng.com/png/detail/115-1150821_default-avatar-comments-sign-in-icon-png.png'
+    : imageAvatar = user.avatar;
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
 
@@ -44,12 +46,13 @@ function Nav() {
                 display: "flex",
                 gap: "2px",
 
-                alignItems: "center"
+
+                alignItems: "center",
               }}
               ref={ref} onClick={() => setShowDropdown(prev => !prev)}>
               <img src={imageAvatar} alt="user avatar" className="avatar" />
+              <p>{user && user.userName}</p>
 
-              <p>{user.userName}</p>
               <img
                 style={{ width: "18px", paddingTop: "5px" }}
                 src={dropDownIcon}

@@ -105,8 +105,6 @@ function SellAirtime() {
 
     const res = await notifyAdmin(data)
 
-
-
     if (res.status === 201) {
       Swal.fire({
         icon: 'success',

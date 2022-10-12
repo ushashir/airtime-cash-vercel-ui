@@ -116,7 +116,7 @@ export const banksList = async () => {
 
 export const notifyAdmin = async (data) => {
   try {
-    const response = await client.post("/api/notify/",data, {
+    const response = await client.post("/api/transactions/",data, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -173,6 +173,38 @@ export const payment = async (data) => {
 export const userWithdawalHistory = async() => {
   try{
     const response = await client.get("/api/withdraw", {
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
+
+export const allTx = async() => {
+  try{
+    const response = await client.get("/api/transactions/all", {
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
+
+export const addToWallet = async (data) => {
+  try {
+    const response = await client.patch("/api/wallet/confirm", data,{
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
+export const cancelTx = async (txId) => {
+  try {
+    const response = await client.patch("/api/wallet/cancel", txId,{
       headers: { Authorization: `Bearer ${token}`},
     });
     return response;

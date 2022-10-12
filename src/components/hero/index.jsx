@@ -11,16 +11,13 @@ export default function Hero() {
           <div className="hero_left_text">
             <div className="hero_header_div">
               <h1 className="hero_header">
-                Surplus Airtime?
-                <br />
-                Don't worry we
-                <br />
-                got your covered
+                Surplus Airtime? Don't worry we got your covered
               </h1>
             </div>
             <div className="hero_subtitle">
-              Converting airtime to cash has never been easier. Problem-free transactions, easy cashouts, money alerts,
-              all in less than five seconds!
+              Converting airtime to cash has never been easier. Problem-free
+              transactions, easy cashouts, money alerts, all in less than five
+              seconds!
             </div>
             <a href="/signup">
               <Button
@@ -31,6 +28,7 @@ export default function Hero() {
                   textAlign: "center",
                   textDecoration: "none",
                   borderRadius: "24px",
+                  cursor: "pointer",
                 }}
               />
             </a>

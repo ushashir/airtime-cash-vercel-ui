@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Select from "react-select";
-import { checkWalletBalance, payment, sendTransactionStatus } from "../../api";
-import { useState, useContext } from "react";
+import { checkWalletBalance, getUserAccount, payment, sendTransactionStatus } from "../../api";
+import { useState, useContext, useEffect } from "react";
 import { bankCodes } from "../../utils/data/bankcodes";
 import { BankContext } from "../../context/userContext";
 import Swal from "sweetalert2";
@@ -16,6 +16,19 @@ function Withdraw() {
     const [bankDetails, setBankDetails] = useState("");
     const [clicked, setClicked] = useState(false);
     const { setUpdateWallet } = useContext(BankContext);
+    const [accounts, setAccounts] = useState([]);
+    // const [accountDetails, setAccountDetails] = useState([]);
+
+    console.log("REDD", accounts)
+    const getAccount = async () => {
+        const response = await getUserAccount();
+        const accns = response.response
+        setAccounts(accns)
+    };
+
+    useEffect(() => {
+        getAccount();
+    }, []);
 
     const withdrawSchema = yup.object().shape({
         amount: yup
@@ -38,18 +51,22 @@ function Withdraw() {
         resolver: yupResolver(withdrawSchema),
     });
     watch();
+
     //form handling logic here
     const onSubmit = async (data, e) => {
         e.preventDefault();
         setClicked(false)
         let bankCode;
-        const bankName = bankDetails.split("(")[0];
+        // const bankName = bankDetails.split("(")[0];
+        const bankName = bankDetails
         bankCodes.map((bank) => {
             if (bankName === bank.name) {
                 bankCode = bank.code;
             }
         });
         const formData = { bankCode, bankName, ...data };
+        console.log('formData', formData)
+
         Swal.fire({
             html: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
     <circle cx="37" cy="50" fill="#de3d6d" r="13">
@@ -76,12 +93,12 @@ function Withdraw() {
         let flutterStatus;
         if (res.message === "Success") {
             const result = await payment(formData);
-            console.log('resss',)
+            console.log('resss', result)
             const status = result.data.response.data.status;
             if (status === "FAILED") {
                 flutterStatus = "failed";
                 Swal.fire({
-                    icon: 'success',
+                    icon: 'error',
                     titleText: 'error',
                     text: 'Transaction failed',
                     confirmButtonText: "Okay",
@@ -102,10 +119,13 @@ function Withdraw() {
         const returned = await sendTransactionStatus(formData, flutterStatus);
         setUpdateWallet(prev => !prev);
     };
-    const options = [
-        { value: "UBA(00011xxxxxxxx)", label: "UBA(000111xxxxxxxx)" },
-        { value: "GT Bank(00011122xxxxxx)", label: "GT Bank(0001112xxxxxx)" },
-    ];
+
+    const options = []
+    accounts.map((account) => {
+        let details = { value: account.bankName, label: account.bankName };
+        options.push(details)
+    })
+
     return (
         <div>
             <p>Withdraw </p>
@@ -153,9 +173,7 @@ function Withdraw() {
                         register={register}
                         errors={errors}
                         name="accountNumber"
-                        readOnly={true}
                         type="text"
-                        value="1234567890"
                     />
                 </div>
                 <div className="form_group">
@@ -186,7 +204,7 @@ function Withdraw() {
                         placeholder="enter password"
                     />
                 </div>
-                <Button value="Withdraw" type="submit" disabled={false} />
+                <Button value="Withdraw" type="submit" disabled={clicked} />
             </form>
         </div>
     );

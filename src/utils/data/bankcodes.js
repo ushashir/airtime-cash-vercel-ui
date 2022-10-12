@@ -210,7 +210,7 @@ export const bankCodes = [
     "ussd": "*826#"
   },
   {
-    "name": "UBA",
+    "name": "United Bank For Africa",
     "slug": "united-bank-for-africa",
     "code": "033",
     "ussd": "*919#"

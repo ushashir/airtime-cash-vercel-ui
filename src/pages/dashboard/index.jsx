@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TransactionHistory from "../../components/transactionHistory";
 import WalletBalance from "../../components/walletBalance";
 import { DashboardWrapper, Tab, TopBg, ButtonGroup } from "./dashboardCss";
@@ -7,6 +7,7 @@ import SellAirtime from "../../components/sellAirtime/";
 import ManageAccount from "../../components/manageAccount/manageAccount";
 import Nav from "../../components/nav";
 import WithdrawalHistory from "../../components/withdrawalHistory";
+
 
 function Dashboard() {
   const tabs = [
@@ -31,13 +32,14 @@ function Dashboard() {
           )}
           <div>
             <ButtonGroup>
-              {tabs.map((tab) => (
+              {tabs.map((tab,index) => (
                 <Tab
                   key={tab}
                   active={active === tab}
                   onClick={() => setActive(tab)}
                 >
-                  <span className="tab">{tab}</span>
+                  <input id={"tab"+index} type="radio" name="tabs" />
+                  <label htmlFor={"tab"+index} className="tab" >{tab}</label>
                 </Tab>
               ))}
             </ButtonGroup>

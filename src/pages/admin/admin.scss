@@ -1,0 +1,181 @@
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    color: #012A4A;
+  }
+  
+  table caption {
+    font-size: 32px;
+    font-weight: 600;
+    margin: .5em 0 .75em;
+
+  }
+  
+  table tr {
+    // background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: .35em;
+  }
+  
+  table th,
+  table td {
+    padding: .625em;
+    text-align: center;
+  }
+  
+  table th {
+    font-size: .85em;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  
+  .table_actions{
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .dropdownContent{
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 0px;
+
+position: absolute;
+width: 15%;
+right: 10px;
+
+/* Basic/White */
+
+background: #FFFFFF;
+/* Gray/100 */
+
+border: 1px solid #F5F5F5;
+/* Shadow/300 */
+
+box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.1), 0px 2px 4px -2px rgba(33, 33, 33, 0.06);
+border-radius: 8px;
+  }
+  .dropdownContent button{
+    all: unset;
+    cursor: pointer;
+    padding: 12px 24px;
+  }
+  .dropdownContent .edit:hover {
+    color: #00A3E0;
+    transition: color 0.5s ease; 
+  }
+  .dropdownContent .cancel:hover {
+    color: #FFA500;
+    transition: color 0.5s ease; 
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      border: 0;
+    }
+  
+    table caption {
+      font-size: 1.3em;
+    }
+    
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+    
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
+      margin-bottom: .625em;
+    }
+    
+    table td {
+      border-bottom: 1px solid #ddd;
+      font-size: .8em;
+    }
+    
+    table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    
+    table td:last-child {
+      border-bottom: 0;
+    }
+    .dropdownContent{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 80%;
+    }
+  }
+
+
+  td:before {
+  font-family: fontawesome;
+  display:none
+}
+.email::before {
+  content: "\f0e0";
+  font-size: 18px;
+}
+.phone::before {
+  content: "\f095";
+  font-size: 18px;
+}
+.toSend::before {
+  content: "\f061";
+  font-size: 18px;
+}
+.date::before {
+  content: "\f017";
+  font-size: 18px;
+}
+.network::before {
+  content: "\f1eb";
+  font-size: 18px;
+}
+.status::before {
+  content: "\f05a";
+  font-size: 18px;
+}
+.toRecieve::before {
+  content: "\f060";
+  font-size: 18px;
+}
+.action::before {
+  content: "\21";
+  font-size: 18px;
+}
+
+  @media screen and (max-width: 650px) {
+   td {
+    font-size: 0;
+  }
+   td:before {
+    margin: 0;
+    display:block;
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+ td {
+    padding: 15px;
+  }
+}
+  
