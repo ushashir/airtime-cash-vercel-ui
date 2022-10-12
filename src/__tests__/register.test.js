@@ -1,8 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import Signup from "../pages/signup"
+function sum(a, b) {
+  return a + b;
+}
+export default sum;
 
-test("renders learn react link", () => {
-  render(<Signup />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("test sum of two numbers", () => {
+  expect(sum(4, 5)).toEqual(9);
 });
