@@ -9,6 +9,9 @@ export default sum;
 test("test sum of two numbers", () => {
   expect(sum(4, 5)).toEqual(9);
 });
+test("test sum of two numbers1", () => {
+  expect(sum(5, 5)).toEqual(10);
+});
 
 test("test substration of two numbers", () => {
   expect(subtract(10, 5)).toEqual(5);
