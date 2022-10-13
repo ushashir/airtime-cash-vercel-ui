@@ -30,7 +30,7 @@ function ManageAccount() {
     }
   };
 
-  const accountNumberRegex = /^(\d{10,12})$/;
+  const accountNumberRegex = /^(\d{10})$/;
   const manageAccountSchema = yup.object().shape({
     accountName: yup
       .string("Please enter a valid Account name")
@@ -41,7 +41,7 @@ function ManageAccount() {
       .required("Please enter your account number")
       .matches(
         accountNumberRegex,
-        "Account number muat be 10 to 12 characters"
+        "Account number must be 10 characters"
       ),
   });
   const {
