@@ -89,3 +89,24 @@ margin-bottom: 2.5rem;
                 animation: 1.5s spin infinite linear;
    
 }
+.upload-picture{
+    border: #F5844C 2px dotted;
+    cursor: pointer;
+}
+
+.tfa{
+    cursor: pointer;
+    gap: 10px;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  padding: 10px auto;
+  height: 48px;
+  color: #fff;
+  background-color: #F5844C;
+  ;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

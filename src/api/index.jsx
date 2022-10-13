@@ -88,12 +88,10 @@ export const getUserAccount = async () => {
   }
 };
 
-export const deleteAccount = async (id) => {
+export const deleteAccount = async (id,password ) => {
   try {
-    const response = await client.delete(`/api/account/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
+    const response = await client.delete(`/api/account/${id}`, password, {
+      headers: { Authorization: `Bearer ${token}` },
     });
     return response.data;
   } catch (error) {
@@ -209,6 +207,29 @@ export const cancelTx = async (txId) => {
     });
     return response;
   }catch (error) {
+    return error.response.data
+  }
+}
+
+export const generateQR = async () => {
+  try{
+    const response = await client.get("/api/twofactor/generate",{
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response.data
+  } catch (error) {
+    return error.response.data
+  }
+}
+
+export const verifyOtp = async (data) => {
+  try {
+    console.log(data)
+    const response = await client.post("/api/twofactor/verify",{pin:data} ,{
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response.data
+  } catch (error) {
     return error.response.data
   }
 }

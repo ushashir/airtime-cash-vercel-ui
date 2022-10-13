@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Button from "../common/button";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { addToWallet } from "../../api";
+import { addToWallet, verifyOtp } from "../../api";
 import Swal from "sweetalert2";
 
 const AmountModal = (data) => {
@@ -12,6 +12,7 @@ const AmountModal = (data) => {
   const email = record[0]
   const txId = record[2]
   const txStatus = "sent"
+
 
     const amountSchema = yup.object().shape({
         amount: yup.number().positive().required().typeError("Please enter your amount"),
@@ -26,8 +27,9 @@ const AmountModal = (data) => {
       });
    let input =  watch()
     
-    const onSubmit = async () => {
-        Swal.fire({
+  const onSubmit = async () => {
+
+       Swal.fire({
             html: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
           <circle cx="37" cy="50" fill="#de3d6d" r="13">
             <animate attributeName="cx" repeatCount="indefinite" dur="1s" keyTimes="0;0.5;1" values="37;63;37" begin="-0.5s"></animate>
@@ -46,11 +48,26 @@ const AmountModal = (data) => {
             },
             showConfirmButton: false,
             showCancelButton: false
-          })
+        })
+    
+        
         const payload = ({ ...input, email,txId, txStatus })
-        console.log(payload)
+        console.log(payload.pin)
+        const isValidOtp = await verifyOtp(payload.pin)
+        console.log(isValidOtp)
+    if (isValidOtp.status === false) {
+      Swal.fire({
+        icon: 'error',
+        titleText: 'Invalid OTP',
+        text: 'You are not Authorized to perform this Operation',
+        confirmButtonText: "Okay",
+        confirmButtonColor: "#DE3D6D",
+      })
+      return
+    }
+    else{
         const res = await addToWallet(payload)
-        console.log(res)
+      
         if (res.status === 200) {
             Swal.fire({
               icon: 'success',
@@ -70,6 +87,7 @@ const AmountModal = (data) => {
           }
           handleChange()
     }
+  }
     function handleChange() {
       data.onChange(false);
   }
@@ -85,7 +103,7 @@ const AmountModal = (data) => {
                 <div className="form_group">
                   <div className="label_container">
                     <label htmlFor="amount" className="form_label">
-                      Amount sent
+                      Amount to send
                     </label>
                   </div>
           
@@ -113,6 +131,22 @@ const AmountModal = (data) => {
                     placeholder="Enter amount"
                   />
                 </div>
+                <div className="form_group">
+                  <div className="label_container">
+                    <label htmlFor="amount_recieved" className="form_label">
+                      Enter OTP
+                    </label>
+                  </div>
+                  <Input
+                    register={register}
+                    errors={errors}
+                    isDisabled={false}
+                    name="pin"
+                    type="text"
+                    placeholder="Enter OTP"
+                  />
+                </div>
+
                 <div style={{ margin: "0 auto" }}>
                   <Button type="submit" value="Confirm" style={{ marginBottom: "33px" }} />
                 </div>

@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 function ViewAccountDetails({ children, handleRender }) {
   const [watchChanges, setWatchChanges] = useState(true);
   const [account, setAccount] = useState([]);
+  const [password, setPassword] = useState("");
 
   const getAccount = async () => {
     const response = await getUserAccount();
@@ -19,29 +20,25 @@ function ViewAccountDetails({ children, handleRender }) {
   const handleDelete = async (id) => {
     let res;
     Swal.fire({
-      title: "Enter your username to remove bank account",
-      input: "text",
+      title: "Enter your password to remove bank account",
+      input: "password",
       inputAttributes: {
         autocapitalize: "off",
       },
       showCancelButton: true,
       confirmButtonText: "Remove",
       showLoaderOnConfirm: true,
-      preConfirm: async (input) => {
-        try {
-          const response = await getUserData();
-          response.response.userName === input
-            ? (res = await deleteAccount(id))
-            : (res = { message: "Wrong username, try again" });
-        } catch (error) {
-          Swal.showValidationMessage(`Request failed: ${error}`);
-        }
+      preConfirm: (input) => {
+        setPassword(input)
       },
       allowOutsideClick: () => !Swal.isLoading(),
-    }).then((result) => {
+    })
+    .then((result) => {
       if (result.isConfirmed) {
+        deleteAccount(id, password)
+        .then(res=>console.log(res))
         setWatchChanges(!watchChanges);
-        Swal.fire(res.message);
+        // Swal.fire(res.message);
       }
     });
   };

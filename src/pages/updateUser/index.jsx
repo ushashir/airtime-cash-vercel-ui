@@ -3,7 +3,7 @@ import Nav from "../../components/nav";
 import Button from "../../components/common/button";
 import logo from "../../assets/icons/logo.svg";
 import { useForm } from "react-hook-form";
-import { updateUserData, getUserData } from "../../api/index";
+import { updateUserData, getUserData, generateQR } from "../../api/index";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -59,6 +59,23 @@ function UpdatePage() {
       reader.readAsDataURL(file);
     }
   };
+
+  const handleTfa = async(e) => {
+    e.preventDefault()
+    
+      const res = await generateQR()
+      console.log(res)
+      Swal.fire({
+        title: "Scan with your 2FA App",
+        imageUrl: res.response,
+        confirmButtonText: "Done",
+        confirmButtonColor: "#DE3D6D"
+      })
+
+ 
+  
+  }
+
 
   const onSubmit = async (data) => {
     try {
@@ -170,7 +187,9 @@ function UpdatePage() {
                 type="button"
                 value="Update profile picture"
                 onClick={updateProfile}
-              />
+                />
+            
+                <button onClick={e=>handleTfa(e)} className="tfa">Setup Two Factor Authentication </button>
               <Button value="Update" type="submit" />
             </form>
           )}
