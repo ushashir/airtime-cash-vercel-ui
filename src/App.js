@@ -18,6 +18,7 @@ import { UserContext, BankContext } from "./context/userContext"
 import ProtectedRoute from "./utils/auth";
 import Layout from "./pages/admin/layout";
 import Transactions from "./pages/admin/transaction";
+import Stats from "./pages/admin/stats";
 import Admin from "./pages/admin";
 
 
@@ -77,6 +78,7 @@ function App() {
                     <Layout>
                       <Routes>
                         <Route exact path="/" element={<Admin />} />{" "}
+                        <Route exact path="/stats" element={<Stats />} />{" "}
                         <Route
                           exact
                           path="/transactions"
