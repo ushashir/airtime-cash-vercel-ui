@@ -51,11 +51,13 @@ const Login = () => {
             .post(`${baseUrl}/api/users/login`, payload)
             .then((res) => {
                 if (res.status === 200) {
+                    console.log('res', res)
                     const token = res.data.response.token;
+                    const isAdmin = res.data.response.userdata.isAdmin;
                     localStorage.setItem("token", token);
                     setUserUpdated(true);
                     // setLogged(true)
-                    navigate("/dashboard");
+                    isAdmin ? navigate("/admin") : navigate("/dashboard")
                 }
             }
             ).catch((err) => {

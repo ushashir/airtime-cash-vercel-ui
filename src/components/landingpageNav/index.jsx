@@ -127,11 +127,13 @@ const Nav = () => {
                   </Link>
                 </div>
               ) : (
-                <a href="/login">
-                  <div className="btn" href="/login">
-                    Login
-                  </div>
-                </a>
+                <li>
+                  <a href="/login">
+                    <div className="btn">
+                      Login
+                    </div>
+                  </a>
+                </li>
               )}
             </ul>
           </div>

@@ -19,7 +19,7 @@ function ViewAccountDetails({ children, handleRender }) {
   const handleDelete = async (id) => {
     let res;
     Swal.fire({
-      title: "Are you sure you want to delete account",
+      title: "Are you sure you want to remove account?",
       showCancelButton: true,
       confirmButtonText: "Remove",
       showLoaderOnConfirm: true,
