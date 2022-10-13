@@ -96,24 +96,19 @@ border-radius: 8px;
     
     table tr {
       border-bottom: 3px solid #ddd;
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: inherit;
       margin-bottom: .625em;
     }
     
     table td {
       border-bottom: 1px solid #ddd;
-      display: block;
       font-size: .8em;
-      text-align: right;
     }
     
     table td::before {
-      /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
       content: attr(data-label);
-      float: left;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -123,7 +118,64 @@ border-radius: 8px;
     }
     .dropdownContent{
         flex-direction: row;
-        width: 50%;
+        justify-content: space-around;
+        width: 80%;
     }
   }
+
+
+  td:before {
+  font-family: fontawesome;
+  display:none
+}
+.email::before {
+  content: "\f0e0";
+  font-size: 18px;
+}
+.phone::before {
+  content: "\f095";
+  font-size: 18px;
+}
+.toSend::before {
+  content: "\f061";
+  font-size: 18px;
+}
+.date::before {
+  content: "\f017";
+  font-size: 18px;
+}
+.network::before {
+  content: "\f1eb";
+  font-size: 18px;
+}
+.status::before {
+  content: "\f05a";
+  font-size: 18px;
+}
+.toRecieve::before {
+  content: "\f060";
+  font-size: 18px;
+}
+.action::before {
+  content: "\21";
+  font-size: 18px;
+}
+
+  @media screen and (max-width: 650px) {
+   td {
+    font-size: 0;
+  }
+   td:before {
+    margin: 0;
+    display:block;
+    font-size: 18px;
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+ td {
+    padding: 15px;
+  }
+}
   

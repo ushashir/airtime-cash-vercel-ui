@@ -15,8 +15,7 @@ export const SideBarStyle = styled.div`
     width: 402px;
     transition: all 0.5s;
     padding-top: 1rem;
-    box-shadow: 0px 5px 3px 0 rgba(0, 0, 0, 0.1 );
-    /* box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
     @media (max-width: 768px) {
       width: 50px;
     }

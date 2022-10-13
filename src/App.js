@@ -11,15 +11,13 @@ import PageNotFound from "./pages/notfound";
 import UpdatePage from "./pages/updateUser";
 import Dashboard from "./pages/dashboard";
 import EmailVerified from "./pages/forgotPassword/EmailVerified";
-import { RecoilRoot } from "recoil";
 import { useState, useEffect } from "react";
 import { hasToken } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
 import { UserContext, BankContext } from "./context/userContext"
 import ProtectedRoute from "./utils/auth";
-import Layout from "./pages/Admin-dashboard/Layout/layout";
-import Overview from "./pages/Admin-dashboard/overview/overview";
-import Transaction from "./pages/Admin-dashboard/transactions/transaction";
+import Layout from "./pages/admin/layout";
+import Transactions from "./pages/admin/transaction";
 import Admin from "./pages/admin";
 
 
@@ -43,7 +41,7 @@ function App() {
 
   return (
     <>
-      <RecoilRoot>
+  
         <BrowserRouter>
           <UserContext.Provider value={{ user, setUserUpdated }}>
             <Routes>
@@ -82,7 +80,7 @@ function App() {
                         <Route
                           exact
                           path="/transactions"
-                          element={<Transaction />}
+                          element={<Transactions />}
                         />{" "}
                       </Routes>
                     </Layout>
@@ -93,7 +91,7 @@ function App() {
             </Routes>
           </UserContext.Provider>
         </BrowserRouter>
-      </RecoilRoot>
+  
     </>
 
   );

@@ -194,7 +194,17 @@ export const allTx = async() => {
 
 export const addToWallet = async (data) => {
   try {
-    const response = await client.patch("/api/wallet", data,{
+    const response = await client.patch("/api/wallet/confirm", data,{
+      headers: { Authorization: `Bearer ${token}`},
+    });
+    return response;
+  }catch (error) {
+    return error.response.data
+  }
+}
+export const cancelTx = async (txId) => {
+  try {
+    const response = await client.patch("/api/wallet/cancel", txId,{
       headers: { Authorization: `Bearer ${token}`},
     });
     return response;
