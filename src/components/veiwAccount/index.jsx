@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 function ViewAccountDetails({ children, handleRender }) {
   const [watchChanges, setWatchChanges] = useState(true);
   const [account, setAccount] = useState([]);
+  const [password, setPassword] = useState("");
 
   const getAccount = async () => {
     const response = await getUserAccount();
@@ -31,10 +32,13 @@ function ViewAccountDetails({ children, handleRender }) {
         }
       },
       allowOutsideClick: () => !Swal.isLoading(),
-    }).then((result) => {
+    })
+    .then((result) => {
       if (result.isConfirmed) {
+        deleteAccount(id, password)
+        .then(res=>console.log(res))
         setWatchChanges(!watchChanges);
-        Swal.fire(res.message);
+        // Swal.fire(res.message);
       }
     });
   };

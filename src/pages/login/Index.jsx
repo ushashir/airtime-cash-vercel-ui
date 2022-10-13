@@ -5,7 +5,7 @@ import { baseUrl } from '../../utils/baseUrl';
 import './style.scss'
 import loginLogo from '../../assets/icons/loginLogo.svg'
 import { useContext } from 'react';
-import { BankContext, UserContext } from '../../context/userContext';
+import {  UserContext } from '../../context/userContext';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -14,7 +14,6 @@ const Login = () => {
     const [clickedLogin, setClickedLogin] = useState(false);
 
     const { setUserUpdated, setLogged } = useContext(UserContext)
-    // const { setUpdateWallet } = useContext(BankContext)
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -68,7 +67,6 @@ const Login = () => {
                 }
             })
     }
-
     return (
         <>
             <div className="alle">

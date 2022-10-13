@@ -77,7 +77,6 @@ function SellAirtime() {
     });
   }
 
-
   const onSubmit = async () => {
     const { phone, amount } = inputs
     const data = { phone, amount, network }
