@@ -7,7 +7,7 @@ const UserProfileDropdown = ({ showDropdown }) => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    console.log('I ran')
+    console.log('I ran logout')
     localStorage.removeItem("token");
     navigate("/login");
   };
@@ -20,8 +20,10 @@ const UserProfileDropdown = ({ showDropdown }) => {
             <img src={ProfileIcon} alt="Account icon" /> <span>Account</span>{" "}
           </DropdownItem>
         </Link>
-        <DropdownItem style={{ cursor: "pointer" }} onClick={handleLogout}>
-          <img src={LogoutIcon} alt="Logout icon" /> <span>Logout</span>
+        <DropdownItem style={{ cursor: "pointer" }} onClick={() => {
+          console.log("I ran after click")
+        }}>
+          <img src={LogoutIcon} alt="Logout icon" /> <span >Logout</span>
         </DropdownItem>
       </Dropdown>
     </>

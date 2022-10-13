@@ -26,6 +26,7 @@ function Withdraw() {
         setAccounts(accns)
     };
 
+
     useEffect(() => {
         getAccount();
     }, []);
@@ -122,7 +123,10 @@ function Withdraw() {
 
     const options = []
     accounts.map((account) => {
-        let details = { value: account.bankName, label: account.bankName };
+        let details = {
+            value: account.bankName, label: account.bankName,
+            accName: account.accountName, accNumber: account.accountNumber
+        };
         options.push(details)
     })
 
@@ -144,7 +148,9 @@ function Withdraw() {
                             isClearable={true}
                             isSearchable={true}
                             options={options}
-                            onChange={(choice) => setBankDetails(choice.value)}
+                            onChange={(choice) => {
+                                setBankDetails(choice.value)
+                            }}
                         />
                     </div>
                 </div>
@@ -160,7 +166,6 @@ function Withdraw() {
                         name="accountName"
                         type="text"
                         placeholder="Account Name"
-
                     />
                 </div>
                 <div className="form_group">
