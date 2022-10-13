@@ -19,20 +19,13 @@ function ViewAccountDetails({ children, handleRender }) {
   const handleDelete = async (id) => {
     let res;
     Swal.fire({
-      title: "Enter your username to remove bank account",
-      input: "text",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
+      title: "Are you sure you want to delete account",
       showCancelButton: true,
       confirmButtonText: "Remove",
       showLoaderOnConfirm: true,
-      preConfirm: async (input) => {
+      preConfirm: async () => {
         try {
-          const response = await getUserData();
-          response.response.userName === input
-            ? (res = await deleteAccount(id))
-            : (res = { message: "Wrong username, try again" });
+          res = await deleteAccount(id);
         } catch (error) {
           Swal.showValidationMessage(`Request failed: ${error}`);
         }
