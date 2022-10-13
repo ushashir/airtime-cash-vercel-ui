@@ -14,13 +14,12 @@ import EmailVerified from "./pages/forgotPassword/EmailVerified";
 import { useState, useEffect } from "react";
 import { hasToken } from "./utils/isLoggedIn";
 import { getUserData } from "./api";
-import { UserContext, BankContext } from "./context/userContext"
+import { UserContext, BankContext } from "./context/userContext";
 import ProtectedRoute from "./utils/auth";
 import Layout from "./pages/admin/layout";
 import Transactions from "./pages/admin/transaction";
 import Stats from "./pages/admin/stats";
 import Admin from "./pages/admin";
-
 
 function App() {
   const [user, setUser] = useState({ avatar: "", userName: "" });
@@ -68,7 +67,6 @@ function App() {
                   </BankContext.Provider>
                 </ProtectedRoute>
               }></Route>
-
 
               <Route
                 exact
