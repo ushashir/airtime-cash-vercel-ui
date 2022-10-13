@@ -8,19 +8,22 @@ import BodyText1 from '../../components/bodyText1';
 import Service from '../../components/services';
 import Advert from '../../components/bodyAdv';
 import BodyText2 from '../../components/bodyText2';
-import Testimonial from '../../components/testimonial';
+// import Testimonial from '../../components/testimonial';
+import TestimonialSlider from '../../testimonials/testimonialSlider';
+
 
 function LandingPage(props) {
   return (
     <>
-      <div className='landingPg'>
+      <div className="landingPg">
         <Nav />
         <Hero />
         <BodyText1 />
         <Service />
         <Advert />
         <BodyText2 />
-        <Testimonial />
+        {/* <Testimonial /> */}
+        <TestimonialSlider/>
         {/* <div className="arrow-pos">
           <div className="arrow">&lt;</div>
           <div className="testimonal-container">
@@ -49,8 +52,7 @@ function LandingPage(props) {
               Airtime2Cash for 2 months now and so far, it still looks promising.
             </p>
           </div> */}
-         
-        <Footer /> 
+        <Footer />
       </div>
     </>
   );
