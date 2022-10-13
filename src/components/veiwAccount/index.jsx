@@ -20,16 +20,16 @@ function ViewAccountDetails({ children, handleRender }) {
   const handleDelete = async (id) => {
     let res;
     Swal.fire({
-      title: "Enter your password to remove bank account",
-      input: "password",
-      inputAttributes: {
-        autocapitalize: "off",
-      },
+      title: "Are you sure you want to remove account?",
       showCancelButton: true,
       confirmButtonText: "Remove",
       showLoaderOnConfirm: true,
-      preConfirm: (input) => {
-        setPassword(input)
+      preConfirm: async () => {
+        try {
+          res = await deleteAccount(id);
+        } catch (error) {
+          Swal.showValidationMessage(`Request failed: ${error}`);
+        }
       },
       allowOutsideClick: () => !Swal.isLoading(),
     })
