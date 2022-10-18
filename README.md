@@ -1,3 +1,6 @@
+- [Demo](https://airtime-cash-podb.vercel.app/)
+- [Decagon Repo](https://github.com/decadevs/live-project-frontend-pod-_b-1)
+
 ## PROJECT SCRIPTS
 
 - Run `yarn start` to start app
